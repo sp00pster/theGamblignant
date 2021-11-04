@@ -1,0 +1,59 @@
+{
+  "theGamblignant:DefaultCommonAttack": {
+    "NAME": "Default Common Attack",
+    "DESCRIPTION": "Deal !D! damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+  },
+  "theGamblignant:DefaultCommonSkill": {
+    "NAME": "Default Common Skill",
+    "DESCRIPTION": "Gain !B! Block. NL thegamblignant:Multiword_Keyword."
+  },
+  "theGamblignant:DefaultCommonPower": {
+    "NAME": "Hold Place",
+    "DESCRIPTION": "Gain !M! thegamblignant:Keyword.",
+    "UPGRADE_DESCRIPTION": "Gain !M! thegamblignant:Keywords."
+  },
+  "theGamblignant:DefaultUncommonAttack": {
+    "NAME": "Big slap",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "theGamblignant:DefaultUncommonSkill": {
+    "NAME": "A Better Defend",
+    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+  },
+  "theGamblignant:DefaultUncommonPower": {
+    "NAME": "Weirdness",
+    "DESCRIPTION": "Gain X thegamblignant:Keywords.",
+    "UPGRADE_DESCRIPTION": "Gain X +1 thegamblignant:Keywords."
+  },
+  "theGamblignant:DefaultRareAttack": {
+    "NAME": "TOUCH",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "theGamblignant:DefaultRareSkill": {
+    "NAME": "For Each Loop x2",
+    "DESCRIPTION": "Apply !M! Vulnerable to all enemies, 2 times.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to all enemies, 3 times."
+  },
+  "theGamblignant:DefaultRarePower": {
+    "NAME": "In-Progress Form",
+    "DESCRIPTION": "At the start of your turn, play a TOUCH."
+  },
+  "theGamblignant:DefaultAttackWithVariable": {
+    "NAME": "Special Strike",
+    "DESCRIPTION": "Deal !D! damage [E] times. NL (Deal !theGamblignant:ENERGY_DAMAGE! damage total.)"
+  },
+  "theGamblignant:DefaultSecondMagicNumberSkill": {
+    "NAME": "Cool 2 Number Card",
+    "DESCRIPTION": "Apply !M! Vulnerable and !theGamblignant:SecondMagic! poison to an enemy."
+  },
+  "theGamblignant:Strike_Cobalt": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "Deal 1d6 + !D! damage."
+  },
+  "theGamblignant:Defend_Cobalt": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Gain 1d6 + !B! Block."
+  }
+}
