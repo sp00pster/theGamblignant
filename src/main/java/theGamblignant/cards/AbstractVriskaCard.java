@@ -55,7 +55,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
         int max;
         int min;
 
-        if (p.hasPower("Strength")) {
+        if (p.hasPower("Luck")) {
             luckAmt = p.getPower("Luck").amount;
         } else {
             luckAmt = 0;
