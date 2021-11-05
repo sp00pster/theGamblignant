@@ -158,6 +158,10 @@ public class TheGamblignant extends CustomPlayer {
         retVal.add(Strike_Cobalt.ID);
         retVal.add(Strike_Cobalt.ID);
         retVal.add(Strike_Cobalt.ID);
+        retVal.add(Defend_Cobalt.ID);
+        retVal.add(Defend_Cobalt.ID);
+        retVal.add(Defend_Cobalt.ID);
+        retVal.add(Defend_Cobalt.ID);
 
         return retVal;
     }

@@ -1,5 +1,7 @@
 package theGamblignant.cards;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
@@ -47,17 +49,32 @@ public abstract class AbstractVriskaCard extends CustomCard {
 
     }
 
-    public int roll(int faces) {
-        int max = faces;
-        System.out.println(max);
-        int min = 1; //also add the amount of luck/vim you have to this
+    public int roll(AbstractPlayer p, int faces) {
+        int luckAmt;
         int result;
-        if (max <= min) {
-            result = max;
+        int max;
+        int min;
+
+        if (p.hasPower("Strength")) {
+            luckAmt = p.getPower("Luck").amount;
         } else {
-            result = AbstractDungeon.cardRandomRng.random(min, max);
+            luckAmt = 0;
         }
-        //clear vim
+
+
+
+        if (luckAmt < 0) {         //if your luck is negative,
+            max = faces + luckAmt; //the highest roll is the amount of faces minus your bad luck,
+            min = 1;               //and the lowest roll is 1.
+        } else {               //otherwise, if your luck is positive or 0,
+            max = faces;       //the highest roll is the amount of faces,
+            min = 1 + luckAmt; //and the lowest roll is 1 plus your luck.
+        }
+
+        if (max <= 1) {return 1;} //if your maximum roll is lower than 1, just return 1
+        else if (max <= min) {return max;} //if your min is greater or equal to your max, return the max
+        else {result = AbstractDungeon.cardRandomRng.random(min, max);} //do the fricken roll
+        //clear vim, if player has it
         return result;
     }
 
