@@ -7,12 +7,24 @@
         "NAME": "Placeholder Power",
         "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
 },
-"theGamblignant:LuckPower": {
+"theGamblignant:Luck": {
         "NAME": "Luck",
-        "DESCRIPTIONS": ["Increase all your dice rolls by #b, without exceeding their normal limits."]
+        "DESCRIPTIONS": [
+                "Increase all your dice rolls by #b,",
+                "Decrease all your dice rolls by #b,",
+                " without exceeding their normal limits."
+        ]
 },
-"theGamblignant:LoseLuckPower": {
+"theGamblignant:LoseLuck": {
         "NAME": "Luck Down",
         "DESCRIPTIONS": ["At the end of your turn, lose #b Luck."]
+},
+"theGamblignant:Vim": {
+        "NAME": "Vim",
+        "DESCRIPTIONS": [
+                "Increase your next dice roll by #b",
+                "Decrease your next dice roll by #b",
+                " without exceeding its normal limit."
+        ]
 }
 }

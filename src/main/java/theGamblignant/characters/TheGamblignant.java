@@ -24,6 +24,7 @@ import org.apache.logging.log4j.Logger;
 import theGamblignant.VriskaMod;
 import theGamblignant.cards.*;
 import theGamblignant.relics.PlaceholderRelic;
+import theGamblignant.relics.TetradactylyRelic;
 
 import java.util.ArrayList;
 
@@ -47,9 +48,9 @@ public class TheGamblignant extends CustomPlayer {
     public static class Enums {
         @SpireEnum
         public static AbstractPlayer.PlayerClass THE_GAMBLIGNANT;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
+        @SpireEnum(name = "DEFAULT_COBALT_COLOR") // These two HAVE to have the same absolutely identical name.
         public static AbstractCard.CardColor COLOR_COBALT;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") @SuppressWarnings("unused")
+        @SpireEnum(name = "DEFAULT_COBALT_COLOR") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
@@ -59,11 +60,11 @@ public class TheGamblignant extends CustomPlayer {
     // =============== BASE STATS =================
 
     public static final int ENERGY_PER_TURN = 3;
-    public static final int STARTING_HP = 75;
-    public static final int MAX_HP = 75;
-    public static final int STARTING_GOLD = 99;
+    public static final int STARTING_HP = 80;
+    public static final int MAX_HP = 80;
+    public static final int STARTING_GOLD = 88;
     public static final int CARD_DRAW = 5;
-    public static final int ORB_SLOTS = 3;
+    public static final int ORB_SLOTS = 0;
 
     // =============== /BASE STATS/ =================
 
@@ -162,6 +163,8 @@ public class TheGamblignant extends CustomPlayer {
         retVal.add(Defend_Cobalt.ID);
         retVal.add(Defend_Cobalt.ID);
         retVal.add(Defend_Cobalt.ID);
+        retVal.add(Gank.ID);
+        retVal.add(CriticalStrike.ID);
 
         return retVal;
     }
@@ -170,11 +173,11 @@ public class TheGamblignant extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        retVal.add(PlaceholderRelic.ID);
+        retVal.add(TetradactylyRelic.ID);
 
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
+        UnlockTracker.markRelicAsSeen(TetradactylyRelic.ID);
 
         return retVal;
     }

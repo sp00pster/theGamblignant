@@ -1,8 +1,14 @@
 package theGamblignant.cards;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import theGamblignant.VriskaMod;
+import theGamblignant.powers.LuckPower;
+import theGamblignant.powers.VimPower;
+import theGamblignant.relics.TetradactylyRelic;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
@@ -16,10 +22,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
     // simply use that in our cards, so long as we put "extends AbstractDynamicCard" instead of "extends CustomCard" at the start.
     // In simple terms, it's for things that we don't want to define again and again in every single card we make.
 
-    public int defaultSecondMagicNumber;        // Just like magic number, or any number for that matter, we want our regular, modifiable stat
-    public int defaultBaseSecondMagicNumber;    // And our base stat - the number in it's base state. It will reset to that by default.
-    public boolean upgradedDefaultSecondMagicNumber; // A boolean to check whether the number has been upgraded or not.
-    public boolean isDefaultSecondMagicNumberModified; // A boolean to check whether the number has been modified or not, for coloring purposes. (red/green)
+    public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName()); //this is for testing purposes, you can remove this eventually
 
     public AbstractVriskaCard(final String id,
                               final String img,
@@ -37,31 +40,33 @@ public abstract class AbstractVriskaCard extends CustomCard {
         isDamageModified = false;
         isBlockModified = false;
         isMagicNumberModified = false;
-        isDefaultSecondMagicNumberModified = false;
     }
 
     public void displayUpgrades() { // Display the upgrade - when you click a card to upgrade it
         super.displayUpgrades();
-        if (upgradedDefaultSecondMagicNumber) { // If we set upgradedDefaultSecondMagicNumber = true in our card.
-            defaultSecondMagicNumber = defaultBaseSecondMagicNumber; // Show how the number changes, as out of combat, the base number of a card is shown.
-            isDefaultSecondMagicNumberModified = true; // Modified = true, color it green to highlight that the number is being changed.
-        }
-
     }
 
     public int roll(AbstractPlayer p, int faces) {
-        int luckAmt;
+        int luckAmt = 0;
         int result;
         int max;
         int min;
 
-        if (p.hasPower("Luck")) {
-            luckAmt = p.getPower("Luck").amount;
-        } else {
-            luckAmt = 0;
+        if (p.hasRelic(TetradactylyRelic.ID)) { //todo: this doesnt work
+            logger.info("do you have tetradactyly? "+p.hasRelic(TetradactylyRelic.ID));
+            p.getRelic(TetradactylyRelic.ID).onTrigger(p);
         }
 
+        if (p.hasPower(LuckPower.POWER_ID)) {
+            luckAmt += p.getPower(LuckPower.POWER_ID).amount;
+        }
+        if (p.hasPower(VimPower.POWER_ID)) {
+            luckAmt += p.getPower(VimPower.POWER_ID).amount;
+            p.getPower(VimPower.POWER_ID).flash();
+            this.addToBot(new RemoveSpecificPowerAction(p, p, VimPower.POWER_ID));
+        }
 
+        logger.info("luck going into this roll: "+luckAmt);
 
         if (luckAmt < 0) {         //if your luck is negative,
             max = faces + luckAmt; //the highest roll is the amount of faces minus your bad luck,
@@ -74,13 +79,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
         if (max <= 1) {return 1;} //if your maximum roll is lower than 1, just return 1
         else if (max <= min) {return max;} //if your min is greater or equal to your max, return the max
         else {result = AbstractDungeon.cardRandomRng.random(min, max);} //do the fricken roll
-        //clear vim, if player has it
-        return result;
-    }
 
-    public void upgradeDefaultSecondMagicNumber(int amount) { // If we're upgrading (read: changing) the number. Note "upgrade" and NOT "upgraded" - 2 different things. One is a boolean, and then this one is what you will usually use - change the integer by how much you want to upgrade.
-        defaultBaseSecondMagicNumber += amount; // Upgrade the number by the amount you provide in your card.
-        defaultSecondMagicNumber = defaultBaseSecondMagicNumber; // Set the number to be equal to the base value.
-        upgradedDefaultSecondMagicNumber = true; // Upgraded = true - which does what the above method does.
+        return result;
     }
 }

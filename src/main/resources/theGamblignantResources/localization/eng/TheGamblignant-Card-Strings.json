@@ -55,5 +55,14 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block.",
     "UPGRADE_DESCRIPTION": "Gain 1d6 + !B! Block."
+  },
+  "theGamblignant:Gank": {
+    "NAME": "Gank",
+    "DESCRIPTION": "Deal !D! damage and add !M! to your next roll."
+  },
+  "theGamblignant:CriticalStrike": {
+    "NAME": "Critical Strike",
+    "DESCRIPTION": "Deal 1d20 damage.",
+    "UPGRADE_DESCRIPTION": "Deal 1d30 damage."
   }
 }

@@ -30,5 +30,10 @@
       ".",
       "Select a card to bottle for "
     ]
+  },
+  "theGamblignant:TetradactylyRelic": {
+    "NAME": "Tetradactyly",
+    "FLAVOR": "flavor",
+    "DESCRIPTIONS": ["Add 4 to the result of every 8th die you roll."]
   }
 }

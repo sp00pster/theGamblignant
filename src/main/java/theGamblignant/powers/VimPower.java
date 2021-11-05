@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -14,7 +13,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.util.TextureLoader;
 
@@ -22,26 +20,25 @@ import static theGamblignant.VriskaMod.makePowerPath;
 
 //Gain 1 dex for the turn for each card played.
 
-public class LoseLuckPower extends AbstractPower implements CloneablePowerInterface {
+public class VimPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = VriskaMod.makeID("LoseLuck");
+    public static final String POWER_ID = VriskaMod.makeID("Vim");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("loseluck_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("loseluck_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("luck_power84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("luck_power32.png"));
 
-    public LoseLuckPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public VimPower(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
-        this.source = source;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -53,15 +50,20 @@ public class LoseLuckPower extends AbstractPower implements CloneablePowerInterf
         updateDescription();
     }
 
-    public void atEndOfTurn(boolean isPlayer) {
-        this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new LuckPower(this.owner, this.owner, -this.amount), -this.amount));
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "LoseLuckPower"));
+    public void updateDescription() {
+        if (this.amount > 0) {
+            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
+            this.type = PowerType.BUFF;
+        } else {
+            int tmp = -this.amount;
+            this.description = DESCRIPTIONS[1] + tmp + DESCRIPTIONS[2];
+            this.type = PowerType.DEBUFF;
+        }
+
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new LoseLuckPower(owner, source, amount);
+        return new VimPower(owner, amount);
     }
-
 }

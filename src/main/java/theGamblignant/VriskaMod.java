@@ -24,10 +24,7 @@ import theGamblignant.cards.*;
 import theGamblignant.characters.TheGamblignant;
 import theGamblignant.events.IdentityCrisisEvent;
 import theGamblignant.potions.PlaceholderPotion;
-import theGamblignant.relics.BottledPlaceholderRelic;
-import theGamblignant.relics.DefaultClickableRelic;
-import theGamblignant.relics.PlaceholderRelic;
-import theGamblignant.relics.PlaceholderRelic2;
+import theGamblignant.relics.*;
 import theGamblignant.util.IDCheckDontTouchPls;
 import theGamblignant.util.TextureLoader;
 import theGamblignant.variables.DefaultCustomVariable;
@@ -395,6 +392,7 @@ public class VriskaMod implements
         BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheGamblignant.Enums.COLOR_COBALT);
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheGamblignant.Enums.COLOR_COBALT);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheGamblignant.Enums.COLOR_COBALT);
+        BaseMod.addRelicToCustomPool(new TetradactylyRelic(), TheGamblignant.Enums.COLOR_COBALT);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
