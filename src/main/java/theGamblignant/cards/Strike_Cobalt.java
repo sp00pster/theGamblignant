@@ -18,7 +18,7 @@ public class Strike_Cobalt extends AbstractVriskaCard {
     // TEXT DECLARATION
 
     public static final String ID = VriskaMod.makeID(Strike_Cobalt.class.getSimpleName());
-    public static final String IMG = makeCardPath("strike2.png");
+    public static final String IMG = makeCardPath("strike.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
