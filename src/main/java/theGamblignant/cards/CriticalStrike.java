@@ -33,7 +33,7 @@ public class CriticalStrike extends AbstractVriskaCard {
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
 
 
@@ -43,7 +43,7 @@ public class CriticalStrike extends AbstractVriskaCard {
     public CriticalStrike() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseMagicNumber = 20;
+        this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
         this.tags.add(CardTags.STARTER_STRIKE);
     }
@@ -53,7 +53,7 @@ public class CriticalStrike extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, roll(p,magicNumber), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new DamageAction(m, new DamageInfo(p, roll(p,8)*magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     // Upgraded stats.
@@ -62,7 +62,7 @@ public class CriticalStrike extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
-            this.upgradeMagicNumber(10);
+            this.upgradeMagicNumber(1);
             initializeDescription();
         }
     }

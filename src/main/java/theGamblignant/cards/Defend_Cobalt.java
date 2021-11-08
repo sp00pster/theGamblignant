@@ -16,13 +16,6 @@ import static theGamblignant.VriskaMod.makeCardPath;
 
 public class Defend_Cobalt extends AbstractVriskaCard {
 
-    /*
-     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
-     *
-     * Defend Gain 5 (8) block.
-     */
-
-
     // TEXT DECLARATION
 
     public static final String ID = VriskaMod.makeID(Defend_Cobalt.class.getSimpleName());
@@ -41,8 +34,6 @@ public class Defend_Cobalt extends AbstractVriskaCard {
 
     private static final int COST = 1;
     private static final int BLOCK = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
-
 
     // /STAT DECLARATION/
 

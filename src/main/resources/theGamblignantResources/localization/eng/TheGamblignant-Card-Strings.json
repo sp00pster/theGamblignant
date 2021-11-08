@@ -62,7 +62,12 @@
   },
   "theGamblignant:CriticalStrike": {
     "NAME": "Critical Strike",
-    "DESCRIPTION": "Deal 1d20 damage.",
-    "UPGRADE_DESCRIPTION": "Deal 1d30 damage."
+    "DESCRIPTION": "Deal 1d8 x 2 damage.",
+    "UPGRADE_DESCRIPTION": "Deal 1d8 x 3 damage."
+  },
+  "theGamblignant:SpiderClaw": {
+    "NAME": "Spider's Claw",
+    "DESCRIPTION": "Deal 1d4 damage 1d4 times.",
+    "UPGRADE_DESCRIPTION": "Deal 1d4 damage 1d6 times."
   }
 }

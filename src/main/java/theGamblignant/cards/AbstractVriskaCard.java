@@ -14,14 +14,6 @@ import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
 public abstract class AbstractVriskaCard extends CustomCard {
 
-    // Custom Abstract Cards can be a bit confusing. While this is a simple base for simply adding a second magic number,
-    // if you're new to modding I suggest you skip this file until you know what unique things that aren't provided
-    // by default, that you need in your own cards.
-
-    // In this example, we use a custom Abstract Card in order to define a new magic number. From here on out, we can
-    // simply use that in our cards, so long as we put "extends AbstractDynamicCard" instead of "extends CustomCard" at the start.
-    // In simple terms, it's for things that we don't want to define again and again in every single card we make.
-
     public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName()); //this is for testing purposes, you can remove this eventually
 
     public AbstractVriskaCard(final String id,
@@ -79,6 +71,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
         else if (max <= min) {result = max;} //if your min is greater or equal to your max, return the max
         else {result = AbstractDungeon.cardRandomRng.random(min, max);} //do the fricken roll
 
+        logger.info("rolled a "+result);
         return result;
     }
 }
