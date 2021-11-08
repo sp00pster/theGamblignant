@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theGamblignant.VriskaMod;
@@ -31,8 +32,7 @@ public class TetradactylyRelic extends CustomRelic {
     }
 
 
-    public void onTrigger(AbstractPlayer p) {
-        logger.info("the ontrigger function was called");
+    public void onTrigger() {
         ++this.counter;
         if (this.counter == 8) {
             this.counter = 0;
@@ -41,8 +41,8 @@ public class TetradactylyRelic extends CustomRelic {
         } else if (this.counter == 7) {
             this.beginPulse();
             this.pulse = true;
-            this.addToBot(new RelicAboveCreatureAction(p, this));
-            this.addToBot(new ApplyPowerAction(p, p, new VimPower(p, 4), 1, true));
+            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VimPower(AbstractDungeon.player, 4), 1, true));
         }
     }
     // Description

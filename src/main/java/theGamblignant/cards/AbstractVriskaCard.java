@@ -52,9 +52,8 @@ public abstract class AbstractVriskaCard extends CustomCard {
         int max;
         int min;
 
-        if (p.hasRelic(TetradactylyRelic.ID)) { //todo: this doesnt work
-            logger.info("do you have tetradactyly? "+p.hasRelic(TetradactylyRelic.ID));
-            p.getRelic(TetradactylyRelic.ID).onTrigger(p);
+        if (p.hasRelic(TetradactylyRelic.ID)) {
+            p.getRelic(TetradactylyRelic.ID).onTrigger();
         }
 
         if (p.hasPower(LuckPower.POWER_ID)) {
@@ -66,7 +65,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
             this.addToBot(new RemoveSpecificPowerAction(p, p, VimPower.POWER_ID));
         }
 
-        logger.info("luck going into this roll: "+luckAmt);
+        logger.info("luck going into this roll: "+luckAmt); //you can remove this eventually
 
         if (luckAmt < 0) {         //if your luck is negative,
             max = faces + luckAmt; //the highest roll is the amount of faces minus your bad luck,
@@ -76,8 +75,8 @@ public abstract class AbstractVriskaCard extends CustomCard {
             min = 1 + luckAmt; //and the lowest roll is 1 plus your luck.
         }
 
-        if (max <= 1) {return 1;} //if your maximum roll is lower than 1, just return 1
-        else if (max <= min) {return max;} //if your min is greater or equal to your max, return the max
+        if (max <= 1) {result = 1;} //if your maximum roll is lower than 1, just return 1
+        else if (max <= min) {result = max;} //if your min is greater or equal to your max, return the max
         else {result = AbstractDungeon.cardRandomRng.random(min, max);} //do the fricken roll
 
         return result;
