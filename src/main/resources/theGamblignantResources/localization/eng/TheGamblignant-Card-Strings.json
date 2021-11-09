@@ -61,7 +61,7 @@
     "DESCRIPTION": "Deal !D! damage and add !M! to your next roll."
   },
   "theGamblignant:CriticalStrike": {
-    "NAME": "Critical Strike",
+    "NAME": "Headshot",
     "DESCRIPTION": "Deal 1d8 x 2 damage.",
     "UPGRADE_DESCRIPTION": "Deal 1d8 x 3 damage."
   },
@@ -69,5 +69,18 @@
     "NAME": "Spider's Claw",
     "DESCRIPTION": "Deal 1d4 damage 1d4 times.",
     "UPGRADE_DESCRIPTION": "Deal 1d4 damage 1d6 times."
+  },
+  "theGamblignant:BallBreak": {
+    "NAME": "Ball Break",
+    "DESCRIPTION": "Deal 1d4 + !D! damage."
+  },
+  "theGamblignant:Wingbeat": {
+    "NAME": "Wingbeat",
+    "DESCRIPTION": "Deal 1d8 damage and gain 1d8 Block.",
+    "UPGRADE_DESCRIPTION": "Deal 1d12 damage and gain 1d12 Block."
+  },
+  "theGamblignant:JumpKick": {
+    "NAME": "Jump Kick",
+    "DESCRIPTION": "Deal !D! damage. If target enemy has any Block, take 5 damage."
   }
 }

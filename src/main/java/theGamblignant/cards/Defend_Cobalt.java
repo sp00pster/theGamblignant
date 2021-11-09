@@ -49,7 +49,7 @@ public class Defend_Cobalt extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, (block + roll(p,6))));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, (block + roll(6))));
         } else {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         }

@@ -38,23 +38,23 @@ public abstract class AbstractVriskaCard extends CustomCard {
         super.displayUpgrades();
     }
 
-    public int roll(AbstractPlayer p, int faces) {
+    public int roll(int faces) {
         int luckAmt = 0;
         int result;
         int max;
         int min;
 
-        if (p.hasRelic(TetradactylyRelic.ID)) {
-            p.getRelic(TetradactylyRelic.ID).onTrigger();
+        if (AbstractDungeon.player.hasRelic(TetradactylyRelic.ID)) {
+            AbstractDungeon.player.getRelic(TetradactylyRelic.ID).onTrigger();
         }
 
-        if (p.hasPower(LuckPower.POWER_ID)) {
-            luckAmt += p.getPower(LuckPower.POWER_ID).amount;
+        if (AbstractDungeon.player.hasPower(LuckPower.POWER_ID)) {
+            luckAmt += AbstractDungeon.player.getPower(LuckPower.POWER_ID).amount;
         }
-        if (p.hasPower(VimPower.POWER_ID)) {
-            luckAmt += p.getPower(VimPower.POWER_ID).amount;
-            p.getPower(VimPower.POWER_ID).flash();
-            this.addToBot(new RemoveSpecificPowerAction(p, p, VimPower.POWER_ID));
+        if (AbstractDungeon.player.hasPower(VimPower.POWER_ID)) {
+            luckAmt += AbstractDungeon.player.getPower(VimPower.POWER_ID).amount;
+            AbstractDungeon.player.getPower(VimPower.POWER_ID).flash();
+            this.addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VimPower.POWER_ID));
         }
 
         logger.info("luck going into this roll: "+luckAmt); //you can remove this eventually
