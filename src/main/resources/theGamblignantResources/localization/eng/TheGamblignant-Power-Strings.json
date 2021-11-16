@@ -10,9 +10,9 @@
 "theGamblignant:Luck": {
         "NAME": "Luck",
         "DESCRIPTIONS": [
-                "Increase all your dice rolls by #b,",
-                "Decrease all your dice rolls by #b,",
-                " without exceeding their normal limits."
+                "Increase all your dice rolls by #b",
+                "Decrease all your dice rolls by #b",
+                ", without exceeding their normal limits."
         ]
 },
 "theGamblignant:LoseLuck": {

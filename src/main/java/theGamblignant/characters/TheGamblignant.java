@@ -63,7 +63,7 @@ public class TheGamblignant extends CustomPlayer {
     public static final int STARTING_HP = 80;
     public static final int MAX_HP = 80;
     public static final int STARTING_GOLD = 88;
-    public static final int CARD_DRAW = 5;
+    public static final int CARD_DRAW = 10; //TODO change this back to 5. it is only 10 for debug purposes
     public static final int ORB_SLOTS = 0;
 
     // =============== /BASE STATS/ =================

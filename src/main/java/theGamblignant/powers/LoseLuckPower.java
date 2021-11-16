@@ -15,6 +15,8 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import theGamblignant.VriskaMod;
 import theGamblignant.util.TextureLoader;
 
@@ -23,7 +25,7 @@ import static theGamblignant.VriskaMod.makePowerPath;
 //Gain 1 dex for the turn for each card played.
 
 public class LoseLuckPower extends AbstractPower implements CloneablePowerInterface {
-    public AbstractCreature source;
+    public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName()); //this is for testing purposes, you can remove this eventually
 
     public static final String POWER_ID = VriskaMod.makeID("LoseLuck");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -35,13 +37,12 @@ public class LoseLuckPower extends AbstractPower implements CloneablePowerInterf
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("loseluck_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("loseluck_power32.png"));
 
-    public LoseLuckPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public LoseLuckPower(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
-        this.source = source;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -54,14 +55,15 @@ public class LoseLuckPower extends AbstractPower implements CloneablePowerInterf
     }
 
     public void atEndOfTurn(boolean isPlayer) {
+        logger.info("loseluckpower activating");
         this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new LuckPower(this.owner, this.owner, -this.amount), -this.amount));
+        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new LuckPower(this.owner, -this.amount), -this.amount));
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "LoseLuckPower"));
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new LoseLuckPower(owner, source, amount);
+        return new LoseLuckPower(owner, amount);
     }
 
 }

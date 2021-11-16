@@ -82,5 +82,9 @@
   "theGamblignant:JumpKick": {
     "NAME": "Jump Kick",
     "DESCRIPTION": "Deal !D! damage. If target enemy has any Block, take 5 damage."
+  },
+  "theGamblignant:Scintillate": {
+    "NAME": "Scintillate",
+    "DESCRIPTION": "Gain !M! Luck. At the end of your turn, lose !M! Luck."
   }
 }
