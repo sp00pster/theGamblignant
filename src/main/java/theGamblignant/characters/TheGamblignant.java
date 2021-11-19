@@ -23,8 +23,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theGamblignant.VriskaMod;
 import theGamblignant.cards.*;
-import theGamblignant.relics.PlaceholderRelic;
 import theGamblignant.relics.TetradactylyRelic;
+//TODO: go through the imports of each file and remove unused ones
 
 import java.util.ArrayList;
 
@@ -231,7 +231,7 @@ public class TheGamblignant extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new DefaultCommonAttack();
+        return new Gank();
     }
 
     // The class name as it appears next to your player name in-game

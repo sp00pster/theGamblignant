@@ -4,7 +4,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
@@ -17,7 +19,8 @@ public class SpiderClaw extends AbstractVriskaCard {
 
         public static final String ID = VriskaMod.makeID(SpiderClaw.class.getSimpleName());
         public static final String IMG = makeCardPath("Attack.png");
-
+        private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+        public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
         // /TEXT DECLARATION/
 
@@ -32,15 +35,14 @@ public class SpiderClaw extends AbstractVriskaCard {
         private static final int COST = 1;
         private static final int UPGRADED_COST = 1;
 
-        private int TIMES = 4;
-        private final int UPGRADE_TIMES = 6;
 
         // /STAT DECLARATION/
 
 
         public SpiderClaw() {
             super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-            magicNumber = TIMES;
+            baseMagicNumber = 4;
+            magicNumber = baseMagicNumber;
         }
 
 
@@ -60,8 +62,9 @@ public class SpiderClaw extends AbstractVriskaCard {
         public void upgrade() {
             if (!upgraded) {
                 upgradeName();
-                TIMES = UPGRADE_TIMES;
+                upgradeMagicNumber(2);
                 upgradeBaseCost(UPGRADED_COST);
+                this.rawDescription = UPGRADE_DESCRIPTION;
                 initializeDescription();
             }
         }

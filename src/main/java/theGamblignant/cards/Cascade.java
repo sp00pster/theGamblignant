@@ -1,36 +1,32 @@
 package theGamblignant.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class DefaultRareAttack extends AbstractDynamicCard {
+public class Cascade extends AbstractVriskaCard {
 
-    /*
-     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
-     *
-     * TOUCH Deal 30(35) damage.
-     */
+    // TEXT DECLARATION
 
-
-    // TEXT DECLARATION 
-
-    public static final String ID = VriskaMod.makeID(DefaultRareAttack.class.getSimpleName());
+    public static final String ID = VriskaMod.makeID(Cascade.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
 
-    // STAT DECLARATION 	
+    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -39,36 +35,35 @@ public class DefaultRareAttack extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 30;
-    private static final int UPGRADE_PLUS_DMG = 5;
-
     // /STAT DECLARATION/
 
 
-    public DefaultRareAttack() {
+    public Cascade() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
     }
 
-
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m != null) {
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY)));
+        int damageroll = 0;
+        if (this.upgraded) {
+            for (int i = 0; i < 6; i++) {
+                damageroll += roll(12);
+            }
+        } else {
+            for (int i = 0; i < 4; i++) {
+                damageroll += roll(13);
+            }
         }
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.NONE));
-
+        this.addToBot(new DamageAction(m, new DamageInfo(p, damageroll, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));
     }
 
-    //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(-1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

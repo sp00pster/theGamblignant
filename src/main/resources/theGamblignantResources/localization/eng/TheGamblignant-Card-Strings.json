@@ -86,5 +86,24 @@
   "theGamblignant:Scintillate": {
     "NAME": "Scintillate",
     "DESCRIPTION": "Gain !M! Luck. At the end of your turn, lose !M! Luck."
+  },
+  "theGamblignant:Cascade": {
+    "NAME": "Cascade",
+    "DESCRIPTION": "Deal 4d13 damage.",
+    "UPGRADE_DESCRIPTION": "Deal 6d12 damage."
+  },
+  "theGamblignant:Fireball": {
+    "NAME": "Fireball",
+    "DESCRIPTION": "Deal 8d6 damage. Exhaust."
+  },
+  "theGamblignant:ShiningArmor": {
+    "NAME": "Shining Armor",
+    "DESCRIPTION": "Gain 12 Block and add 3 to your next roll.",
+    "UPGRADE_DESCRIPTION": "Gain 15 Block and add 4 to your next roll."
+  },
+  "theGamblignant:DieCast": {
+    "NAME": "Die Cast",
+    "DESCRIPTION": "Gain 2d8 Block.",
+    "UPGRADE_DESCRIPTION": "Gain 3d8 Block."
   }
 }

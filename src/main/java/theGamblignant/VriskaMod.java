@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import theGamblignant.cards.*;
+import theGamblignant.cards.AbstractVriskaCard;
 import theGamblignant.characters.TheGamblignant;
 import theGamblignant.events.IdentityCrisisEvent;
 import theGamblignant.potions.PlaceholderPotion;
@@ -28,7 +28,6 @@ import theGamblignant.relics.*;
 import theGamblignant.util.IDCheckDontTouchPls;
 import theGamblignant.util.TextureLoader;
 import theGamblignant.variables.DefaultCustomVariable;
-import theGamblignant.variables.DefaultSecondMagicNumber;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -387,7 +386,6 @@ public class VriskaMod implements
         logger.info("Add variables");
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
-        BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
         
         logger.info("Adding cards");
         /*
@@ -401,8 +399,8 @@ public class VriskaMod implements
          It's the mod id you give MTS in ModTheSpire.json - by default your artifact ID in your pom.xml
         */
 
-        new AutoAdd("TheGamblignant") // ${project.artifactId}
-            .packageFilter(AbstractDefaultCard.class) // filters to any class in the same package as AbstractDefaultCard, nested packages included
+        new AutoAdd("TheGamblignant")
+            .packageFilter(AbstractVriskaCard.class) // filters to any class in the same package as AbstractDefaultCard, nested packages included
             .setDefaultSeen(true)
             .cards();
 

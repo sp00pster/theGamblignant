@@ -1,68 +1,63 @@
 package theGamblignant.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class DefaultUncommonAttack extends AbstractDynamicCard {
+public class Fireball extends AbstractVriskaCard {
 
-    /*
-     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
-     *
-     * Big Slap Deal 10(15)) damage.
-     */
+    public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName());
 
-    // TEXT DECLARATION 
+    // TEXT DECLARATION
 
-    public static final String ID = VriskaMod.makeID(DefaultUncommonAttack.class.getSimpleName());
+    public static final String ID = VriskaMod.makeID(Fireball.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     // /TEXT DECLARATION/
 
 
-    // STAT DECLARATION 	
+    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DMG = 5;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
     // /STAT DECLARATION/
 
 
-    public DefaultUncommonAttack() {
+    public Fireball() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.exhaust = true;
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-
+        int damageroll = 0;
+            for (int i = 0; i < 8; i++) {
+                damageroll += roll(6);
+            }
+        this.addToBot(new DamageAction(m, new DamageInfo(p, damageroll, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
     }
 
-    //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

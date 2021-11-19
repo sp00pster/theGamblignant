@@ -17,7 +17,7 @@
 },
 "theGamblignant:LoseLuck": {
         "NAME": "Luck Down",
-        "DESCRIPTIONS": ["At the end of your turn, lose #b Luck."]
+        "DESCRIPTIONS": ["At the end of your turn, lose #b", " Luck."]
 },
 "theGamblignant:Vim": {
         "NAME": "Vim",

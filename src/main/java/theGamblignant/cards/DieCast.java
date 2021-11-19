@@ -1,6 +1,6 @@
 package theGamblignant.cards;
 
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -8,34 +8,23 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
-import theGamblignant.orbs.DefaultOrb;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class OrbSkill extends AbstractDynamicCard {
-
-    /*
-     * Orb time.
-     *
-     * Channel 1 Default Orb.
-     */
+public class DieCast extends AbstractVriskaCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = VriskaMod.makeID(OrbSkill.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
+    public static final String ID = VriskaMod.makeID(DieCast.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
-
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     // /TEXT DECLARATION/
 
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
@@ -44,25 +33,29 @@ public class OrbSkill extends AbstractDynamicCard {
 
     // /STAT DECLARATION/
 
-    public OrbSkill() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
+    public DieCast() {
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        magicNumber = 2;
+        baseMagicNumber = magicNumber;
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        AbstractDungeon.actionManager.addToBottom(new ChannelAction(new DefaultOrb())); // Channel a Default Orb.
-
+        int blockroll = 0;
+        for (int i = 0; i < magicNumber; i++) {
+            blockroll += roll(8);
+        }
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, blockroll));
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(1);
+            initializeDescription();
         }
     }
 }

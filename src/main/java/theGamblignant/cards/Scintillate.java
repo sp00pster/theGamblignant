@@ -5,8 +5,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.LoseStrengthPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 import theGamblignant.powers.LoseLuckPower;
@@ -33,9 +31,6 @@ public class Scintillate extends AbstractVriskaCard {
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
     private static final int COST = 0;
-
-    private static final int MAGIC = 2;
-    private static final int UPGRADE_MAGIC = 1;
 
     // /STAT DECLARATION/
 
