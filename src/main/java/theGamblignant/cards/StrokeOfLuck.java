@@ -1,48 +1,48 @@
 package theGamblignant.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
-import theGamblignant.powers.LoseLuckPower;
-import theGamblignant.powers.LuckPower;
+import theGamblignant.powers.VimPower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class Scintillate extends AbstractVriskaCard {
+public class StrokeOfLuck extends AbstractVriskaCard {
 
-    public static final String ID = VriskaMod.makeID(Scintillate.class.getSimpleName());
+    public static final String ID = VriskaMod.makeID(StrokeOfLuck.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
     private static final int COST = 0;
 
-    public Scintillate() {
+    public StrokeOfLuck() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new LoseLuckPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new VimPower(p, 8), 8));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.selfRetain = true;
             initializeDescription();
         }
     }

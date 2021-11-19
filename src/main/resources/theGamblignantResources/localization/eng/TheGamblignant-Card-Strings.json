@@ -7,45 +7,6 @@
     "NAME": "Default Common Skill",
     "DESCRIPTION": "Gain !B! Block. NL thegamblignant:Multiword_Keyword."
   },
-  "theGamblignant:DefaultCommonPower": {
-    "NAME": "Hold Place",
-    "DESCRIPTION": "Gain !M! thegamblignant:Keyword.",
-    "UPGRADE_DESCRIPTION": "Gain !M! thegamblignant:Keywords."
-  },
-  "theGamblignant:DefaultUncommonAttack": {
-    "NAME": "Big slap",
-    "DESCRIPTION": "Deal !D! damage."
-  },
-  "theGamblignant:DefaultUncommonSkill": {
-    "NAME": "A Better Defend",
-    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
-  },
-  "theGamblignant:DefaultUncommonPower": {
-    "NAME": "Weirdness",
-    "DESCRIPTION": "Gain X thegamblignant:Keywords.",
-    "UPGRADE_DESCRIPTION": "Gain X +1 thegamblignant:Keywords."
-  },
-  "theGamblignant:DefaultRareAttack": {
-    "NAME": "TOUCH",
-    "DESCRIPTION": "Deal !D! damage."
-  },
-  "theGamblignant:DefaultRareSkill": {
-    "NAME": "For Each Loop x2",
-    "DESCRIPTION": "Apply !M! Vulnerable to all enemies, 2 times.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to all enemies, 3 times."
-  },
-  "theGamblignant:DefaultRarePower": {
-    "NAME": "In-Progress Form",
-    "DESCRIPTION": "At the start of your turn, play a TOUCH."
-  },
-  "theGamblignant:DefaultAttackWithVariable": {
-    "NAME": "Special Strike",
-    "DESCRIPTION": "Deal !D! damage [E] times. NL (Deal !theGamblignant:ENERGY_DAMAGE! damage total.)"
-  },
-  "theGamblignant:DefaultSecondMagicNumberSkill": {
-    "NAME": "Cool 2 Number Card",
-    "DESCRIPTION": "Apply !M! Vulnerable and !theGamblignant:SecondMagic! poison to an enemy."
-  },
   "theGamblignant:Strike_Cobalt": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage.",
@@ -105,5 +66,26 @@
     "NAME": "Die Cast",
     "DESCRIPTION": "Gain 2d8 Block.",
     "UPGRADE_DESCRIPTION": "Gain 3d8 Block."
+  },
+  "theGamblignant:StrokeOfLuck": {
+    "NAME": "Stroke Of Luck",
+    "DESCRIPTION": "Add 8 to your next roll. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. Add 8 to your next roll. Exhaust."
+  },
+  "theGamblignant:BeginnersLuck": {
+    "NAME": "Beginner's Luck",
+    "DESCRIPTION": "Gain 1 Luck.",
+    "UPGRADE_DESCRIPTION": "Innate. Gain 1 Luck."
+  },
+  "theGamblignant:SilverWind": {
+    "NAME": "Silver Wind",
+    "DESCRIPTION": "Gain 1d4 Strength and 1d4 Dexterity",
+    "UPGRADE_DESCRIPTION": "Gain 1d6 Strength and 1d6 Dexterity."
+  },
+  "theGamblignant:LightScreen": {
+    "NAME": "Light Screen",
+    "DESCRIPTION": "Gain 4d6 Block.",
+    "UPGRADE_DESCRIPTION": "Gain 6d6 Block."
   }
+
 }
