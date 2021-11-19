@@ -23,7 +23,7 @@ public class BeginnersLuck extends AbstractVriskaCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public BeginnersLuck() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -31,7 +31,7 @@ public class BeginnersLuck extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, 1), 1));
     }
 
     @Override

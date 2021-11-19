@@ -42,7 +42,7 @@
   },
   "theGamblignant:JumpKick": {
     "NAME": "Jump Kick",
-    "DESCRIPTION": "Deal !D! damage. If target enemy has any Block, take 5 damage."
+    "DESCRIPTION": "If target enemy has any Block, take 5 damage. Deal !D! damage."
   },
   "theGamblignant:Scintillate": {
     "NAME": "Scintillate",
@@ -84,8 +84,8 @@
   },
   "theGamblignant:LightScreen": {
     "NAME": "Light Screen",
-    "DESCRIPTION": "Gain 4d6 Block.",
-    "UPGRADE_DESCRIPTION": "Gain 6d6 Block."
+    "DESCRIPTION": "Gain 5d6 Block.",
+    "UPGRADE_DESCRIPTION": "Gain 7d6 Block."
   }
 
 }

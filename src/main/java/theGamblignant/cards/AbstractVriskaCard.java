@@ -67,6 +67,8 @@ public abstract class AbstractVriskaCard extends CustomCard {
             min = 1 + luckAmt;      //and the lowest roll is 1 plus your luck.
         }
 
+        logger.info("rolling from "+min+" to "+max);
+
         if (max <= 1) {result = 1;}                 //if your maximum roll is lower than 1, just return 1
         else if (max <= min) {result = max;}        //if your min is greater or equal to your max, return the max
         else {result = AbstractDungeon.cardRandomRng.random(min, max);} //otherwise, just do the fricken roll
