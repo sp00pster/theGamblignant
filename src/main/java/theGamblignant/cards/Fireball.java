@@ -1,11 +1,9 @@
 package theGamblignant.cards;
 
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,15 +16,8 @@ public class Fireball extends AbstractVriskaCard {
 
     public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName());
 
-    // TEXT DECLARATION
-
     public static final String ID = VriskaMod.makeID(Fireball.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
-
-    // /TEXT DECLARATION/
-
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -35,9 +26,6 @@ public class Fireball extends AbstractVriskaCard {
 
     private static final int COST = 2;
     private static final int UPGRADED_COST = 1;
-
-    // /STAT DECLARATION/
-
 
     public Fireball() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

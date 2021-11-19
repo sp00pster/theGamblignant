@@ -21,8 +21,6 @@ public class LuckPower extends AbstractPower implements CloneablePowerInterface 
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("luck_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("luck_power32.png"));
 
@@ -48,7 +46,7 @@ public class LuckPower extends AbstractPower implements CloneablePowerInterface 
         this.fontScale = 8.0F;
         this.amount += stackAmount;
         if (this.amount == 0) {
-            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.POWER_ID));
+            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, LuckPower.POWER_ID));
         }
     }
 

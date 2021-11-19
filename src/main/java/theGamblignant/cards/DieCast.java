@@ -13,16 +13,10 @@ import static theGamblignant.VriskaMod.makeCardPath;
 
 public class DieCast extends AbstractVriskaCard {
 
-    // TEXT DECLARATION
-
     public static final String ID = VriskaMod.makeID(DieCast.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    // /TEXT DECLARATION/
-
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -30,9 +24,6 @@ public class DieCast extends AbstractVriskaCard {
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
     private static final int COST = 1;
-
-    // /STAT DECLARATION/
-
 
     public DieCast() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

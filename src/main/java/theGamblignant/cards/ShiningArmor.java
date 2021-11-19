@@ -14,16 +14,10 @@ import static theGamblignant.VriskaMod.makeCardPath;
 
 public class ShiningArmor extends AbstractVriskaCard {
 
-    // TEXT DECLARATION
-
     public static final String ID = VriskaMod.makeID(ShiningArmor.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    // /TEXT DECLARATION/
-
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -32,14 +26,11 @@ public class ShiningArmor extends AbstractVriskaCard {
 
     private static final int COST = 2;
 
-    // /STAT DECLARATION/
-
-
     public ShiningArmor() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        baseBlock = 12;
         magicNumber = 3;
         baseMagicNumber = magicNumber;
-        baseBlock = 12;
     }
 
     @Override

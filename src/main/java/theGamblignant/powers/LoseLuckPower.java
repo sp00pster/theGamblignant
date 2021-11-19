@@ -16,8 +16,6 @@ import theGamblignant.util.TextureLoader;
 
 import static theGamblignant.VriskaMod.makePowerPath;
 
-//Gain 1 dex for the turn for each card played.
-
 public class LoseLuckPower extends AbstractPower implements CloneablePowerInterface {
     public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName()); //this is for testing purposes, you can remove this eventually
 
@@ -26,10 +24,8 @@ public class LoseLuckPower extends AbstractPower implements CloneablePowerInterf
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("altloseluck_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("altloseluck_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("arrowloseluck_power84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("arrowloseluck_power32.png"));
 
     public LoseLuckPower(final AbstractCreature owner, final int amount) {
         name = NAME;
@@ -52,7 +48,7 @@ public class LoseLuckPower extends AbstractPower implements CloneablePowerInterf
         this.fontScale = 8.0F;
         this.amount += stackAmount;
         if (this.amount == 0) {
-            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.POWER_ID));
+            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, LoseLuckPower.POWER_ID));
         }
     }
 
@@ -61,7 +57,7 @@ public class LoseLuckPower extends AbstractPower implements CloneablePowerInterf
     public void atEndOfTurn(boolean isPlayer) {
         this.flash();
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new LuckPower(this.owner, -this.amount), -this.amount));
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.POWER_ID));
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, LoseLuckPower.POWER_ID));
     }
 
     @Override

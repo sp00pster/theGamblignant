@@ -15,17 +15,10 @@ import static theGamblignant.VriskaMod.makeCardPath;
 
 public class SpiderClaw extends AbstractVriskaCard {
 
-        // TEXT DECLARATION
-
         public static final String ID = VriskaMod.makeID(SpiderClaw.class.getSimpleName());
         public static final String IMG = makeCardPath("Attack.png");
         private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-
-        // /TEXT DECLARATION/
-
-
-        // STAT DECLARATION
 
         private static final CardRarity RARITY = CardRarity.COMMON;
         private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -35,18 +28,12 @@ public class SpiderClaw extends AbstractVriskaCard {
         private static final int COST = 1;
         private static final int UPGRADED_COST = 1;
 
-
-        // /STAT DECLARATION/
-
-
         public SpiderClaw() {
             super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
             baseMagicNumber = 4;
             magicNumber = baseMagicNumber;
         }
 
-
-        // Actions the card should do.
         @Override
         public void use(AbstractPlayer p, AbstractMonster m) {
             int times = roll(magicNumber);
@@ -56,8 +43,6 @@ public class SpiderClaw extends AbstractVriskaCard {
             }
         }
 
-
-        // Upgraded stats.
         @Override
         public void upgrade() {
             if (!upgraded) {

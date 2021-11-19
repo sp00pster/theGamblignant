@@ -14,7 +14,7 @@ import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
 public abstract class AbstractVriskaCard extends CustomCard {
 
-    public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName()); //this is for testing purposes, you can remove this eventually
+        public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName()); //this is for testing purposes, you can remove this eventually
 
     public AbstractVriskaCard(final String id,
                               final String img,
@@ -59,17 +59,17 @@ public abstract class AbstractVriskaCard extends CustomCard {
 
         logger.info("luck going into this roll: "+luckAmt); //you can remove this eventually
 
-        if (luckAmt < 0) {         //if your luck is negative,
-            max = faces + luckAmt; //the highest roll is the amount of faces minus your bad luck,
-            min = 1;               //and the lowest roll is 1.
-        } else {               //otherwise, if your luck is positive or 0,
-            max = faces;       //the highest roll is the amount of faces,
-            min = 1 + luckAmt; //and the lowest roll is 1 plus your luck.
+        if (luckAmt < 0) {          //if your luck is negative,
+            max = faces + luckAmt;  //the highest roll is the amount of faces minus your bad luck,
+            min = 1;                //and the lowest roll is 1.
+        } else {                    //otherwise, if your luck is positive or 0,
+            max = faces;            //the highest roll is the amount of faces,
+            min = 1 + luckAmt;      //and the lowest roll is 1 plus your luck.
         }
 
-        if (max <= 1) {result = 1;} //if your maximum roll is lower than 1, just return 1
-        else if (max <= min) {result = max;} //if your min is greater or equal to your max, return the max
-        else {result = AbstractDungeon.cardRandomRng.random(min, max);} //do the fricken roll
+        if (max <= 1) {result = 1;}                 //if your maximum roll is lower than 1, just return 1
+        else if (max <= min) {result = max;}        //if your min is greater or equal to your max, return the max
+        else {result = AbstractDungeon.cardRandomRng.random(min, max);} //otherwise, just do the fricken roll
 
         logger.info("rolled a "+result);
         return result;

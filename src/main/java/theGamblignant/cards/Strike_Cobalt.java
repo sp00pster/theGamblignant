@@ -46,8 +46,6 @@ public class Strike_Cobalt extends AbstractVriskaCard {
         this.tags.add(CardTags.STARTER_STRIKE);
     }
 
-
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.upgraded) {
@@ -59,7 +57,6 @@ public class Strike_Cobalt extends AbstractVriskaCard {
         }
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
