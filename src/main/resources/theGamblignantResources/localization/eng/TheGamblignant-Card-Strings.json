@@ -42,7 +42,7 @@
   },
   "theGamblignant:JumpKick": {
     "NAME": "Jump Kick",
-    "DESCRIPTION": "If target enemy has any Block, take 5 damage. Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. If target enemy has any Block, take 5 damage."
   },
   "theGamblignant:Scintillate": {
     "NAME": "Scintillate",
@@ -86,6 +86,33 @@
     "NAME": "Light Screen",
     "DESCRIPTION": "Gain 5d6 Block.",
     "UPGRADE_DESCRIPTION": "Gain 7d6 Block."
+  },
+  "theGamblignant:SlideKick": {
+    "NAME": "Slide Kick",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to all enemies."
+  },
+  "theGamblignant:CripplingBlow": {
+    "NAME": "Crippling Blow",
+    "DESCRIPTION": "Deal !D! damage and apply 1d4 Weak.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1d6 Weak."
+  },
+  "theGamblignant:CunningAction": {
+    "NAME": "Cunning Action",
+    "DESCRIPTION": "Deal !D! damage. Gain Block equal to blocked damage dealt."
+  },
+  "theGamblignant:AerialAce": {
+    "NAME": "Aerial Ace",
+    "DESCRIPTION": "Deal 1d20 damage.",
+    "UPGRADE_DESCRIPTION": "Deal 1d30 damage."
+  },
+  "theGamblignant:Swipe": {
+    "NAME": "Swipe",
+    "DESCRIPTION": "Deal !D! damage to all enemies and gain 1 Luck. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies and gain 1 Luck for each enemy affected. Exhaust."
+  },
+  "theGamblignant:DazzlingGleam": {
+    "NAME": "Dazzling Gleam",
+    "DESCRIPTION": "Deal !D! damage to all enemies and add !M! to your next roll."
   }
 
 }

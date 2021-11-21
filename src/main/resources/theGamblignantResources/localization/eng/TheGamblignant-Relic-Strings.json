@@ -34,6 +34,6 @@
   "theGamblignant:TetradactylyRelic": {
     "NAME": "Tetradactyly",
     "FLAVOR": "flavor",
-    "DESCRIPTIONS": ["Add 4 to the result of every 8th die you roll."]
+    "DESCRIPTIONS": ["Whenever you play 8 cards, add 4 to your next dice roll."]
   }
 }

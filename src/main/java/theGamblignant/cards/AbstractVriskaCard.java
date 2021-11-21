@@ -44,10 +44,6 @@ public abstract class AbstractVriskaCard extends CustomCard {
         int max;
         int min;
 
-        if (AbstractDungeon.player.hasRelic(TetradactylyRelic.ID)) {
-            AbstractDungeon.player.getRelic(TetradactylyRelic.ID).onTrigger();
-        }
-
         if (AbstractDungeon.player.hasPower(LuckPower.POWER_ID)) {
             luckAmt += AbstractDungeon.player.getPower(LuckPower.POWER_ID).amount;
         }
