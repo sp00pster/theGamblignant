@@ -39,7 +39,7 @@ public class AerialAce extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, roll(magicNumber), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, roll(magicNumber,'a'), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
     @Override

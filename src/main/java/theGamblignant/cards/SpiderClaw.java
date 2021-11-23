@@ -36,10 +36,10 @@ public class SpiderClaw extends AbstractVriskaCard {
 
         @Override
         public void use(AbstractPlayer p, AbstractMonster m) {
-            int times = roll(magicNumber);
+            int times = roll(magicNumber,'a');
             for (int i = 0; i < times; i++) {
                 AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, roll(4), damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                new DamageAction(m, new DamageInfo(p, roll(4,'a'), damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             }
         }
 

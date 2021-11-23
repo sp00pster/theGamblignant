@@ -50,7 +50,7 @@ public class Strike_Cobalt extends AbstractVriskaCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.upgraded) {
             AbstractDungeon.actionManager.addToBottom(
-                    new DamageAction(m, new DamageInfo(p, (damage + roll(6)), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                    new DamageAction(m, new DamageInfo(p, (damage + roll(6,'a')), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         } else {
             AbstractDungeon.actionManager.addToBottom(
                     new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));

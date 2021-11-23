@@ -1,5 +1,6 @@
 package theGamblignant.cards;
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,12 +12,10 @@ import theGamblignant.characters.TheGamblignant;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class DieCast extends AbstractVriskaCard {
+public class Prattle extends AbstractVriskaCard {
 
-    public static final String ID = VriskaMod.makeID(DieCast.class.getSimpleName());
+    public static final String ID = VriskaMod.makeID(Prattle.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -25,27 +24,20 @@ public class DieCast extends AbstractVriskaCard {
 
     private static final int COST = 1;
 
-    public DieCast() {
+    public Prattle() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = 2;
-        baseMagicNumber = magicNumber;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int blockroll = 0;
-        for (int i = 0; i < magicNumber; i++) {
-            blockroll += roll(8,'s');
-        }
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, blockroll));
+        this.addToBot(new DrawCardAction(p, roll(4,'s')));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            upgradeMagicNumber(1);
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

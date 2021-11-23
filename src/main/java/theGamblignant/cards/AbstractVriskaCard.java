@@ -1,14 +1,14 @@
 package theGamblignant.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theGamblignant.VriskaMod;
+import theGamblignant.powers.CharismaPower;
 import theGamblignant.powers.LuckPower;
 import theGamblignant.powers.VimPower;
-import theGamblignant.relics.TetradactylyRelic;
+import theGamblignant.powers.WisdomPower;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
@@ -38,7 +38,8 @@ public abstract class AbstractVriskaCard extends CustomCard {
         super.displayUpgrades();
     }
 
-    public int roll(int faces) {
+    public int roll(int faces, char purpose) {
+        //for purpose, 'a' = attack, 's' = skill, 'o' = other (used for wisdom/charisma)
         int luckAmt = 0;
         int result;
         int max;
@@ -51,6 +52,12 @@ public abstract class AbstractVriskaCard extends CustomCard {
             luckAmt += AbstractDungeon.player.getPower(VimPower.POWER_ID).amount;
             AbstractDungeon.player.getPower(VimPower.POWER_ID).flash();
             this.addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VimPower.POWER_ID));
+        }
+        if (AbstractDungeon.player.hasPower(CharismaPower.POWER_ID)&&purpose=='a') {
+            luckAmt += AbstractDungeon.player.getPower(CharismaPower.POWER_ID).amount;
+        }
+        if (AbstractDungeon.player.hasPower(WisdomPower.POWER_ID)&&purpose=='s') {
+            luckAmt += AbstractDungeon.player.getPower(WisdomPower.POWER_ID).amount;
         }
 
         logger.info("luck going into this roll: "+luckAmt); //you can remove this eventually

@@ -117,6 +117,16 @@
   "theGamblignant:StringShot": {
     "NAME": "String Shot",
     "DESCRIPTION": "Apply !M! Weak. Exhaust."
+  },
+  "theGamblignant:Charisma": {
+    "NAME": "Charisma",
+    "DESCRIPTION": "Increase dice rolls made on Attacks by 1.",
+    "UPGRADE_DESCRIPTION": "Increase dice rolls made on Attacks by 2."
+  },
+  "theGamblignant:Wisdom": {
+    "NAME": "Wisdom",
+    "DESCRIPTION": "Increase dice rolls made on Skills by 1."
   }
+
 
 }

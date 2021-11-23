@@ -38,7 +38,7 @@ public class CriticalStrike extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, roll(8)*magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new DamageAction(m, new DamageInfo(p, roll(8,'a')*magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     // Upgraded stats.

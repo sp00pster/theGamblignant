@@ -26,5 +26,17 @@
                 "Decrease your next dice roll by #b",
                 " without exceeding its normal limit."
         ]
-}
+},
+        "theGamblignant:Wisdom": {
+                "NAME": "Wisdom",
+                "DESCRIPTIONS": [
+                        "Increase dice rolls made on Skills by #b"," ."
+                ]
+        },
+        "theGamblignant:Charisma": {
+                "NAME": "Charisma",
+                "DESCRIPTIONS": [
+                        "Increase dice rolls made on Attacks by #b"," ."
+                ]
+        }
 }

@@ -36,7 +36,7 @@ public class Fireball extends AbstractVriskaCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int damageroll = 0;
             for (int i = 0; i < 8; i++) {
-                damageroll += roll(6);
+                damageroll += roll(6,'a');
             }
         this.addToBot(new DamageAction(m, new DamageInfo(p, damageroll, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
     }

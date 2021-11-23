@@ -38,11 +38,11 @@ public class Cascade extends AbstractVriskaCard {
         int damageroll = 0;
         if (this.upgraded) {
             for (int i = 0; i < 6; i++) {
-                damageroll += roll(12);
+                damageroll += roll(12,'a');
             }
         } else {
             for (int i = 0; i < 4; i++) {
-                damageroll += roll(13);
+                damageroll += roll(13,'a');
             }
         }
         this.addToBot(new DamageAction(m, new DamageInfo(p, damageroll, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));

@@ -37,8 +37,8 @@ public class SilverWind extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int str = roll(this.magicNumber);
-        int dex = roll(this.magicNumber);
+        int str = roll(this.magicNumber,'p');
+        int dex = roll(this.magicNumber,'p');
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, str), str));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, dex), dex));
     }
