@@ -49,10 +49,7 @@ public class WisdomPower extends AbstractPower implements CloneablePowerInterfac
     }
 
     public void updateDescription() {
-        if (this.amount > 0) {
             this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        }
-
     }
 
     @Override

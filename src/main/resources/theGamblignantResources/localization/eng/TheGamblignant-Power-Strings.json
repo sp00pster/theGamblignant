@@ -1,42 +1,69 @@
 {
-"theGamblignant:CommonPower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
-},
-"theGamblignant:RarePower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-},
-"theGamblignant:Luck": {
-        "NAME": "Luck",
-        "DESCRIPTIONS": [
-                "Increase all your dice rolls by #b",
-                "Decrease all your dice rolls by #b",
-                ", without exceeding their normal limits."
-        ]
-},
-"theGamblignant:LoseLuck": {
-        "NAME": "Luck Down",
-        "DESCRIPTIONS": ["At the end of your turn, lose #b", " Luck."]
-},
-"theGamblignant:Vim": {
-        "NAME": "Vim",
-        "DESCRIPTIONS": [
-                "Increase your next dice roll by #b",
-                "Decrease your next dice roll by #b",
-                " without exceeding its normal limit."
-        ]
-},
+        "theGamblignant:CommonPower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": [
+                        "You applied #b",
+                        " keyword.",
+                        " keywords."
+                ]
+        },
+        "theGamblignant:RarePower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, TOUCH #b",
+                        " enemy.",
+                        " enemies."
+                ]
+        },
+        "theGamblignant:Luck": {
+                "NAME": "Luck",
+                "DESCRIPTIONS": [
+                        "Increase all your dice rolls by #b",
+                        "Decrease all your dice rolls by #b",
+                        ", without exceeding their normal limits."
+                ]
+        },
+        "theGamblignant:LoseLuck": {
+                "NAME": "Luck Down",
+                "DESCRIPTIONS": [
+                        "At the end of your turn, lose #b",
+                        " Luck."
+                ]
+        },
+        "theGamblignant:Vim": {
+                "NAME": "Vim",
+                "DESCRIPTIONS": [
+                        "Increase your next dice roll by #b",
+                        "Decrease your next dice roll by #b",
+                        " without exceeding its normal limit."
+                ]
+        },
         "theGamblignant:Wisdom": {
                 "NAME": "Wisdom",
                 "DESCRIPTIONS": [
-                        "Increase dice rolls made on Skills by #b"," ."
+                        "Increase dice rolls made on Skills by #b",
+                        " ."
                 ]
         },
         "theGamblignant:Charisma": {
                 "NAME": "Charisma",
                 "DESCRIPTIONS": [
-                        "Increase dice rolls made on Attacks by #b"," ."
+                        "Increase dice rolls made on Attacks by #b",
+                        " ."
+                ]
+        },
+        "theGamblignant:QuiverDance": {
+                "NAME": "Quiver Dance",
+                "DESCRIPTIONS": [
+                        "Add #b",
+                        " to the first roll you make each turn."
+                ]
+        },
+        "theGamblignant:Gatekeep": {
+                "NAME": "Gatekeep",
+                "DESCRIPTIONS": [
+                        "Whenever you fully block an attack, the attacker loses #b",
+                        " Strength."
                 ]
         }
 }

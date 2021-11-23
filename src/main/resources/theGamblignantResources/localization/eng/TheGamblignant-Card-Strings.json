@@ -126,7 +126,13 @@
   "theGamblignant:Wisdom": {
     "NAME": "Wisdom",
     "DESCRIPTION": "Increase dice rolls made on Skills by 1."
+  },
+  "theGamblignant:Gatekeep": {
+    "NAME": "Gatekeep",
+    "DESCRIPTION": "Whenever you fully block an attack, the attacker loses 1 Strength."
+  },
+  "theGamblignant:QuiverDance": {
+    "NAME": "Quiver Dance",
+    "DESCRIPTION": "Add !M! to the first roll you make each turn."
   }
-
-
 }
