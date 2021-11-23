@@ -113,6 +113,10 @@
   "theGamblignant:DazzlingGleam": {
     "NAME": "Dazzling Gleam",
     "DESCRIPTION": "Deal !D! damage to all enemies and add !M! to your next roll."
+  },
+  "theGamblignant:StringShot": {
+    "NAME": "String Shot",
+    "DESCRIPTION": "Apply !M! Weak. Exhaust."
   }
 
 }
