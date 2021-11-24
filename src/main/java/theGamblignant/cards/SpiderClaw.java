@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 
@@ -36,12 +38,35 @@ public class SpiderClaw extends AbstractVriskaCard {
 
         @Override
         public void use(AbstractPlayer p, AbstractMonster m) {
+            this.baseDamage = roll(4,'a');
             int times = roll(magicNumber,'a');
+            this.calculateCardDamage(m);
             for (int i = 0; i < times; i++) {
                 AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, roll(4,'a'), damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             }
         }
+
+    public void applyPowers() {
+        super.applyPowers();
+        int addeddamage = 0;
+        if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)) {addeddamage += AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount;}
+        if (AbstractDungeon.player.hasPower(VigorPower.POWER_ID)) {addeddamage += AbstractDungeon.player.getPower(VigorPower.POWER_ID).amount;}
+        if (!this.upgraded) {
+            if (addeddamage > 0) {
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
+            } else if (addeddamage < 0) {
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
+            } else {this.rawDescription = cardStrings.DESCRIPTION;}
+        } else {
+            if (addeddamage > 0) {
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[3];
+            } else if (addeddamage < 0) {
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[3];
+            } else {this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;}
+        }
+        this.initializeDescription();
+    }
 
         @Override
         public void upgrade() {
