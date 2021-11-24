@@ -65,5 +65,62 @@
                         "Whenever you fully block an attack, the attacker loses #b",
                         " Strength."
                 ]
+        },
+        "theGamblignant:Superstition": {
+                "NAME": "Superstition",
+                "DESCRIPTIONS": [
+                        "Whenever you roll a 1, deal #b",
+                        " damage to all enemies."
+                ]
+        },
+        "theGamblignant:LoadedDice": {
+                "NAME": "Loaded Dice",
+                "DESCRIPTIONS": [
+                        "Whenever you roll a die, deal #b",
+                        " damage to a random enemy."
+        ]
+        },
+        "theGamblignant:FengShui": {
+                "NAME": "Feng Shui",
+                "DESCRIPTIONS": [
+                      "At the end of your turn, gain #b1d",
+                      " Block."
+                ]
+        },
+        "theGamblignant:FengShuiPlus": {
+                "NAME": "Feng Shui+",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, gain #b1d",
+                        " Block."
+                ]
+        },
+        "theGamblignant:AncestralAwakening": {
+                "NAME": "Ancestral Awakening",
+                "DESCRIPTIONS": [
+                        "Whenever a D8 is rolled, it results in an 8."]
+        },
+        "theGamblignant:TricksterMode": {
+                "NAME": "Trickster Mode",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, gain #b1d",
+                        " Luck. At the end of your turn, lose #b1d",
+                        " Luck."
+                ]
+        },
+        "theGamblignant:ThiefForm": {
+                "NAME": "Thief Form",
+                "DESCRIPTIONS": [
+                        "Whenever you play an Attack, gain #b1d",
+                        " Luck. Whenever you are attacked, lose #b1d",
+                        " Luck."
+                ]
+        },
+        "theGamblignant:ThiefFormPlus": {
+                "NAME": "Thief Form+",
+                "DESCRIPTIONS": [
+                        "Whenever you play an Attack, gain #b1d",
+                        " Luck. Whenever you take unblocked attack damage, lose #b1d",
+                        " Luck."
+                ]
         }
 }

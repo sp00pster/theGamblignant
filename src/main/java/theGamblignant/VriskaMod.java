@@ -89,31 +89,32 @@ public class VriskaMod implements
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
   
     // Card backgrounds - The actual rectangular card.
-    private static final String ATTACK_DEFAULT_GRAY = "theGamblignantResources/images/512/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY = "theGamblignantResources/images/512/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY = "theGamblignantResources/images/512/bg_power_default_gray.png";
+    private static final String ATTACK_COBALT = "theGamblignantResources/images/512/bg_attack_cobalt.png";
+    private static final String SKILL_COBALT = "theGamblignantResources/images/512/bg_skill_cobalt.png";
+    private static final String POWER_COBALT = "theGamblignantResources/images/512/bg_power_cobalt.png";
     
     private static final String ENERGY_ORB_DEFAULT_GRAY = "theGamblignantResources/images/512/card_default_gray_orb.png";
     private static final String CARD_ENERGY_ORB = "theGamblignantResources/images/512/card_small_orb.png";
     
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "theGamblignantResources/images/1024/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "theGamblignantResources/images/1024/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "theGamblignantResources/images/1024/bg_power_default_gray.png";
+    private static final String ATTACK_COBALT_PORTRAIT = "theGamblignantResources/images/1024/bg_attack_cobalt.png";
+    private static final String SKILL_COBALT_PORTRAIT = "theGamblignantResources/images/1024/bg_skill_cobalt.png";
+    private static final String POWER_COBALT_PORTRAIT = "theGamblignantResources/images/1024/bg_power_cobalt.png";
     private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "theGamblignantResources/images/1024/card_default_gray_orb.png";
     
     // Character assets
-    private static final String THE_DEFAULT_BUTTON = "theGamblignantResources/images/charSelect/DefaultCharacterButton.png";
-    private static final String THE_DEFAULT_PORTRAIT = "theGamblignantResources/images/charSelect/DefaultCharacterPortraitBG.png";
-    public static final String THE_DEFAULT_SHOULDER_1 = "theGamblignantResources/images/char/defaultCharacter/shoulder.png";
-    public static final String THE_DEFAULT_SHOULDER_2 = "theGamblignantResources/images/char/defaultCharacter/shoulder2.png";
-    public static final String THE_DEFAULT_CORPSE = "theGamblignantResources/images/char/defaultCharacter/corpse.png";
+    private static final String VRISKA_BUTTON = "theGamblignantResources/images/charSelect/DefaultCharacterButton.png";
+    private static final String VRISKA_PORTRAIT = "theGamblignantResources/images/charSelect/DefaultCharacterPortraitBG.png";
+    public static final String VRISKA_SHOULDER_1 = "theGamblignantResources/images/char/character/shoulder.png";
+    public static final String VRISKA_SHOULDER_2 = "theGamblignantResources/images/char/character/shoulder2.png";
+    public static final String VRISKA_CORPSE = "theGamblignantResources/images/char/character/corpse.png";
+    public static final String VRISKA_SPRITE = "theGamblignantResources/images/char/character/main.png";
     
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
     public static final String BADGE_IMAGE = "theGamblignantResources/images/Badge.png";
     
     // Atlas and JSON files for the Animations
-    public static final String THE_DEFAULT_SKELETON_ATLAS = "theGamblignantResources/images/char/defaultCharacter/skeleton.atlas";
-    public static final String THE_DEFAULT_SKELETON_JSON = "theGamblignantResources/images/char/defaultCharacter/skeleton.json";
+    public static final String THE_DEFAULT_SKELETON_ATLAS = "theGamblignantResources/images/char/character/skeleton.atlas";
+    public static final String THE_DEFAULT_SKELETON_JSON = "theGamblignantResources/images/char/character/skeleton.json";
     
     // =============== MAKE IMAGE PATHS =================
     
@@ -171,8 +172,8 @@ public class VriskaMod implements
         
         BaseMod.addColor(TheGamblignant.Enums.COLOR_COBALT, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
                 DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
-                ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
-                ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
+                ATTACK_COBALT, SKILL_COBALT, POWER_COBALT, ENERGY_ORB_DEFAULT_GRAY,
+                ATTACK_COBALT_PORTRAIT, SKILL_COBALT_PORTRAIT, POWER_COBALT_PORTRAIT,
                 ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
         
         logger.info("Done creating the color");
@@ -254,7 +255,7 @@ public class VriskaMod implements
         logger.info("Beginning to edit characters. " + "Add " + TheGamblignant.Enums.THE_GAMBLIGNANT.toString());
         
         BaseMod.addCharacter(new TheGamblignant("the Gamblignant", TheGamblignant.Enums.THE_GAMBLIGNANT),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheGamblignant.Enums.THE_GAMBLIGNANT);
+                VRISKA_BUTTON, VRISKA_PORTRAIT, TheGamblignant.Enums.THE_GAMBLIGNANT);
         
         receiveEditPotions();
         logger.info("Added " + TheGamblignant.Enums.THE_GAMBLIGNANT.toString());
@@ -444,12 +445,8 @@ public class VriskaMod implements
         // CharacterStrings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
                 getModID() + "Resources/localization/eng/TheGamblignant-Character-Strings.json");
-        
-        // OrbStrings
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/TheGamblignant-Orb-Strings.json");
-        
-        logger.info("Done edittting strings");
+
+        logger.info("Done editing strings");
     }
     
     // ================ /LOAD THE TEXT/ ===================

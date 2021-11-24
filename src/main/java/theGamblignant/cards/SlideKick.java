@@ -17,7 +17,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class SlideKick extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(SlideKick.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("slidekick.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

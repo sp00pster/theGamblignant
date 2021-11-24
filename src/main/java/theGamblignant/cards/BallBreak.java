@@ -18,7 +18,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class BallBreak extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(BallBreak.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("ballbreak.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.COMMON;

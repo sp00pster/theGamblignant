@@ -82,17 +82,17 @@ public class TheGamblignant extends CustomPlayer {
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
     public static final String[] orbTextures = {
-            "theGamblignantResources/images/char/defaultCharacter/orb/layer1.png",
-            "theGamblignantResources/images/char/defaultCharacter/orb/layer2.png",
-            "theGamblignantResources/images/char/defaultCharacter/orb/layer3.png",
-            "theGamblignantResources/images/char/defaultCharacter/orb/layer4.png",
-            "theGamblignantResources/images/char/defaultCharacter/orb/layer5.png",
-            "theGamblignantResources/images/char/defaultCharacter/orb/layer6.png",
-            "theGamblignantResources/images/char/defaultCharacter/orb/layer1d.png",
-            "theGamblignantResources/images/char/defaultCharacter/orb/layer2d.png",
-            "theGamblignantResources/images/char/defaultCharacter/orb/layer3d.png",
-            "theGamblignantResources/images/char/defaultCharacter/orb/layer4d.png",
-            "theGamblignantResources/images/char/defaultCharacter/orb/layer5d.png",};
+            "theGamblignantResources/images/char/character/orb/layer1.png",
+            "theGamblignantResources/images/char/character/orb/layer2.png",
+            "theGamblignantResources/images/char/character/orb/layer3.png",
+            "theGamblignantResources/images/char/character/orb/layer4.png",
+            "theGamblignantResources/images/char/character/orb/layer5.png",
+            "theGamblignantResources/images/char/character/orb/layer6.png",
+            "theGamblignantResources/images/char/character/orb/layer1d.png",
+            "theGamblignantResources/images/char/character/orb/layer2d.png",
+            "theGamblignantResources/images/char/character/orb/layer3d.png",
+            "theGamblignantResources/images/char/character/orb/layer4d.png",
+            "theGamblignantResources/images/char/character/orb/layer5d.png",};
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
@@ -100,32 +100,30 @@ public class TheGamblignant extends CustomPlayer {
 
     public TheGamblignant(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
-                "theGamblignantResources/images/char/defaultCharacter/orb/vfx.png", null,
-                new SpriterAnimation(
-                        "theGamblignantResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
+                "theGamblignantResources/images/char/character/orb/vfx.png", null,
+                null,null);
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================  
 
-        initializeClass(null, // required call to load textures and setup energy/loadout.
-                // I left these in DefaultMod.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
-                THE_DEFAULT_SHOULDER_2, // campfire pose
-                THE_DEFAULT_SHOULDER_1, // another campfire pose
-                THE_DEFAULT_CORPSE, // dead corpse
+        initializeClass(VRISKA_SPRITE,
+                VRISKA_SHOULDER_2, // campfire pose
+                VRISKA_SHOULDER_1, // another campfire pose
+                VRISKA_CORPSE, // dead corpse
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN)); // energy manager
 
         // =============== /TEXTURES, ENERGY, LOADOUT/ =================
 
 
         // =============== ANIMATIONS =================  
-
+/*
         loadAnimation(
                 THE_DEFAULT_SKELETON_ATLAS,
                 THE_DEFAULT_SKELETON_JSON,
                 1.0f);
         AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
         e.setTime(e.getEndTime() * MathUtils.random());
-
+*/
         // =============== /ANIMATIONS/ =================
 
 

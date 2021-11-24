@@ -243,6 +243,10 @@
     "DESCRIPTION": "Gain 10 Block. Subtract 3 from your next roll.",
     "UPGRADE_DESCRIPTION": "Retain. Gain 10 Block. Subtract 3 from your next roll."
   },
+  "theGamblignant:Prattle": {
+    "NAME": "Prattle",
+    "DESCRIPTION": "Draw 1d4 cards."
+  },
   "theGamblignant:Refract": {
     "NAME": "Refract",
     "DESCRIPTION": "Add 1d8 to your next roll."
