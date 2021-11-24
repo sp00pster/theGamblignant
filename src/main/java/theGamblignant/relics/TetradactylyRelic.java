@@ -39,7 +39,7 @@ public class TetradactylyRelic extends CustomRelic {
             this.flash();
             this.pulse = false;
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VimPower(AbstractDungeon.player, 4), 1, true));
+            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VimPower(AbstractDungeon.player, 4), 4, true));
         } else {
             this.beginPulse();
             this.pulse = true;

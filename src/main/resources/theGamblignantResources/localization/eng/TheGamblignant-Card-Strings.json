@@ -1,10 +1,10 @@
 {
   "theGamblignant:DefaultCommonAttack": {
-    "NAME": "Default Common Attack",
+    "NAME": "Default Common Attack (vestige from template)",
     "DESCRIPTION": "Deal !D! damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
   },
   "theGamblignant:DefaultCommonSkill": {
-    "NAME": "Default Common Skill",
+    "NAME": "Default Common Skill (vestige from template)",
     "DESCRIPTION": "Gain !B! Block. NL thegamblignant:Multiword_Keyword."
   },
   "theGamblignant:Strike_Cobalt": {
@@ -23,8 +23,8 @@
   },
   "theGamblignant:CriticalStrike": {
     "NAME": "Headshot",
-    "DESCRIPTION": "Deal 1d8 x 2 damage.",
-    "UPGRADE_DESCRIPTION": "Deal 1d8 x 3 damage."
+    "DESCRIPTION": "Deal 1d8 x !M! damage.",
+    "EXTENDED_DESCRIPTION": ["Deal 1d8 x !M! + ","Deal 1d8 x !M! - "," damage."]
   },
   "theGamblignant:SpiderClaw": {
     "NAME": "Spider's Claw",
@@ -105,11 +105,6 @@
     "DESCRIPTION": "Deal 1d20 damage.",
     "UPGRADE_DESCRIPTION": "Deal 1d30 damage."
   },
-  "theGamblignant:Swipe": {
-    "NAME": "Swipe",
-    "DESCRIPTION": "Deal !D! damage to all enemies and gain 1 Luck. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies and gain 1 Luck for each enemy affected. Exhaust."
-  },
   "theGamblignant:DazzlingGleam": {
     "NAME": "Dazzling Gleam",
     "DESCRIPTION": "Deal !D! damage to all enemies and add !M! to your next roll."
@@ -134,5 +129,42 @@
   "theGamblignant:QuiverDance": {
     "NAME": "Quiver Dance",
     "DESCRIPTION": "Add !M! to the first roll you make each turn."
+  },
+  "theGamblignant:Swipe": {
+    "NAME": "Swipe",
+    "DESCRIPTION": "Deal !D! damage to all enemies and gain 1 Luck. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies and gain 1 Luck for each enemy affected. Exhaust."
+  },
+  "theGamblignant:UTurn": {
+    "NAME": "U-Turn",
+    "DESCRIPTION": "Deal !D! damage. If 1d2 = 2, gain 1 Energy and draw a card."
+  },
+  "theGamblignant:Shatter": {
+    "NAME": "Shatter",
+    "DESCRIPTION": "Deal !D! damage. Subtract 3 from your next roll."
+  },
+  "theGamblignant:Pilfer": {
+    "NAME": "Pilfer",
+    "DESCRIPTION": "Deal !D! damage. Gain Gold equal to unblocked damage dealt.",
+    "UPGRADE_DESCRIPTION": "Deal 1d8 + !D! damage. Gain Gold equal to unblocked damage dealt."
+  },
+  "theGamblignant:PoisonSting": {
+    "NAME": "Poison Sting",
+    "DESCRIPTION": "Deal !D! damage and apply 1d8 Poison. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1d8 Poison. Exhaust."
+  },
+  "theGamblignant:FuryCutter": {
+    "NAME": "Fury Cutter",
+    "DESCRIPTION": "Deal !D! damage. Double this card's damage for this combat."
   }
+
+
+
+
+
+
+
+
+
+
 }
