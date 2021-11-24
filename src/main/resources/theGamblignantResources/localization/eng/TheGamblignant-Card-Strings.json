@@ -23,7 +23,7 @@
     "DESCRIPTION": "Deal !D! damage and add !M! to your next roll."
   },
   "theGamblignant:CriticalStrike": {
-    "NAME": "Headshot",
+    "NAME": "Critical Strike",
     "DESCRIPTION": "Deal 1d8 x !M! damage.",
     "EXTENDED_DESCRIPTION": ["Deal 1d8 x !M! + ","Deal 1d8 x !M! - "," damage."]
   },
@@ -164,15 +164,196 @@
   "theGamblignant:FuryCutter": {
     "NAME": "Fury Cutter",
     "DESCRIPTION": "Deal !D! damage. Double this card's damage for this combat."
+  },
+  "theGamblignant:DeviousLick": {
+    "NAME": "Devious Lick",
+    "DESCRIPTION": "Deal !D! damage and add !M! to your next roll."
+  },
+  "theGamblignant:PowerTrip": {
+    "NAME": "Power Trip",
+    "DESCRIPTION": "Deal !D! damage. Deals 1 additional damage for each stack of the target's buffs and debuffs."
+  },
+  "theGamblignant:Blizzard": {
+    "NAME": "Blizzard",
+    "DESCRIPTION": "Deal 6d4 damage to all enemies.",
+    "UPGRADE_DESCRIPTION": "Deal 8d4 damage to all enemies.",
+    "EXTENDED_DESCRIPTION": ["Deal 6d4 + ","Deal 6d4 - ","Deal 8d4 + ","Deal 8d4 - "," damage to all enemies."]
+  },
+  "theGamblignant:AllInAttack": {
+    "NAME": "All-In Attack",
+    "DESCRIPTION": "Deal 8d8 damage and lose 2 Luck.",
+    "UPGRADE_DESCRIPTION": "Deal 8d8 damage to all enemies and lose 2 Luck.",
+    "EXTENDED_DESCRIPTION": ["Deal 8d8 + ","Deal 8d8 - "," damage and lose 2 Luck."," damage to all enemies and lose 2 Luck."]
+  },
+  "theGamblignant:MagicMissile": {
+    "NAME": "Magic Missile",
+    "DESCRIPTION": "Deal Xd12 damage.",
+    "UPGRADE_DESCRIPTION": "Deal Xd16 damage.",
+    "EXTENDED_DESCRIPTION": ["Deal Xd12 + ","Deal Xd12 - ","Deal Xd16 + ","Deal Xd16 - "," damage."]
+  },
+  "theGamblignant:VorpalStrike": {
+    "NAME": "Vorpal Strike",
+    "DESCRIPTION": "Deal 1d8^2 damage.",
+    "EXTENDED_DESCRIPTION": ["Deal 1d8^2 + ","Deal 1d8^2 - "," damage."]
+  },
+  "theGamblignant:BadJuju": {
+    "NAME": "Bad Juju",
+    "DESCRIPTION": "Deal !D! damage. Whenever you attack this enemy, add 1 to your next roll. Exhaust."
+  },
+  "theGamblignant:Thunderbolt": {
+    "NAME": "Thunderbolt",
+    "DESCRIPTION": "Deal !D! damage and apply 1d4 Vulnerable."
+  },
+  "theGamblignant:Gaslight": {
+    "NAME": "Gaslight",
+    "DESCRIPTION": "Deal !D! damage to all enemies. Lose 1 Luck."
+  },
+  "theGamblignant:LusterPurge": {
+    "NAME": "Luster Purge",
+    "DESCRIPTION": "Deal 4d6 damage to all enemies, then gain 1 Luck for each enemy affected. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal 6d6 damage to all enemies, then gain 1 Luck for each enemy affected. Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Deal 4d6 + ","Deal 4d6 - ","Deal 6d6 + ","Deal 6d6 - "," damage to all enemies, then gain 1 Luck for each enemy affected. Exhaust."]
+  },
+  "theGamblignant:JujuBreaker": {
+    "NAME": "Juju Breaker",
+    "DESCRIPTION": "Deal 7 damage. Remove all buffs from both you and target enemy. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal 7 damage. Remove all buffs from target enemy. Exhaust."
+  },
+  "theGamblignant:SolarBeam": {
+    "NAME": "Solar Beam",
+    "DESCRIPTION": "Heal Xd3 HP. At the start of next turn, deal Xd20 damage to all enemies. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Heal Xd4 HP. At the start of next turn, deal Xd20 damage to all enemies. Exhaust."
+  },
+  "theGamblignant:WebWeave": {
+    "NAME": "Web Weave",
+    "DESCRIPTION": "Gain !B! Block and 2 Weak."
+  },
+  "theGamblignant:Meddle": {
+    "NAME": "Meddle",
+    "DESCRIPTION": "Gain 1d8 Block and add 2 to your next roll.",
+    "UPGRADE_DESCRIPTION": "Gain 1d10 Block and add 3 to your next roll."
+  },
+  "theGamblignant:Ward": {
+    "NAME": "Ward",
+    "DESCRIPTION": "Gain 1d4 Plated Armor. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1d6 Plated Armor. Exhaust."
+  },
+  "theGamblignant:Fuss": {
+    "NAME": "Fuss",
+    "DESCRIPTION": "Gain 10 Block. Subtract 3 from your next roll.",
+    "UPGRADE_DESCRIPTION": "Retain. Gain 10 Block. Subtract 3 from your next roll."
+  },
+  "theGamblignant:Refract": {
+    "NAME": "Refract",
+    "DESCRIPTION": "Add 1d8 to your next roll."
+  },
+  "theGamblignant:MoodSwing": {
+    "NAME": "Mood Swing",
+    "DESCRIPTION": "Gain 1d4 Strength. At the end of this turn, lose 1d4 Strength.",
+    "UPGRADE_DESCRIPTION": "Gain 1d6 Strength. At the end of this turn, lose 1d6 Strength."
+  },
+  "theGamblignant:ViciousMockery": {
+    "NAME": "Vicious Mockery",
+    "DESCRIPTION": "Apply 1d8 Vulnerable. Exhaust."
+  },
+  "theGamblignant:Call": {
+    "NAME": "Call",
+    "DESCRIPTION": "If target enemy intends to Attack, gain 1 Luck."
+  },
+  "theGamblignant:Mulligan": {
+    "NAME": "Mulligan",
+    "DESCRIPTION": "Discard your hand and draw 1d6 cards. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Discard your hand and draw 1d6 cards."
+  },
+  "theGamblignant:DiceTechnique": {
+    "NAME": "Dice Technique",
+    "DESCRIPTION": "Add a random Attack of any color to your hand, with 1d8 determining its rarity.",
+    "UPGRADE_DESCRIPTION": "Add a random Attack of any color to your hand, with 1d8 determining its rarity. It costs 0 this turn."
+  },
+  "theGamblignant:SavingRoll": {
+    "NAME": "Saving Roll",
+    "DESCRIPTION": "Add a random Skill of any color to your hand, with 1d8 determining its rarity.",
+    "UPGRADE_DESCRIPTION": "Add a random Skill of any color to your hand, with 1d8 determining its rarity. It costs 0 this turn."
+  },
+  "theGamblignant:Fold": {
+    "NAME": "Fold",
+    "DESCRIPTION": "Discard your hand. Gain !B! Block for each card discarded."
+  },
+  "theGamblignant:BlindingFlash": {
+    "NAME": "Blinding Flash",
+    "DESCRIPTION": "Gain 1 Luck. Apply 2 Weak to all enemies. Exhaust."
+  },
+  "theGamblignant:MindFang": {
+    "NAME": "Mind Fang",
+    "DESCRIPTION": "Apply 1d8 Poison and 1d4 Weak to target enemy. Lose 1 Luck.",
+    "UPGRADE_DESCRIPTION": "Apply 1d10 Poison and 1d5 Weak to target enemy. Lose 1 Luck."
+  },
+  "theGamblignant:Girlboss": {
+    "NAME": "Girlboss",
+    "DESCRIPTION": "Apply 99 Weak. Exhaust."
+  },
+  "theGamblignant:Bioluminescence": {
+    "NAME": "Bioluminescence",
+    "DESCRIPTION": "Gain 1d4 Energy. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1d4 Energy."
+  },
+  "theGamblignant:BigBlind": {
+    "NAME": "Big Blind",
+    "DESCRIPTION": "Gain !M! Luck. All enemies gain !M! Strength."
+  },
+  "theGamblignant:Clairvoyant": {
+    "NAME": "Clairvoyant",
+    "DESCRIPTION": "Next turn, gain !M! temporary Luck. Exhaust."
+  },
+  "theGamblignant:Pupation": {
+    "NAME": "Pupation",
+    "DESCRIPTION": "Add !M! Powers into your draw pile. Exhaust."
+  },
+  "theGamblignant:MindControl": {
+    "NAME": "Mind Control",
+    "DESCRIPTION": "If the enemy intends to attack, it deals damage to a random enemy or itself this turn instead of you. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. If the enemy intends to attack, it deals damage to a random enemy or itself this turn instead of you. Exhaust."
+  },
+  "theGamblignant:DoomsdayDevice": {
+    "NAME": "Doomsday Device",
+    "DESCRIPTION": "After 8 turns, deal 88 damage to all enemies. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. After 8 turns, deal 88 damage to all enemies. Exhaust."
+  },
+  "theGamblignant:Guillotine": {
+    "NAME": "Guillotine",
+    "DESCRIPTION": "If enemy's HP is less than 8d8, set its HP to zero."
+  },
+  "theGamblignant:Superstition": {
+    "NAME": "Superstition",
+    "DESCRIPTION": "Whenever you roll a 1, deal !M! damage to all enemies."
+  },
+  "theGamblignant:LoadedDice": {
+    "NAME": "Loaded Dice",
+    "DESCRIPTION": "Whenever you roll a die, deal !M! damage to a random enemy."
+  },
+  "theGamblignant:FengShui": {
+    "NAME": "Feng Shui",
+    "DESCRIPTION": "At the end of your turn, gain 1d8 Block.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn"
+  },
+  "theGamblignant:Serendipity": {
+    "NAME": "Serendipity",
+    "DESCRIPTION": "At the start of your turn",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theGamblignant:AncestralAwakening": {
+    "NAME": "Ancestral Awakening",
+    "DESCRIPTION": "Whenever a D8 is rolled, it results in an 8."
+  },
+  "theGamblignant:TricksterMode": {
+    "NAME": "Trickster Mode",
+    "DESCRIPTION": "At the start of your turn, gain 1d6 Luck. At the end of your turn, lose 1d6 Luck.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, gain 1d8 Luck. At the end of your turn, lose 1d8 Luck."
+  },
+  "theGamblignant:ThiefForm": {
+    "NAME": "Thief Form",
+    "DESCRIPTION": "Whenever you play an Attack, gain 1 Luck. Whenever you are attacked, lose 1 Luck.",
+    "UPGRADE_DESCRIPTION": "Whenever you play an Attack, gain 1 Luck. Whenever you take unblocked attack damage, lose 1 Luck."
   }
-
-
-
-
-
-
-
-
-
 
 }
