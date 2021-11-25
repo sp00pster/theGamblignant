@@ -145,7 +145,7 @@
   },
   "theGamblignant:UTurn": {
     "NAME": "U-Turn",
-    "DESCRIPTION": "Deal !D! damage. If 1d2 = 2, gain 1 Energy and draw a card."
+    "DESCRIPTION": "Deal !D! damage. If 1d4 = 4, gain 1 Energy and draw a card."
   },
   "theGamblignant:Shatter": {
     "NAME": "Shatter",
@@ -160,7 +160,7 @@
   "theGamblignant:PoisonSting": {
     "NAME": "Poison Sting",
     "DESCRIPTION": "Deal !D! damage and apply 1d8 Poison. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1d8 Poison. Exhaust."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1d8 Poison."
   },
   "theGamblignant:FuryCutter": {
     "NAME": "Fury Cutter",
