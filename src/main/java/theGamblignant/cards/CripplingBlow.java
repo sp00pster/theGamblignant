@@ -44,8 +44,9 @@ public class CripplingBlow extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int effectroll = roll(4, 'a');
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
-        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, roll(magicNumber,'a'), false), 1, true, AbstractGameAction.AttackEffect.NONE));
+        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, effectroll, false), effectroll, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override

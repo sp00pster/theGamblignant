@@ -32,8 +32,6 @@ public class Gank extends AbstractVriskaCard {
         baseDamage = DAMAGE;
         this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;
-
-        this.tags.add(CardTags.STARTER_STRIKE);
     }
 
     @Override

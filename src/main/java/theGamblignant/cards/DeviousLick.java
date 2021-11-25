@@ -15,7 +15,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class DeviousLick extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(DeviousLick.class.getSimpleName());
-    public static final String IMG = makeCardPath("gank.png");
+    public static final String IMG = makeCardPath("Attack.png");
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -32,8 +32,6 @@ public class DeviousLick extends AbstractVriskaCard {
         baseDamage = DAMAGE;
         this.baseMagicNumber = 6;
         this.magicNumber = this.baseMagicNumber;
-
-        this.tags.add(CardTags.STARTER_STRIKE);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package theGamblignant.cards;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -8,30 +9,32 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class PowerTrip extends AbstractVriskaCard {
+public class Thunderbolt extends AbstractVriskaCard {
 
-    public static final String ID = VriskaMod.makeID(PowerTrip.class.getSimpleName());
+    public static final String ID = VriskaMod.makeID(Thunderbolt.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 14;
+    private static final int DAMAGE_ADDEND = 6;
 
 
-    public PowerTrip() {
+    public Thunderbolt() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber;
@@ -39,23 +42,16 @@ public class PowerTrip extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int effectroll = roll(4, 'a');
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-    }
-
-    public void calculateCardDamage(AbstractMonster m) {
-        super.calculateCardDamage(m);
-        int targetpowers = 0;
-        for (AbstractPower i : m.powers) {
-            targetpowers += i.amount;
-        }
-        this.damage += targetpowers;
+        this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, effectroll, false), effectroll, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeDamage(DAMAGE_ADDEND);
             initializeDescription();
         }
     }

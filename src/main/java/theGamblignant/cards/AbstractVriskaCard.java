@@ -67,25 +67,22 @@ public abstract class AbstractVriskaCard extends CustomCard {
 
         logger.info("luck going into this roll: "+luckAmt); //you can remove this eventually
 
-        if (luckAmt < 0) {          //if your luck is negative,
-            max = faces + luckAmt;  //the highest roll is the amount of faces minus your bad luck,
-            min = 1;                //and the lowest roll is 1.
-        } else {                    //otherwise, if your luck is positive or 0,
-            max = faces;            //the highest roll is the amount of faces,
-            min = 1 + luckAmt;      //and the lowest roll is 1 plus your luck.
-        }
+        max = faces;
+        min = 1;
+        result = AbstractDungeon.cardRandomRng.random(min, max);
 
-        logger.info("rolling from "+min+" to "+max);
+        logger.info("rolled a "+result+" before luck");
 
-        if (max <= 1) {result = 1;}                 //if your maximum roll is lower than 1, just return 1
-        else if (max <= min) {result = max;}        //if your min is greater or equal to your max, return the max
-        else {result = AbstractDungeon.cardRandomRng.random(min, max);} //otherwise, just do the fricken roll
+        result += luckAmt;
+        if (result > max) {result = max;}
+        if (result < 1) {result = 1;}
+
+        logger.info("final roll: "+result);
 
         if ((result == 1) && (AbstractDungeon.player.hasPower(SuperstitionPower.POWER_ID))) {
             this.addToTop(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(AbstractDungeon.player.getPower(SuperstitionPower.POWER_ID).amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.POISON));
         }
 
-        logger.info("rolled a "+result);
         return result;
     }
 }

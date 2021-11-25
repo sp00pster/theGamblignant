@@ -1,50 +1,60 @@
 package theGamblignant.cards;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class AerialAce extends AbstractVriskaCard {
+public class Blizzard_Cobalt extends AbstractVriskaCard {
 
-    public static final String ID = VriskaMod.makeID(AerialAce.class.getSimpleName());
+    public static final String ID = VriskaMod.makeID(Blizzard_Cobalt.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
-    private static final int MAGIC = 20;
-    private static final int MAGIC_ADDEND = 10;
+    private static final int MAGIC = 6;
+    private static final int MAGIC_ADDEND = 2;
 
 
-    public AerialAce() {
+    public Blizzard_Cobalt() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = MAGIC;
-        baseMagicNumber = magicNumber;
+        baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber;
+        this.isMultiDamage = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.baseDamage = roll(magicNumber,'a');
-        this.calculateCardDamage(m);
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        int damageroll = 0;
+        for (int i = 0; i < magicNumber; i++) {
+            damageroll += roll(4,'a');
+        }
+        this.baseDamage = damageroll;
+        if (Settings.FAST_MODE) {
+            this.addToBot(new VFXAction(new BlizzardEffect(magicNumber, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.25F));
+        } else {
+            this.addToBot(new VFXAction(new BlizzardEffect(magicNumber, AbstractDungeon.getMonsters().shouldFlipVfx()), 1.0F));
+        }
+        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY, false));
     }
 
     public void applyPowers() {
@@ -60,9 +70,9 @@ public class AerialAce extends AbstractVriskaCard {
             } else {this.rawDescription = cardStrings.DESCRIPTION;}
         } else {
             if (addeddamage > 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[2] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[5];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[2] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[4];
             } else if (addeddamage < 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[5];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[4];
             } else {this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;}
         }
         this.initializeDescription();

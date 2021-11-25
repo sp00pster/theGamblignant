@@ -174,17 +174,17 @@
     "NAME": "Power Trip",
     "DESCRIPTION": "Deal !D! damage. Deals 1 additional damage for each stack of the target's buffs and debuffs."
   },
-  "theGamblignant:Blizzard": {
+  "theGamblignant:Blizzard_Cobalt": {
     "NAME": "Blizzard",
     "DESCRIPTION": "Deal 6d4 damage to all enemies.",
     "UPGRADE_DESCRIPTION": "Deal 8d4 damage to all enemies.",
     "EXTENDED_DESCRIPTION": ["Deal 6d4 + ","Deal 6d4 - ","Deal 8d4 + ","Deal 8d4 - "," damage to all enemies."]
   },
-  "theGamblignant:AllInAttack": {
-    "NAME": "All-In Attack",
-    "DESCRIPTION": "Deal 8d8 damage and lose 2 Luck.",
-    "UPGRADE_DESCRIPTION": "Deal 8d8 damage to all enemies and lose 2 Luck.",
-    "EXTENDED_DESCRIPTION": ["Deal 8d8 + ","Deal 8d8 - "," damage and lose 2 Luck."," damage to all enemies and lose 2 Luck."]
+  "theGamblignant:Gaslight": {
+    "NAME": "Gaslight",
+    "DESCRIPTION": "Deal 6d8 damage and lose 1 Luck.",
+    "UPGRADE_DESCRIPTION": "Deal 6d8 damage to all enemies and lose 1 Luck.",
+    "EXTENDED_DESCRIPTION": ["Deal 6d8 + ","Deal 6d8 - "," damage and lose 2 Luck."," damage to all enemies and lose 2 Luck."]
   },
   "theGamblignant:MagicMissile": {
     "NAME": "Magic Missile",
@@ -197,17 +197,9 @@
     "DESCRIPTION": "Deal 1d8^2 damage.",
     "EXTENDED_DESCRIPTION": ["Deal 1d8^2 + ","Deal 1d8^2 - "," damage."]
   },
-  "theGamblignant:BadJuju": {
-    "NAME": "Bad Juju",
-    "DESCRIPTION": "Deal !D! damage. Whenever you attack this enemy, add 1 to your next roll. Exhaust."
-  },
   "theGamblignant:Thunderbolt": {
     "NAME": "Thunderbolt",
     "DESCRIPTION": "Deal !D! damage and apply 1d4 Vulnerable."
-  },
-  "theGamblignant:Gaslight": {
-    "NAME": "Gaslight",
-    "DESCRIPTION": "Deal !D! damage to all enemies. Lose 1 Luck."
   },
   "theGamblignant:LusterPurge": {
     "NAME": "Luster Purge",
@@ -223,7 +215,7 @@
   "theGamblignant:SolarBeam": {
     "NAME": "Solar Beam",
     "DESCRIPTION": "Heal Xd3 HP. At the start of next turn, deal Xd20 damage to all enemies. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Heal Xd4 HP. At the start of next turn, deal Xd20 damage to all enemies. Exhaust."
+    "UPGRADE_DESCRIPTION": "Heal Xd4 HP. At the start of next turn, deal Xd24 damage to all enemies. Exhaust."
   },
   "theGamblignant:WebWeave": {
     "NAME": "Web Weave",
@@ -255,8 +247,8 @@
   },
   "theGamblignant:MoodSwing": {
     "NAME": "Mood Swing",
-    "DESCRIPTION": "Gain 1d4 Strength. At the end of this turn, lose 1d4 Strength.",
-    "UPGRADE_DESCRIPTION": "Gain 1d6 Strength. At the end of this turn, lose 1d6 Strength."
+    "DESCRIPTION": "Gain 1d4 Strength. At the end of this turn, lose 1d4 Strength. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1d6 Strength. At the end of this turn, lose 1d6 Strength. Exhaust."
   },
   "theGamblignant:ViciousMockery": {
     "NAME": "Vicious Mockery",
@@ -264,7 +256,8 @@
   },
   "theGamblignant:Call": {
     "NAME": "Call",
-    "DESCRIPTION": "If target enemy intends to Attack, gain 1 Luck."
+    "DESCRIPTION": "If target enemy intends to Attack, gain 1 Luck. Exhaust.",
+    "EXTENDED_DESCRIPTION": ["That guy doesn't intend to attack!"]
   },
   "theGamblignant:Mulligan": {
     "NAME": "Mulligan",
@@ -360,6 +353,10 @@
     "NAME": "Thief Form",
     "DESCRIPTION": "Whenever you play an Attack, gain 1 Luck. Whenever you are attacked, lose 1 Luck.",
     "UPGRADE_DESCRIPTION": "Whenever you play an Attack, gain 1 Luck. Whenever you take unblocked attack damage, lose 1 Luck."
+  },
+  "theGamblignant:TailGlow": {
+    "NAME": "Tail Glow",
+    "DESCRIPTION": "Lose !M! Strength and gain !M! Luck."
   }
 
 }

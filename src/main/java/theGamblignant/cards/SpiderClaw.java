@@ -56,13 +56,13 @@ public class SpiderClaw extends AbstractVriskaCard {
             if (addeddamage > 0) {
                 this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
             } else if (addeddamage < 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
             } else {this.rawDescription = cardStrings.DESCRIPTION;}
         } else {
             if (addeddamage > 0) {
                 this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[3];
             } else if (addeddamage < 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[3];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[3];
             } else {this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;}
         }
         this.initializeDescription();

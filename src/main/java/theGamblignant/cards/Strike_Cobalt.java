@@ -71,7 +71,7 @@ public class Strike_Cobalt extends AbstractVriskaCard {
             if (addeddamage >= 0) {
                 this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
             } else if (addeddamage < 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
             }
         }
         this.initializeDescription();

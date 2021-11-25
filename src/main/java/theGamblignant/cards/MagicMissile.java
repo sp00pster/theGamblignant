@@ -10,41 +10,57 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class AerialAce extends AbstractVriskaCard {
+public class MagicMissile extends AbstractVriskaCard {
 
-    public static final String ID = VriskaMod.makeID(AerialAce.class.getSimpleName());
+    public static final String ID = VriskaMod.makeID(MagicMissile.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 1;
+    private static final int COST = -1;
 
-    private static final int MAGIC = 20;
-    private static final int MAGIC_ADDEND = 10;
+    private static final int MAGIC = 12;
+    private static final int MAGIC_ADDEND = 16;
 
 
-    public AerialAce() {
+    public MagicMissile() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = MAGIC;
-        baseMagicNumber = magicNumber;
+        baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.baseDamage = roll(magicNumber,'a');
-        this.calculateCardDamage(m);
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        int effect = this.energyOnUse;
+        if (p.hasRelic("Chemical X")) {
+            effect += 2;
+            p.getRelic("Chemical X").flash();
+        }
+
+        if (effect > 0) {
+            int damageroll = 0;
+            for (int i = 0; i < effect; i++) {
+                damageroll += roll(magicNumber, 'a');
+            }
+            this.baseDamage = damageroll;
+            this.calculateCardDamage(m);
+            this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+
+            if (!this.freeToPlayOnce) {
+                p.energy.use(EnergyPanel.totalCount);
+            }
+        }
     }
 
     public void applyPowers() {
@@ -60,9 +76,9 @@ public class AerialAce extends AbstractVriskaCard {
             } else {this.rawDescription = cardStrings.DESCRIPTION;}
         } else {
             if (addeddamage > 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[2] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[5];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[2] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[4];
             } else if (addeddamage < 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[5];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[4];
             } else {this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;}
         }
         this.initializeDescription();
