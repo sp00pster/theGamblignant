@@ -6,6 +6,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 
@@ -38,6 +41,26 @@ public class DieCast extends AbstractVriskaCard {
             blockroll += roll(8,'s');
         }
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, blockroll));
+    }
+
+    public void applyPowers() {
+        super.applyPowers();
+        int addedblock = 0;
+        if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {addedblock += AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount;}
+        if (!this.upgraded) {
+            if (addedblock > 0) {
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addedblock + cardStrings.EXTENDED_DESCRIPTION[4];
+            } else if (addedblock < 0) {
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + addedblock + cardStrings.EXTENDED_DESCRIPTION[4];
+            } else {this.rawDescription = cardStrings.DESCRIPTION;}
+        } else {
+            if (addedblock > 0) {
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[2] + addedblock + cardStrings.EXTENDED_DESCRIPTION[5];
+            } else if (addedblock < 0) {
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3] + addedblock + cardStrings.EXTENDED_DESCRIPTION[5];
+            } else {this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;}
+        }
+        this.initializeDescription();
     }
 
     @Override

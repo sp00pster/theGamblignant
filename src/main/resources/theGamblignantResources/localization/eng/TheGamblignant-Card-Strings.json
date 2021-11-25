@@ -65,13 +65,13 @@
   },
   "theGamblignant:ShiningArmor": {
     "NAME": "Shining Armor",
-    "DESCRIPTION": "Gain 12 Block and add 3 to your next roll.",
-    "UPGRADE_DESCRIPTION": "Gain 15 Block and add 4 to your next roll."
+    "DESCRIPTION": "Gain !B! Block and add !M! to your next roll."
   },
   "theGamblignant:DieCast": {
     "NAME": "Die Cast",
     "DESCRIPTION": "Gain 2d8 Block.",
-    "UPGRADE_DESCRIPTION": "Gain 3d8 Block."
+    "UPGRADE_DESCRIPTION": "Gain 3d8 Block.",
+    "EXTENDED_DESCRIPTION": ["Gain 2d8 + ","Gain 2d8 - ","Gain 3d8 + ","Gain 3d8 - "," Block."]
   },
   "theGamblignant:StrokeOfLuck": {
     "NAME": "Stroke Of Luck",
@@ -91,7 +91,8 @@
   "theGamblignant:LightScreen": {
     "NAME": "Light Screen",
     "DESCRIPTION": "Gain 5d6 Block.",
-    "UPGRADE_DESCRIPTION": "Gain 7d6 Block."
+    "UPGRADE_DESCRIPTION": "Gain 7d6 Block.",
+    "EXTENDED_DESCRIPTION": ["Gain 5d6 + ","Gain 5d6 - ","Gain 7d6 + ","Gain 7d6 - "," Block."]
   },
   "theGamblignant:SlideKick": {
     "NAME": "Slide Kick",
@@ -230,8 +231,9 @@
   },
   "theGamblignant:Meddle": {
     "NAME": "Meddle",
-    "DESCRIPTION": "Gain 1d8 Block and add 2 to your next roll.",
-    "UPGRADE_DESCRIPTION": "Gain 1d10 Block and add 3 to your next roll."
+    "DESCRIPTION": "Gain 1d8 Block and add !M! to your next roll.",
+    "UPGRADE_DESCRIPTION": "Gain 1d10 Block and add !M! to your next roll.",
+    "EXTENDED_DESCRIPTION": ["Gain 1d8 + ","Gain 1d8 - ","Gain 1d10 + ","Gain 1d10 - "," Block and add !M! to your next roll."]
   },
   "theGamblignant:Ward": {
     "NAME": "Ward",
@@ -240,8 +242,8 @@
   },
   "theGamblignant:Fuss": {
     "NAME": "Fuss",
-    "DESCRIPTION": "Gain 10 Block. Subtract 3 from your next roll.",
-    "UPGRADE_DESCRIPTION": "Retain. Gain 10 Block. Subtract 3 from your next roll."
+    "DESCRIPTION": "Gain !B! Block. Subtract 3 from your next roll.",
+    "UPGRADE_DESCRIPTION": "Retain. Gain !B! Block. Subtract 3 from your next roll."
   },
   "theGamblignant:Prattle": {
     "NAME": "Prattle",
