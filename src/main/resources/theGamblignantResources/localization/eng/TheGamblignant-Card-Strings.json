@@ -317,10 +317,6 @@
     "DESCRIPTION": "After 8 turns, deal 88 damage to all enemies. Exhaust.",
     "UPGRADE_DESCRIPTION": "Innate. After 8 turns, deal 88 damage to all enemies. Exhaust."
   },
-  "theGamblignant:Guillotine": {
-    "NAME": "Guillotine",
-    "DESCRIPTION": "If enemy's HP is less than 8d8, set its HP to zero."
-  },
   "theGamblignant:Superstition": {
     "NAME": "Superstition",
     "DESCRIPTION": "Whenever you roll a 1, deal !M! damage to all enemies."
@@ -333,11 +329,6 @@
     "NAME": "Feng Shui",
     "DESCRIPTION": "At the end of your turn, gain 1d8 Block.",
     "UPGRADE_DESCRIPTION": "At the start of your turn"
-  },
-  "theGamblignant:Serendipity": {
-    "NAME": "Serendipity",
-    "DESCRIPTION": "At the start of your turn",
-    "UPGRADE_DESCRIPTION": ""
   },
   "theGamblignant:AncestralAwakening": {
     "NAME": "Ancestral Awakening",

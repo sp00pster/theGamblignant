@@ -1,5 +1,6 @@
 package theGamblignant.cards;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 
@@ -43,7 +45,8 @@ public class Thunderbolt extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int effectroll = roll(4, 'a');
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        this.addToBot(new VFXAction(new LightningEffect(m.drawX, m.drawY), 0.05F));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, effectroll, false), effectroll, true, AbstractGameAction.AttackEffect.NONE));
     }
 

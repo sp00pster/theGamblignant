@@ -1,7 +1,6 @@
 package theGamblignant.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -45,7 +44,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
 
     //this roll function was inspired by that of Downfall's Snecko
 
-    public int roll(int faces, char purpose) {
+    public static int roll(int faces, char purpose) {
         //for purpose, 'a' = attack, 's' = skill, 'o' = other (used for wisdom/charisma)
         int luckAmt = 0;
         int result;
@@ -58,7 +57,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
         if (AbstractDungeon.player.hasPower(VimPower.POWER_ID)) {
             luckAmt += AbstractDungeon.player.getPower(VimPower.POWER_ID).amount;
             AbstractDungeon.player.getPower(VimPower.POWER_ID).flash();
-            this.addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VimPower.POWER_ID));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VimPower.POWER_ID));
         }
         if (AbstractDungeon.player.hasPower(CharismaPower.POWER_ID)&&purpose=='a') {
             luckAmt += AbstractDungeon.player.getPower(CharismaPower.POWER_ID).amount;
@@ -67,7 +66,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
             luckAmt += AbstractDungeon.player.getPower(WisdomPower.POWER_ID).amount;
         }
         if (AbstractDungeon.player.hasPower(LoadedDicePower.POWER_ID)) {
-            this.addToBot(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, AbstractDungeon.player.getPower(LoadedDicePower.POWER_ID).amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, AbstractDungeon.player.getPower(LoadedDicePower.POWER_ID).amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
         }
 
         logger.info("luck going into this roll: "+luckAmt); //you can remove this eventually
@@ -82,16 +81,20 @@ public abstract class AbstractVriskaCard extends CustomCard {
         if (result > max) {result = max;}
         if (result < 1) {result = 1;}
 
+        if ((faces == 8 && AbstractDungeon.player.hasPower(AncestralAwakeningPower.POWER_ID))) {
+            result = 8;
+        }
+
         if (result == max) {
-            this.addToTop(new TimedVFXAction(new RollNumberEffect(AbstractDungeon.player.dialogX+25F, AbstractDungeon.player.dialogY, result+"!")));
+            AbstractDungeon.actionManager.addToTop(new TimedVFXAction(new RollNumberEffect(AbstractDungeon.player.dialogX+25F, AbstractDungeon.player.dialogY, result+"!")));
         } else {
-            this.addToTop(new TimedVFXAction(new RollNumberEffect(AbstractDungeon.player.dialogX+25F, AbstractDungeon.player.dialogY, Integer.toString(result))));
+            AbstractDungeon.actionManager.addToTop(new TimedVFXAction(new RollNumberEffect(AbstractDungeon.player.dialogX+25F, AbstractDungeon.player.dialogY, Integer.toString(result))));
 
         }
         logger.info("final roll: "+result);
 
         if ((result == 1) && (AbstractDungeon.player.hasPower(SuperstitionPower.POWER_ID))) {
-            this.addToTop(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(AbstractDungeon.player.getPower(SuperstitionPower.POWER_ID).amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.POISON));
+            AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(AbstractDungeon.player.getPower(SuperstitionPower.POWER_ID).amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.POISON));
         }
 
         return result;

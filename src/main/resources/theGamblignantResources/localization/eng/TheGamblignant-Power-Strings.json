@@ -83,15 +83,13 @@
         "theGamblignant:FengShui": {
                 "NAME": "Feng Shui",
                 "DESCRIPTIONS": [
-                      "At the end of your turn, gain #b1d",
-                      " Block."
+                      "At the end of your turn, gain 1d8 Block."
                 ]
         },
         "theGamblignant:FengShuiPlus": {
                 "NAME": "Feng Shui+",
                 "DESCRIPTIONS": [
-                        "At the start of your turn, gain #b1d",
-                        " Block."
+                        "At the start of your turn, gain 1d8 Block."
                 ]
         },
         "theGamblignant:AncestralAwakening": {
@@ -128,6 +126,18 @@
                 "DESCRIPTIONS": [
                         "At the start of next turn, deal #b",
                         " damage to all enemies."
+                ]
+        },
+        "theGamblignant:Clairvoyant": {
+                "NAME": "Clairvoyant",
+                "DESCRIPTIONS": [
+                        "At the start of your next turn, gain #b","temporary Luck."
+                ]
+        },
+        "theGamblignant:Doomsday Device": {
+                "NAME": "Impending Doom",
+                "DESCRIPTIONS": [
+                        "After #b","turns, deal 88 damage to all enemies."
                 ]
         }
 }
