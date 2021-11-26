@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.powers.TheBombPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
+import theGamblignant.powers.SolarBeamPower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
@@ -53,6 +54,7 @@ public class SolarBeam extends AbstractVriskaCard {
                 for (int i = 0; i < effect; i++) {
                     healroll += roll(3, 's');
                 }
+                this.addToBot(new HealAction(p, p, healroll));
                 for (int i = 0; i < effect; i++) {
                     damageroll += roll(20, 's');
                 }
@@ -60,6 +62,7 @@ public class SolarBeam extends AbstractVriskaCard {
                 for (int i = 0; i < effect; i++) {
                     healroll += roll(4, 's');
                 }
+                this.addToBot(new HealAction(p, p, healroll));
                 for (int i = 0; i < effect; i++) {
                     damageroll += roll(24, 's');
                 }
@@ -67,8 +70,8 @@ public class SolarBeam extends AbstractVriskaCard {
             if (!this.freeToPlayOnce) {
                 p.energy.use(EnergyPanel.totalCount);
             }
-            this.addToBot(new HealAction(p, p, healroll));
-            this.addToBot(new ApplyPowerAction(p, p, new TheBombPower(p, 1, damageroll), 3)); //TODO: GIVE THIS ITS OWN UNIQUE POWER
+
+            this.addToBot(new ApplyPowerAction(p, p, new SolarBeamPower(p, damageroll), damageroll));
         }
     }
 

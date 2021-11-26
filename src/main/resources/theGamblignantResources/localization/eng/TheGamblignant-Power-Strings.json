@@ -122,5 +122,12 @@
                         " Luck. Whenever you take unblocked attack damage, lose #b1d",
                         " Luck."
                 ]
+        },
+        "theGamblignant:SolarBeam": {
+                "NAME": "Solar Energy",
+                "DESCRIPTIONS": [
+                        "At the start of next turn, deal #b",
+                        " damage to all enemies."
+                ]
         }
 }

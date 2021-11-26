@@ -1,6 +1,7 @@
 package theGamblignant.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -10,6 +11,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theGamblignant.VriskaMod;
+import theGamblignant.actions.RollNumberEffect;
+import theGamblignant.actions.TimedVFXAction;
 import theGamblignant.powers.*;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
@@ -77,6 +80,12 @@ public abstract class AbstractVriskaCard extends CustomCard {
         if (result > max) {result = max;}
         if (result < 1) {result = 1;}
 
+        if (result == max) {
+            this.addToTop(new TimedVFXAction(new RollNumberEffect(AbstractDungeon.player.dialogX+25F, AbstractDungeon.player.dialogY, result+"!")));
+        } else {
+            this.addToTop(new TimedVFXAction(new RollNumberEffect(AbstractDungeon.player.dialogX+25F, AbstractDungeon.player.dialogY, Integer.toString(result))));
+
+        }
         logger.info("final roll: "+result);
 
         if ((result == 1) && (AbstractDungeon.player.hasPower(SuperstitionPower.POWER_ID))) {
