@@ -23,8 +23,8 @@ public class TricksterModePower extends AbstractPower implements CloneablePowerI
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("luck_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("luck_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("trickster_power84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("trickster_power32.png"));
 
     public TricksterModePower(final AbstractCreature owner, final int amount) {
         name = NAME;

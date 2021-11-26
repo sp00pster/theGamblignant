@@ -23,8 +23,8 @@ public class FengShuiPower extends AbstractPower implements CloneablePowerInterf
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("luck_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("luck_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("fengshui_power84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("fengshui_power32.png"));
 
     public FengShuiPower(final AbstractCreature owner) {
         name = NAME;

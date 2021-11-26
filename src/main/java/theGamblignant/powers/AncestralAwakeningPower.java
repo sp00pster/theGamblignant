@@ -21,8 +21,8 @@ public class AncestralAwakeningPower extends AbstractPower implements CloneableP
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("luck_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("luck_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("ancestralawakening_power84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("ancestralawakening_power32.png"));
 
     public AncestralAwakeningPower(final AbstractCreature owner) {
         name = NAME;
