@@ -1,6 +1,5 @@
 package theGamblignant.cards;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,11 +13,13 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 
+import java.util.Objects;
+
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class DiceTechnique extends AbstractVriskaCard {
+public class SavingRoll extends AbstractVriskaCard {
 
-    public static final String ID = VriskaMod.makeID(DiceTechnique.class.getSimpleName());
+    public static final String ID = VriskaMod.makeID(SavingRoll.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -30,7 +31,7 @@ public class DiceTechnique extends AbstractVriskaCard {
 
     private static final int COST = 1;
 
-    public DiceTechnique() {
+    public SavingRoll() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     }
 
@@ -47,7 +48,10 @@ public class DiceTechnique extends AbstractVriskaCard {
         } else {
             cardRarity = CardRarity.RARE;
         }
-        AbstractCard tmp = CardLibrary.getAnyColorCard(CardType.ATTACK, cardRarity);
+        AbstractCard tmp = CardLibrary.getAnyColorCard(CardType.SKILL, cardRarity);
+        while (Objects.equals(tmp.cardID, "Zap") || Objects.equals(tmp.cardID, "Dualcast")) {
+            tmp = CardLibrary.getAnyColorCard(CardType.SKILL, cardRarity);
+        }
         if (this.upgraded) { tmp.setCostForTurn(0); }
         if (AbstractDungeon.player.hand.size() < 10) {
             AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(tmp, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));

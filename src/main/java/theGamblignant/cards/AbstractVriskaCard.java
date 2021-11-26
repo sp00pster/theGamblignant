@@ -43,6 +43,8 @@ public abstract class AbstractVriskaCard extends CustomCard {
         super.displayUpgrades();
     }
 
+    //this roll function was inspired by that of Downfall's Snecko
+
     public int roll(int faces, char purpose) {
         //for purpose, 'a' = attack, 's' = skill, 'o' = other (used for wisdom/charisma)
         int luckAmt = 0;

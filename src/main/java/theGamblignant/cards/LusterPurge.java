@@ -1,8 +1,10 @@
 package theGamblignant.cards;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,15 +14,18 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 import theGamblignant.powers.LuckPower;
 
+import java.util.Iterator;
+
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class Gaslight extends AbstractVriskaCard {
+public class LusterPurge extends AbstractVriskaCard {
 
-    public static final String ID = VriskaMod.makeID(Gaslight.class.getSimpleName());
+    public static final String ID = VriskaMod.makeID(LusterPurge.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -32,25 +37,34 @@ public class Gaslight extends AbstractVriskaCard {
 
     private static final int COST = 2;
 
-    public Gaslight() {
+    private static final int MAGIC = 4;
+    private static final int MAGIC_ADDEND = 2;
+
+
+    public LusterPurge() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int damageroll = 0;
-        for (int i = 0; i < 6; i++) {
-            damageroll += roll(8, 'a');
+        for (int i = 0; i < magicNumber; i++) {
+            damageroll += roll(6,'a');
         }
         this.baseDamage = damageroll;
-        this.calculateCardDamage(m);
-        if (!this.upgraded) {
-            this.addToBot(new DamageAction(m, new DamageInfo(p, damageroll, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        } else {
-            this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY, false));
+        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY, false));
+        int count = 0;
+        Iterator var4 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
+
+        while(var4.hasNext()) {
+            AbstractMonster m2 = (AbstractMonster)var4.next();
+            if (!m2.isDeadOrEscaped()) {
+                ++count;
+                this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, 1), 1));
+            }
         }
-        this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, -1), -1));
     }
 
     public void applyPowers() {
@@ -60,15 +74,15 @@ public class Gaslight extends AbstractVriskaCard {
         if (AbstractDungeon.player.hasPower(VigorPower.POWER_ID)) {addeddamage += AbstractDungeon.player.getPower(VigorPower.POWER_ID).amount;}
         if (!this.upgraded) {
             if (addeddamage > 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[4];
             } else if (addeddamage < 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[4];
             } else {this.rawDescription = cardStrings.DESCRIPTION;}
         } else {
             if (addeddamage > 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[3];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[2] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[4];
             } else if (addeddamage < 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[3];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[4];
             } else {this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;}
         }
         this.initializeDescription();
@@ -78,8 +92,8 @@ public class Gaslight extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.isMultiDamage = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(MAGIC_ADDEND);
             initializeDescription();
         }
     }

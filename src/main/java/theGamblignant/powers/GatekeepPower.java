@@ -56,7 +56,7 @@ public class GatekeepPower extends AbstractPower implements CloneablePowerInterf
 
 
     public int onAttacked(DamageInfo info, int damageAmount) { //if statement taken from thorns, with final condition added
-        if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner && damageAmount <= this.owner.currentBlock) {
+        if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner && damageAmount <= this.owner.currentBlock && this.owner.currentBlock != 0) {
             this.flash();
             this.addToTop(new ApplyPowerAction(info.owner, this.owner, new StrengthPower(info.owner, -this.amount), -this.amount));
         }

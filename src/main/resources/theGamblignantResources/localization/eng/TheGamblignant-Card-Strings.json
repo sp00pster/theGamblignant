@@ -132,7 +132,7 @@
   },
   "theGamblignant:Gatekeep": {
     "NAME": "Gatekeep",
-    "DESCRIPTION": "Whenever you fully block an attack, the attacker loses 1 Strength."
+    "DESCRIPTION": "Whenever you fully Block an attack, the attacker loses 1 Strength."
   },
   "theGamblignant:QuiverDance": {
     "NAME": "Quiver Dance",
@@ -140,8 +140,7 @@
   },
   "theGamblignant:Swipe": {
     "NAME": "Swipe",
-    "DESCRIPTION": "Deal !D! damage to all enemies and gain 1 Luck. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies and gain 1 Luck for each enemy affected. Exhaust."
+    "DESCRIPTION": "Deal !D! damage to all enemies and gain 1 Luck. Exhaust."
   },
   "theGamblignant:UTurn": {
     "NAME": "U-Turn",
@@ -184,7 +183,7 @@
     "NAME": "Gaslight",
     "DESCRIPTION": "Deal 6d8 damage and lose 1 Luck.",
     "UPGRADE_DESCRIPTION": "Deal 6d8 damage to all enemies and lose 1 Luck.",
-    "EXTENDED_DESCRIPTION": ["Deal 6d8 + ","Deal 6d8 - "," damage and lose 2 Luck."," damage to all enemies and lose 2 Luck."]
+    "EXTENDED_DESCRIPTION": ["Deal 6d8 + ","Deal 6d8 - "," damage and lose 1 Luck."," damage to all enemies and lose 1 Luck."]
   },
   "theGamblignant:MagicMissile": {
     "NAME": "Magic Missile",
@@ -310,8 +309,8 @@
   },
   "theGamblignant:MindControl": {
     "NAME": "Mind Control",
-    "DESCRIPTION": "If the enemy intends to attack, it deals damage to a random enemy or itself this turn instead of you. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. If the enemy intends to attack, it deals damage to a random enemy or itself this turn instead of you. Exhaust."
+    "DESCRIPTION": "If target enemy intends to attack, it attacks itself or a random enemy and is stunned for 1 turn. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. If target enemy intends to attack, it attacks itself or a random enemy and is stunned for 1 turn. Exhaust."
   },
   "theGamblignant:DoomsdayDevice": {
     "NAME": "Doomsday Device",
