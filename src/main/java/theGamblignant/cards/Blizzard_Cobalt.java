@@ -25,7 +25,7 @@ public class Blizzard_Cobalt extends AbstractVriskaCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
@@ -49,6 +49,7 @@ public class Blizzard_Cobalt extends AbstractVriskaCard {
             damageroll += roll(4,'a');
         }
         this.baseDamage = damageroll;
+        calculateCardDamage(m);
         if (Settings.FAST_MODE) {
             this.addToBot(new VFXAction(new BlizzardEffect(magicNumber, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.25F));
         } else {

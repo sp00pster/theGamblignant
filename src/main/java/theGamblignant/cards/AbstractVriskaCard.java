@@ -54,7 +54,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
         if (AbstractDungeon.player.hasPower(LuckPower.POWER_ID)) {
             luckAmt += AbstractDungeon.player.getPower(LuckPower.POWER_ID).amount;
         }
-        if (AbstractDungeon.player.hasPower(VimPower.POWER_ID)) {
+        if (AbstractDungeon.player.hasPower(VimPower.POWER_ID)&&purpose!='f') {
             luckAmt += AbstractDungeon.player.getPower(VimPower.POWER_ID).amount;
             AbstractDungeon.player.getPower(VimPower.POWER_ID).flash();
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VimPower.POWER_ID));

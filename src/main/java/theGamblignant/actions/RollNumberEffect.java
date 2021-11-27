@@ -22,7 +22,7 @@ public class RollNumberEffect extends AbstractGameEffect {
     private float y;
     private static final float GRAVITY_Y;
     private String msg;
-    private float scale = 1.5F;
+    private float scale = 1.7F;
     private boolean playedSound = false;
 
     public RollNumberEffect(float x, float y, String msg) {
@@ -35,7 +35,7 @@ public class RollNumberEffect extends AbstractGameEffect {
     }
 
     public void update() {
-        this.y += 4 * GRAVITY_Y * Gdx.graphics.getDeltaTime();
+        this.y += 3 * GRAVITY_Y * Gdx.graphics.getDeltaTime();
         super.update();
         if (!this.playedSound) {
             CardCrawlGame.sound.play("VriskaMod:DICE");

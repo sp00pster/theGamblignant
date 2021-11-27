@@ -55,7 +55,7 @@ public class Strike_Cobalt extends AbstractVriskaCard {
             this.calculateCardDamage(m);
         }
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 
     public void applyPowers() {

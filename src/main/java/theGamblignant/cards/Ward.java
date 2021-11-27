@@ -37,7 +37,7 @@ public class Ward extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int powerroll = roll(magicNumber, 's');
-        this.addToBot(new ApplyPowerAction(m, p, new PlatedArmorPower(p, powerroll), powerroll));
+        this.addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p, powerroll), powerroll));
     }
 
     @Override

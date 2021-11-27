@@ -36,7 +36,7 @@ public class Mulligan extends AbstractVriskaCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int drawroll = roll(6,'s');
         this.addToTop(new DiscardAction(p, p, AbstractDungeon.player.hand.size(), true));
-        this.addToTop(new DrawCardAction(p, drawroll));
+        this.addToBot(new DrawCardAction(p, drawroll));
     }
 
     @Override

@@ -328,7 +328,7 @@
   "theGamblignant:FengShui": {
     "NAME": "Feng Shui",
     "DESCRIPTION": "At the end of your turn, gain 1d8 Block.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn"
+    "UPGRADE_DESCRIPTION": "Gain 1d8 Block. At the start of your turn, gain 1d8 Block."
   },
   "theGamblignant:AncestralAwakening": {
     "NAME": "Ancestral Awakening",

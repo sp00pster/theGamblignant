@@ -23,8 +23,8 @@ public class FengShuiPower extends AbstractPower implements CloneablePowerInterf
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("fengshui_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("fengshui_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("fengshuipower_84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("fengshuipower_32.png"));
 
     public FengShuiPower(final AbstractCreature owner) {
         name = NAME;
@@ -48,7 +48,7 @@ public class FengShuiPower extends AbstractPower implements CloneablePowerInterf
     }
 
     public void atEndOfTurn(boolean isPlayer) {
-        this.addToBot(new GainBlockAction(this.owner, this.owner, AbstractVriskaCard.roll(8,'p')));
+        this.addToBot(new GainBlockAction(this.owner, this.owner, AbstractVriskaCard.roll(8,'f')));
     }
 
     public void updateDescription() {
