@@ -33,7 +33,57 @@
   },
   "theGamblignant:TetradactylyRelic": {
     "NAME": "Tetradactyly",
-    "FLAVOR": "flavor",
+    "FLAVOR": "You take great delight in the fact that you have 8 fingers.",
     "DESCRIPTIONS": ["Whenever you play 8 cards, add 4 to your next dice roll."]
+  },
+  "theGamblignant:BrightPowderRelic": {
+    "NAME": "Bright Powder",
+    "FLAVOR": "It's astonishingly reflective.",
+    "DESCRIPTIONS": ["Whenever you play a Skill, gain 1 temporary Luck."]
+  },
+  "theGamblignant:BatteredPendulumRelic": {
+    "NAME": "Battered Pendulum",
+    "FLAVOR": "Supposedly, this is a part of a machine that grants conditional immortality. What can it do on its own?",
+    "DESCRIPTIONS": ["When you would die, roll 1d8. If you roll an 8, revive with 30% of your max HP."]
+  },
+  "theGamblignant:DreamBubbleRelic": {
+    "NAME": "Dream Bubble",
+    "FLAVOR": "When you sleep, your dream self awakes.",
+    "DESCRIPTIONS": ["When you Rest, visit a random ? room."]
+  },
+  "theGamblignant:ZillywairRelic": {
+    "NAME": "Cutlass of Zillywair",
+    "FLAVOR": "Flippety dippety doo bup bup shrubber double floppy mumblescurry noodlescoop pizzabubble pizzabubble mip mip mip mip mip mip",
+    "DESCRIPTIONS": ["When you play 3 Attacks in 1 turn, gain 1 Luck."]
+  },
+  "theGamblignant:CloversHatRelic": {
+  "NAME": "Clover's Hat",
+  "FLAVOR": "Just looking at this thing kinda pisses you off. It doesn’t even have horn holes.",
+  "DESCRIPTIONS": ["On pickup, lose 75% of your max HP. Start each combat with 4 Luck."]
+  },
+  "theGamblignant:BloodSpadeRelic": {
+    "NAME": "Blood Spade",
+    "FLAVOR": "What kind of blood even is this?",
+    "DESCRIPTIONS": ["At the start of your turn, gain 1 Energy. If your dice rolls between playing two cards add up to 21, take 13 damage."]
+  },
+  "theGamblignant:ScratchedCoinRelic": {
+    "NAME": "Scratched Coin",
+    "FLAVOR": "1 double-headed Troll Caegar. His image has been defaced, presumably by some lunatic.",
+    "DESCRIPTIONS": ["At the end of each combat, gain 1d20 Gold."]
+  },
+  "theGamblignant:BionicBoundbeastRelic": {
+    "NAME": "Bionic Boundbeast",
+    "FLAVOR": "You've heard that these creatures can bring luck. You haven't heard of any that look quite like this, though.",
+    "DESCRIPTIONS": ["Start each combat with 1 Luck."]
+  },
+  "theGamblignant:SpindownDiceRelic": {
+    "NAME": "Spindown Dice",
+    "FLAVOR": "When you roll this dice, it always lands on ",
+    "DESCRIPTIONS": ["Whenever you lose HPm add the amount of HP lost to your next roll."]
+  },
+  "theGamblignant:DarkMapRelic": {
+    "NAME": "Dark Map",
+    "FLAVOR": "The once blank parchment is now glowing with patterns of broken glass.",
+    "DESCRIPTIONS": ["At the start of your turn, instead of drawing 5 cards, draw 1d7+3 cards."]
   }
 }
