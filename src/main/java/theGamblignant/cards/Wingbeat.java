@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theGamblignant.VriskaMod;
@@ -56,27 +57,33 @@ public class Wingbeat extends AbstractVriskaCard {
         this.baseBlock = blockroll;
         this.baseDamage = damageroll;
         applyPowers();
-        this.addToBot(new GainBlockAction(p, p, (roll(this.magicNumber,'a'))));
-        this.addToBot(new DamageAction(m, new DamageInfo(p, roll(this.magicNumber,'a'), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        this.addToBot(new GainBlockAction(p, p, (blockroll)));
+        this.addToBot(new DamageAction(m, new DamageInfo(m, damageroll, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     public void applyPowers() {
         super.applyPowers();
         int addeddamage = 0;
+        int addedblock = 0;
         if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)) {addeddamage += AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount;}
         if (AbstractDungeon.player.hasPower(VigorPower.POWER_ID)) {addeddamage += AbstractDungeon.player.getPower(VigorPower.POWER_ID).amount;}
+        if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {addedblock += AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount;}
         if (!this.upgraded) {
-            if (addeddamage > 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[4];
-            } else if (addeddamage < 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[4];
-            } else {this.rawDescription = cardStrings.DESCRIPTION;}
+            if (addeddamage > 0) {this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[2] + addeddamage;}
+            else if (addeddamage < 0) {this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3] + -addeddamage;}
+            else {this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];}
+            if (addedblock > 0) {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[8] + addeddamage;}
+            else if (addedblock < 0) {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[9] + -addeddamage;}
+            else {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[6];}
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[12];
         } else {
-            if (addeddamage > 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[2] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[4];
-            } else if (addeddamage < 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[4];
-            } else {this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;}
+            if (addeddamage > 0) {this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[4] + addeddamage;}
+            else if (addeddamage < 0) {this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[5] + -addeddamage;}
+            else {this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];}
+            if (addedblock > 0) {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[10] + addeddamage;}
+            else if (addedblock < 0) {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[11] + -addeddamage;}
+            else {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[7];}
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[12];
         }
         this.initializeDescription();
     }

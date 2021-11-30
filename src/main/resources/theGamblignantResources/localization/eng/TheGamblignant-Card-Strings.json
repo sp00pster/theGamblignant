@@ -42,7 +42,7 @@
     "NAME": "Wingbeat",
     "DESCRIPTION": "Deal 1d8 damage and gain 1d8 Block.",
     "UPGRADE_DESCRIPTION": "Deal 1d12 damage and gain 1d12 Block.",
-    "EXTENDED_DESCRIPTION": ["Deal 1d8 + ","Deal 1d8 - ","Deal 1d12 + ","Deal 1d12 - "," damage and gain 1d8 Block."," damage and gain 1d12 Block."]
+    "EXTENDED_DESCRIPTION": ["Deal 1d8 ","Deal 1d12 ","Deal 1d8 + ","Deal 1d8 - ","Deal 1d12 + ","Deal 1d12 - "," damage and gain 1d8 "," damage and gain 1d12 "," damage and gain 1d8 + "," damage and gain 1d8 - "," damage and gain 1d12 + "," damage and gain 1d12 - ", " Block."]
   },
   "theGamblignant:JumpKick": {
     "NAME": "Jump Kick",
@@ -170,7 +170,7 @@
     "DESCRIPTION": "Deal !D! damage and add !M! to your next roll."
   },
   "theGamblignant:PowerTrip": {
-    "NAME": "Power Trip",
+    "NAME": "Gaslight",
     "DESCRIPTION": "Deal !D! damage. Deals 1 additional damage for each stack of the target's buffs and debuffs."
   },
   "theGamblignant:Blizzard_Cobalt": {
@@ -180,7 +180,7 @@
     "EXTENDED_DESCRIPTION": ["Deal 6d4 + ","Deal 6d4 - ","Deal 8d4 + ","Deal 8d4 - "," damage to all enemies."]
   },
   "theGamblignant:Gaslight": {
-    "NAME": "Gaslight",
+    "NAME": "Power Trip",
     "DESCRIPTION": "Deal 6d8 damage and lose 1 Luck.",
     "UPGRADE_DESCRIPTION": "Deal 6d8 damage to all enemies and lose 1 Luck.",
     "EXTENDED_DESCRIPTION": ["Deal 6d8 + ","Deal 6d8 - "," damage and lose 1 Luck."," damage to all enemies and lose 1 Luck."]

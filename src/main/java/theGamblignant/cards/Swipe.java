@@ -26,7 +26,7 @@ public class Swipe extends AbstractVriskaCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
@@ -53,6 +53,7 @@ public class Swipe extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(DAMAGE_ADDEND);
+            TARGET = CardTarget.ALL_ENEMY;
             initializeDescription();
         }
     }

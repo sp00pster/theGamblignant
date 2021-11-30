@@ -30,8 +30,8 @@ public class Fireball extends AbstractVriskaCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 3;
-    private static final int UPGRADED_COST = 2;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
     public Fireball() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
