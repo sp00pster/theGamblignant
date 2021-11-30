@@ -17,8 +17,6 @@ public class WebWeave extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(WebWeave.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -42,7 +40,6 @@ public class WebWeave extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeBlock(4);
             initializeDescription();
         }

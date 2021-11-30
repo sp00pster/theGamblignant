@@ -1,5 +1,6 @@
 package theGamblignant.relics;
 
+import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomRelic;
@@ -25,6 +26,7 @@ import java.util.function.Predicate;
 import static theGamblignant.VriskaMod.makeRelicOutlinePath;
 import static theGamblignant.VriskaMod.makeRelicPath;
 
+@AutoAdd.Ignore
 public class BottledPlaceholderRelic extends CustomRelic implements CustomBottleRelic, CustomSavable<Integer> {
     // This file will show you how to use 2 things - (Mostly) The Custom Bottle Relic and the Custom Savable - they go hand in hand.
 

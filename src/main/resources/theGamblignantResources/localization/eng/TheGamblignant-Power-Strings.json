@@ -131,10 +131,10 @@
         "theGamblignant:Clairvoyant": {
                 "NAME": "Clairvoyant",
                 "DESCRIPTIONS": [
-                        "At the start of your next turn, gain #b","temporary Luck."
+                        "At the start of your next turn, gain #b"," temporary Luck."
                 ]
         },
-        "theGamblignant:Doomsday Device": {
+        "theGamblignant:DoomsdayDevice": {
                 "NAME": "Impending Doom",
                 "DESCRIPTIONS": [
                         "After #b","turns, deal 88 damage to all enemies."

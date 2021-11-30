@@ -51,6 +51,11 @@ public class Wingbeat extends AbstractVriskaCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int blockroll = roll(this.magicNumber, 'a');
+        int damageroll = roll(this.magicNumber, 'a');
+        this.baseBlock = blockroll;
+        this.baseDamage = damageroll;
+        applyPowers();
         this.addToBot(new GainBlockAction(p, p, (roll(this.magicNumber,'a'))));
         this.addToBot(new DamageAction(m, new DamageInfo(p, roll(this.magicNumber,'a'), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }

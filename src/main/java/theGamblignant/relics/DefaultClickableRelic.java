@@ -1,5 +1,6 @@
 package theGamblignant.relics;
 
+import basemod.AutoAdd;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
@@ -17,6 +18,7 @@ import theGamblignant.util.TextureLoader;
 import static theGamblignant.VriskaMod.makeRelicOutlinePath;
 import static theGamblignant.VriskaMod.makeRelicPath;
 
+@AutoAdd.Ignore
 public class DefaultClickableRelic extends CustomRelic implements ClickableRelic { // You must implement things you want to use from StSlib
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics

@@ -49,12 +49,12 @@ public class TricksterModePower extends AbstractPower implements CloneablePowerI
     }
 
     public void atStartOfTurn() {
-        int luckuproll = AbstractVriskaCard.roll(this.amount,'p');
+        int luckuproll = AbstractVriskaCard.roll(this.amount,'t');
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new LuckPower(this.owner, luckuproll), luckuproll));
     }
 
     public void atEndOfTurn(boolean isPlayer) {
-        int luckdownroll = -AbstractVriskaCard.roll(this.amount,'p');
+        int luckdownroll = -AbstractVriskaCard.roll(this.amount,'t');
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new LuckPower(this.owner, luckdownroll), luckdownroll));
     }
 

@@ -30,6 +30,7 @@ public class ViciousMockery extends AbstractVriskaCard {
 
     public ViciousMockery() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.exhaust = true;
     }
 
     @Override

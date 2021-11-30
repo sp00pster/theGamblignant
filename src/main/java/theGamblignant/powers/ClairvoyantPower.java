@@ -50,6 +50,7 @@ public class ClairvoyantPower extends AbstractPower implements CloneablePowerInt
     public void atStartOfTurn() {
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new LuckPower(this.owner, this.amount), this.amount));
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new LoseLuckPower(this.owner, this.amount), this.amount));
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, ClairvoyantPower.POWER_ID));
     }
 
     public void updateDescription() {

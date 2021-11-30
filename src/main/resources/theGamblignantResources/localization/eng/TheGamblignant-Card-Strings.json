@@ -336,8 +336,8 @@
   },
   "theGamblignant:TricksterMode": {
     "NAME": "Trickster Mode",
-    "DESCRIPTION": "At the start of your turn, gain 1d6 Luck. At the end of your turn, lose 1d6 Luck.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, gain 1d8 Luck. At the end of your turn, lose 1d8 Luck."
+    "DESCRIPTION": "At the start of your turn, gain 1d6 Luck. At the end of your turn, lose 1d6 Luck. Ignores your Luck.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, gain 1d8 Luck. At the end of your turn, lose 1d8 Luck. Ignores your Luck."
   },
   "theGamblignant:ThiefForm": {
     "NAME": "Thief Form",

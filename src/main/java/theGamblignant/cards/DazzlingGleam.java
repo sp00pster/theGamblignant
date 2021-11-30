@@ -45,13 +45,14 @@ public class DazzlingGleam extends AbstractVriskaCard {
         baseDamage = DAMAGE;
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
+        isMultiDamage = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal)));
-        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ApplyPowerAction(p, p, new VimPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override

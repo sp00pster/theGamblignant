@@ -40,6 +40,8 @@ public class DieCast extends AbstractVriskaCard {
         for (int i = 0; i < magicNumber; i++) {
             blockroll += roll(8,'s');
         }
+        this.baseBlock = blockroll;
+        applyPowersToBlock();
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, blockroll));
     }
 
