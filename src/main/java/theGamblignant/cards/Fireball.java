@@ -22,7 +22,7 @@ public class Fireball extends AbstractVriskaCard {
     public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName());
 
     public static final String ID = VriskaMod.makeID(Fireball.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("fireball.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

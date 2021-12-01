@@ -55,9 +55,9 @@ public class LightScreen extends AbstractVriskaCard {
             } else {this.rawDescription = cardStrings.DESCRIPTION;}
         } else {
             if (addedblock > 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[2] + addedblock + cardStrings.EXTENDED_DESCRIPTION[5];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[2] + addedblock + cardStrings.EXTENDED_DESCRIPTION[4];
             } else if (addedblock < 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3] + addedblock + cardStrings.EXTENDED_DESCRIPTION[5];
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3] + addedblock + cardStrings.EXTENDED_DESCRIPTION[4];
             } else {this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;}
         }
         this.initializeDescription();

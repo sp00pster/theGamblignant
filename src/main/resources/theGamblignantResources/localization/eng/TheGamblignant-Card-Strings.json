@@ -180,7 +180,7 @@
     "EXTENDED_DESCRIPTION": ["Deal 6d4 + ","Deal 6d4 - ","Deal 8d4 + ","Deal 8d4 - "," damage to all enemies."]
   },
   "theGamblignant:Gaslight": {
-    "NAME": "Power Trip",
+    "NAME": "Meteor Shower",
     "DESCRIPTION": "Deal 6d8 damage and lose 1 Luck.",
     "UPGRADE_DESCRIPTION": "Deal 6d8 damage to all enemies and lose 1 Luck.",
     "EXTENDED_DESCRIPTION": ["Deal 6d8 + ","Deal 6d8 - "," damage and lose 1 Luck."," damage to all enemies and lose 1 Luck."]
