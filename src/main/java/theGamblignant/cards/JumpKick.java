@@ -18,7 +18,7 @@ public class JumpKick extends AbstractVriskaCard {
     // TEXT DECLARATION
 
     public static final String ID = VriskaMod.makeID(JumpKick.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("jumpkick.png");
 
 
     // /TEXT DECLARATION/
