@@ -57,8 +57,8 @@ public class Wingbeat extends AbstractVriskaCard {
         this.baseBlock = blockroll;
         this.baseDamage = damageroll;
         applyPowers();
-        this.addToBot(new GainBlockAction(p, p, (blockroll)));
-        this.addToBot(new DamageAction(m, new DamageInfo(m, damageroll, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        this.addToBot(new GainBlockAction(p, p, (block)));
+        this.addToBot(new DamageAction(m, new DamageInfo(m, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     public void applyPowers() {
@@ -72,16 +72,16 @@ public class Wingbeat extends AbstractVriskaCard {
             if (addeddamage > 0) {this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[2] + addeddamage;}
             else if (addeddamage < 0) {this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3] + -addeddamage;}
             else {this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];}
-            if (addedblock > 0) {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[8] + addeddamage;}
-            else if (addedblock < 0) {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[9] + -addeddamage;}
+            if (addedblock > 0) {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[8] + addedblock;}
+            else if (addedblock < 0) {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[9] + -addedblock;}
             else {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[6];}
             this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[12];
         } else {
             if (addeddamage > 0) {this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[4] + addeddamage;}
             else if (addeddamage < 0) {this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[5] + -addeddamage;}
             else {this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];}
-            if (addedblock > 0) {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[10] + addeddamage;}
-            else if (addedblock < 0) {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[11] + -addeddamage;}
+            if (addedblock > 0) {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[10] + addedblock;}
+            else if (addedblock < 0) {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[11] + -addedblock;}
             else {this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[7];}
             this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[12];
         }
