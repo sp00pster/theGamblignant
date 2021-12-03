@@ -3,6 +3,8 @@ scope, but there are still a lot of things I considered "core mechanics". I've i
 
 Link to demo video: https://youtu.be/CdbCzhPDOyo
 
+Also, here is the template mod I used to create my mod: https://github.com/Gremious/StS-DefaultModBase
+
 # What I Learned
 
 Obviously, I learned how to make mods for Slay the Spire, which is something I'll probably do again in the future. I also gained a rudimentary understanding of
