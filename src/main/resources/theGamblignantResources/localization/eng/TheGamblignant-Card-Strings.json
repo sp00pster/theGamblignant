@@ -73,11 +73,6 @@
     "UPGRADE_DESCRIPTION": "Gain 3d8 Block.",
     "EXTENDED_DESCRIPTION": ["Gain 2d8 + ","Gain 2d8 - ","Gain 3d8 + ","Gain 3d8 - "," Block."]
   },
-  "theGamblignant:StrokeOfLuck": {
-    "NAME": "Stroke Of Luck",
-    "DESCRIPTION": "Add 8 to your next roll. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. Add 8 to your next roll. Exhaust."
-  },
   "theGamblignant:BeginnersLuck": {
     "NAME": "Beginner's Luck",
     "DESCRIPTION": "Gain 1 Luck.",
@@ -138,10 +133,6 @@
     "NAME": "Quiver Dance",
     "DESCRIPTION": "Add !M! to the first roll you make each turn."
   },
-  "theGamblignant:Swipe": {
-    "NAME": "Swipe",
-    "DESCRIPTION": "Deal !D! damage to all enemies and gain 1 Luck. Exhaust."
-  },
   "theGamblignant:UTurn": {
     "NAME": "U-Turn",
     "DESCRIPTION": "Deal !D! damage. If 1d4 = 4, gain 1 Energy and draw a card."
@@ -165,11 +156,7 @@
     "NAME": "Fury Cutter",
     "DESCRIPTION": "Deal !D! damage. Double this card's damage for this combat."
   },
-  "theGamblignant:DeviousLick": {
-    "NAME": "Devious Lick",
-    "DESCRIPTION": "Deal !D! damage and add !M! to your next roll."
-  },
-  "theGamblignant:PowerTrip": {
+  "theGamblignant:Gaslight": {
     "NAME": "Gaslight",
     "DESCRIPTION": "Deal !D! damage. Deals 1 additional damage for each stack of the target's buffs and debuffs."
   },
@@ -179,11 +166,11 @@
     "UPGRADE_DESCRIPTION": "Deal 8d4 damage to all enemies.",
     "EXTENDED_DESCRIPTION": ["Deal 6d4 + ","Deal 6d4 - ","Deal 8d4 + ","Deal 8d4 - "," damage to all enemies."]
   },
-  "theGamblignant:Gaslight": {
-    "NAME": "Meteor Shower",
-    "DESCRIPTION": "Deal 6d8 damage and lose 1 Luck.",
-    "UPGRADE_DESCRIPTION": "Deal 6d8 damage to all enemies and lose 1 Luck.",
-    "EXTENDED_DESCRIPTION": ["Deal 6d8 + ","Deal 6d8 - "," damage and lose 1 Luck."," damage to all enemies and lose 1 Luck."]
+  "theGamblignant:Combrave": {
+    "NAME": "Comb Rave",
+    "DESCRIPTION": "Deal 6d6 damage and lose 1 Luck.",
+    "UPGRADE_DESCRIPTION": "Deal 6d6 damage to all enemies and lose 1 Luck.",
+    "EXTENDED_DESCRIPTION": ["Deal 6d6 + ","Deal 6d6 - "," damage and lose 1 Luck."," damage to all enemies and lose 1 Luck."]
   },
   "theGamblignant:MagicMissile": {
     "NAME": "Magic Missile",
@@ -218,18 +205,13 @@
   },
   "theGamblignant:WebWeave": {
     "NAME": "Web Weave",
-    "DESCRIPTION": "Gain !B! Block and 2 Weak."
+    "DESCRIPTION": "Gain !B! Block and lose 1 Strength."
   },
   "theGamblignant:Meddle": {
     "NAME": "Meddle",
     "DESCRIPTION": "Gain 1d8 Block and add !M! to your next roll.",
     "UPGRADE_DESCRIPTION": "Gain 1d10 Block and add !M! to your next roll.",
     "EXTENDED_DESCRIPTION": ["Gain 1d8 + ","Gain 1d8 - ","Gain 1d10 + ","Gain 1d10 - "," Block and add !M! to your next roll."]
-  },
-  "theGamblignant:Ward": {
-    "NAME": "Ward",
-    "DESCRIPTION": "Gain 1d4 Plated Armor. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1d6 Plated Armor. Exhaust."
   },
   "theGamblignant:Fuss": {
     "NAME": "Fuss",
@@ -346,7 +328,7 @@
   },
   "theGamblignant:TailGlow": {
     "NAME": "Tail Glow",
-    "DESCRIPTION": "Lose !M! Strength and gain !M! Luck."
+    "DESCRIPTION": "Gain !M! Strength and !M! Dexterity. Lose !M! Luck."
   }
 
 }

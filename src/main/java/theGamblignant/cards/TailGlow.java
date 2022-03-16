@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
@@ -36,8 +37,9 @@ public class TailGlow extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, -magicNumber), -magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, magicNumber), magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber), magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, -magicNumber), -magicNumber));
     }
 
     @Override

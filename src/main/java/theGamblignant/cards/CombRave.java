@@ -1,5 +1,7 @@
 package theGamblignant.cards;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -12,12 +14,13 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
+import theGamblignant.powers.LuckPower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class VorpalStrike extends AbstractVriskaCard {
+public class CombRave extends AbstractVriskaCard {
 
-    public static final String ID = VriskaMod.makeID(VorpalStrike.class.getSimpleName());
+    public static final String ID = VriskaMod.makeID(CombRave.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -29,19 +32,25 @@ public class VorpalStrike extends AbstractVriskaCard {
 
     private static final int COST = 2;
 
-
-    public VorpalStrike() {
+    public CombRave() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber;
-        this.tags.add(CardTags.STRIKE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int damageroll = roll(8,'a');
-        baseDamage = damageroll*damageroll;
+        int damageroll = 0;
+        for (int i = 0; i < 6; i++) {
+            damageroll += roll(6, 'a');
+        }
+        this.baseDamage = damageroll;
         this.calculateCardDamage(m);
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        if (!this.upgraded) {
+            this.addToBot(new DamageAction(m, new DamageInfo(p, damageroll, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        } else {
+            this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY, false));
+        }
+        this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, -1), -1));
     }
 
     public void applyPowers() {
@@ -49,11 +58,18 @@ public class VorpalStrike extends AbstractVriskaCard {
         int addeddamage = 0;
         if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)) {addeddamage += AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount;}
         if (AbstractDungeon.player.hasPower(VigorPower.POWER_ID)) {addeddamage += AbstractDungeon.player.getPower(VigorPower.POWER_ID).amount;}
-        if (AbstractDungeon.player.hasRelic("StrikeDummy")) {addeddamage += 3;}
-        if (addeddamage >= 0) {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0]+addeddamage+cardStrings.EXTENDED_DESCRIPTION[2];
-        } else if (addeddamage < 0) {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1]+-addeddamage+cardStrings.EXTENDED_DESCRIPTION[2];
+        if (!this.upgraded) {
+            if (addeddamage > 0) {
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
+            } else if (addeddamage < 0) {
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
+            } else {this.rawDescription = cardStrings.DESCRIPTION;}
+        } else {
+            if (addeddamage > 0) {
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[3];
+            } else if (addeddamage < 0) {
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[3];
+            } else {this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;}
         }
         this.initializeDescription();
     }
@@ -62,7 +78,8 @@ public class VorpalStrike extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            this.isMultiDamage = true;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

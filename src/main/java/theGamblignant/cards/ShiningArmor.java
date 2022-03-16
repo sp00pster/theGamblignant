@@ -24,11 +24,11 @@ public class ShiningArmor extends AbstractVriskaCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public ShiningArmor() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = 12;
+        baseBlock = 8;
         magicNumber = 3;
         baseMagicNumber = magicNumber;
     }
@@ -44,7 +44,7 @@ public class ShiningArmor extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
-            upgradeBlock(3);
+            upgradeBlock(4);
             initializeDescription();
         }
     }

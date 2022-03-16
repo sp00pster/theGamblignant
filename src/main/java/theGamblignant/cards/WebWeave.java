@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
@@ -33,7 +34,7 @@ public class WebWeave extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, p, block));
-        this.addToBot(new ApplyPowerAction(p, p, new WeakPower(p,2,false), 2));
+        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, -1), -1));
     }
 
     @Override

@@ -21,7 +21,7 @@ public class Clairvoyant extends AbstractVriskaCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
@@ -30,7 +30,7 @@ public class Clairvoyant extends AbstractVriskaCard {
 
     public Clairvoyant() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = 5;
+        magicNumber = 3;
         baseMagicNumber = magicNumber;
         this.exhaust = true;
     }
@@ -45,7 +45,7 @@ public class Clairvoyant extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(4);
             initializeDescription();
         }
     }

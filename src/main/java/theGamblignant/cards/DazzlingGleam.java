@@ -31,9 +31,9 @@ public class DazzlingGleam extends AbstractVriskaCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 6;
     private static final int DAMAGE_ADDEND = 4;
 
     private static final int MAGIC = 4;

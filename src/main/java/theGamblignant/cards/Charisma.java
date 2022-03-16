@@ -23,7 +23,7 @@ public class Charisma extends AbstractVriskaCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public Charisma() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -40,8 +40,7 @@ public class Charisma extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            upgradeMagicNumber(1);
+            upgradeBaseCost(1);
             initializeDescription();
         }
     }
