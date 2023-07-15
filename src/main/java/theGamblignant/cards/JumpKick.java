@@ -49,7 +49,7 @@ public class JumpKick extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m.currentBlock != 0) {
-            this.addToBot(new LoseHPAction(p,p,4));
+            this.addToBot(new LoseHPAction(p,p,m.currentBlock));
             logger.info("enemy has block!");
         }
         AbstractDungeon.actionManager.addToBottom(

@@ -10,13 +10,8 @@
   "theGamblignant:Strike_Cobalt": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "Deal 1d6 + 6 damage.",
+    "UPGRADE_DESCRIPTION": "Deal 1d6 + !D! damage.",
     "EXTENDED_DESCRIPTION": ["Deal 1d6 + ","Deal 1d6 - "," damage."]
-  },
-  "theGamblignant:Defend_Cobalt": {
-    "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Gain 1d6 + !B! Block."
   },
   "theGamblignant:Gank": {
     "NAME": "Gank",
@@ -27,80 +22,19 @@
     "DESCRIPTION": "Deal 1d8 x !M! damage.",
     "EXTENDED_DESCRIPTION": ["Deal 1d8 x !M! + ","Deal 1d8 x !M! - "," damage."]
   },
-  "theGamblignant:SpiderClaw": {
-    "NAME": "Spider's Claw",
-    "DESCRIPTION": "Deal 1d4 damage 1d4 times.",
-    "UPGRADE_DESCRIPTION": "Deal 1d4 damage 1d6 times.",
-    "EXTENDED_DESCRIPTION": ["Deal 1d4 + ","Deal 1d4 - "," damage 1d4 times."," damage 1d6 times."]
-  },
-  "theGamblignant:BallBreak": {
-    "NAME": "Ball Break",
-    "DESCRIPTION": "Deal 1d4 + 4 damage.",
-    "EXTENDED_DESCRIPTION": ["Deal 1d4 + ","Deal 1d4 - "," damage."]
-  },
-  "theGamblignant:Wingbeat": {
-    "NAME": "Wingbeat",
-    "DESCRIPTION": "Deal 1d8 damage and gain 1d8 Block.",
-    "UPGRADE_DESCRIPTION": "Deal 1d12 damage and gain 1d12 Block.",
-    "EXTENDED_DESCRIPTION": ["Deal 1d8 ","Deal 1d12 ","Deal 1d8 + ","Deal 1d8 - ","Deal 1d12 + ","Deal 1d12 - "," damage and gain 1d8 "," damage and gain 1d12 "," damage and gain 1d8 + "," damage and gain 1d8 - "," damage and gain 1d12 + "," damage and gain 1d12 - ", " Block."]
-  },
-  "theGamblignant:JumpKick": {
-    "NAME": "Jump Kick",
-    "DESCRIPTION": "Deal !D! damage. If target enemy has any Block, take 5 damage."
-  },
-  "theGamblignant:Scintillate": {
-    "NAME": "Scintillate",
-    "DESCRIPTION": "Gain !M! Luck. At the end of your turn, lose !M! Luck."
-  },
-  "theGamblignant:Cascade": {
-    "NAME": "Cascade",
-    "DESCRIPTION": "Deal 4d13 damage.",
-    "UPGRADE_DESCRIPTION": "Deal 6d12 damage.",
-    "EXTENDED_DESCRIPTION": ["Deal 4d13 + ","Deal 4d13 - ","Deal 6d12 + ","Deal 6d12 - "," damage."]
-  },
-  "theGamblignant:Fireball": {
-    "NAME": "Fireball",
-    "DESCRIPTION": "Deal 8d6 damage. Exhaust.",
-    "EXTENDED_DESCRIPTION": ["Deal 8d6 + ","Deal 8d6 - ","damage. Exhaust."]
-  },
-  "theGamblignant:ShiningArmor": {
-    "NAME": "Shining Armor",
-    "DESCRIPTION": "Gain !B! Block and add !M! to your next roll."
-  },
-  "theGamblignant:DieCast": {
-    "NAME": "Die Cast",
-    "DESCRIPTION": "Gain 2d8 Block.",
-    "UPGRADE_DESCRIPTION": "Gain 3d8 Block.",
-    "EXTENDED_DESCRIPTION": ["Gain 2d8 + ","Gain 2d8 - ","Gain 3d8 + ","Gain 3d8 - "," Block."]
-  },
-  "theGamblignant:BeginnersLuck": {
-    "NAME": "Beginner's Luck",
-    "DESCRIPTION": "Gain 1 Luck.",
-    "UPGRADE_DESCRIPTION": "Innate. Gain 1 Luck."
-  },
-  "theGamblignant:SilverWind": {
-    "NAME": "Silver Wind",
-    "DESCRIPTION": "Gain 1d4 Strength and 1d4 Dexterity",
-    "UPGRADE_DESCRIPTION": "Gain 1d6 Strength and 1d6 Dexterity."
-  },
-  "theGamblignant:LightScreen": {
-    "NAME": "Light Screen",
-    "DESCRIPTION": "Gain 5d6 Block.",
-    "UPGRADE_DESCRIPTION": "Gain 7d6 Block.",
-    "EXTENDED_DESCRIPTION": ["Gain 5d6 + ","Gain 5d6 - ","Gain 7d6 + ","Gain 7d6 - "," Block."]
-  },
-  "theGamblignant:SlideKick": {
-    "NAME": "Slide Kick",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to all enemies."
-  },
-  "theGamblignant:CripplingBlow": {
-    "NAME": "Crippling Blow",
-    "DESCRIPTION": "Deal !D! damage and apply 1d4 Weak.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1d6 Weak."
-  },
   "theGamblignant:CunningAction": {
     "NAME": "Cunning Action",
     "DESCRIPTION": "Deal !D! damage. Gain Block equal to blocked damage dealt."
+  },
+  "theGamblignant:JumpKick": {
+    "NAME": "Jump Kick",
+    "DESCRIPTION": "Take damage equal to the target's Block. Deal !D! damage."
+  },
+  "theGamblignant:BallBreak": {
+    "NAME": "Ball Break",
+    "DESCRIPTION": "Deal 1d4 + 4 damage and draw a card.",
+    "UPGRADE_DESCRIPTION": "Deal 2d4 + 4 damage and draw a card.",
+    "EXTENDED_DESCRIPTION": ["Deal 1d4 + ","Deal 1d4 - ","Deal 2d4 + ","Deal 2d4 - "," damage."]
   },
   "theGamblignant:AerialAce": {
     "NAME": "Aerial Ace",
@@ -108,57 +42,28 @@
     "UPGRADE_DESCRIPTION": "Deal 1d30 damage.",
     "EXTENDED_DESCRIPTION": ["Deal 1d20 + ","Deal 1d20 - ","Deal 1d30 + ","Deal 1d30 - "," damage."]
   },
-  "theGamblignant:DazzlingGleam": {
-    "NAME": "Dazzling Gleam",
-    "DESCRIPTION": "Deal !D! damage to all enemies and add !M! to your next roll."
-  },
-  "theGamblignant:StringShot": {
-    "NAME": "String Shot",
-    "DESCRIPTION": "Apply !M! Weak. Exhaust."
-  },
-  "theGamblignant:Charisma": {
-    "NAME": "Charisma",
-    "DESCRIPTION": "Increase dice rolls made on Attacks by 1.",
-    "UPGRADE_DESCRIPTION": "Increase dice rolls made on Attacks by 2."
-  },
-  "theGamblignant:Wisdom": {
-    "NAME": "Wisdom",
-    "DESCRIPTION": "Increase dice rolls made on Skills by 1."
-  },
-  "theGamblignant:Gatekeep": {
-    "NAME": "Gatekeep",
-    "DESCRIPTION": "Whenever you fully Block an attack, the attacker loses 1 Strength."
-  },
-  "theGamblignant:QuiverDance": {
-    "NAME": "Quiver Dance",
-    "DESCRIPTION": "Add !M! to the first roll you make each turn."
-  },
-  "theGamblignant:UTurn": {
-    "NAME": "U-Turn",
-    "DESCRIPTION": "Deal !D! damage. If 1d4 = 4, gain 1 Energy and draw a card."
-  },
-  "theGamblignant:Shatter": {
-    "NAME": "Shatter",
-    "DESCRIPTION": "Deal !D! damage. Subtract 3 from your next roll."
-  },
-  "theGamblignant:Pilfer": {
-    "NAME": "Pilfer",
-    "DESCRIPTION": "Deal !D! damage. Gain Gold equal to unblocked damage dealt.",
-    "UPGRADE_DESCRIPTION": "Deal 1d8 + !D! damage. Gain Gold equal to unblocked damage dealt.",
-    "EXTENDED_DESCRIPTION": ["Deal 1d8 + ","Deal 1d8 - "," damage. Gain Gold equal to unblocked damage dealt."]
+  "theGamblignant:CripplingBlow": {
+    "NAME": "Crippling Blow",
+    "DESCRIPTION": "Deal !D! damage and apply 1d3 Weak.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1d4 Weak."
   },
   "theGamblignant:PoisonSting": {
     "NAME": "Poison Sting",
     "DESCRIPTION": "Deal !D! damage and apply 1d8 Poison. Exhaust.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1d8 Poison."
   },
-  "theGamblignant:FuryCutter": {
-    "NAME": "Fury Cutter",
-    "DESCRIPTION": "Deal !D! damage. Double this card's damage for this combat."
+  "theGamblignant:DazzlingGleam": {
+    "NAME": "Dazzling Gleam",
+    "DESCRIPTION": "Deal !D! damage to all enemies and add !M! to your next roll."
   },
-  "theGamblignant:Gaslight": {
-    "NAME": "Gaslight",
-    "DESCRIPTION": "Deal !D! damage. Deals 1 additional damage for each stack of the target's buffs and debuffs."
+  "theGamblignant:FlipKick": {
+    "NAME": "Flip Kick",
+    "DESCRIPTION": "Deal !D! damage. If 1d2 = 2, gain 1 Energy and draw a card."
+  },
+  "theGamblignant:Fireball": {
+    "NAME": "Fireball",
+    "DESCRIPTION": "Deal 8d6 damage. Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Deal 8d6 + ","Deal 8d6 - ","damage. Exhaust."]
   },
   "theGamblignant:Blizzard_Cobalt": {
     "NAME": "Blizzard",
@@ -166,111 +71,72 @@
     "UPGRADE_DESCRIPTION": "Deal 8d4 damage to all enemies.",
     "EXTENDED_DESCRIPTION": ["Deal 6d4 + ","Deal 6d4 - ","Deal 8d4 + ","Deal 8d4 - "," damage to all enemies."]
   },
-  "theGamblignant:Combrave": {
-    "NAME": "Comb Rave",
-    "DESCRIPTION": "Deal 6d6 damage and lose 1 Luck.",
-    "UPGRADE_DESCRIPTION": "Deal 6d6 damage to all enemies and lose 1 Luck.",
-    "EXTENDED_DESCRIPTION": ["Deal 6d6 + ","Deal 6d6 - "," damage and lose 1 Luck."," damage to all enemies and lose 1 Luck."]
-  },
   "theGamblignant:MagicMissile": {
     "NAME": "Magic Missile",
-    "DESCRIPTION": "Deal Xd12 damage.",
-    "UPGRADE_DESCRIPTION": "Deal Xd16 damage.",
-    "EXTENDED_DESCRIPTION": ["Deal Xd12 + ","Deal Xd12 - ","Deal Xd16 + ","Deal Xd16 - "," damage."]
+    "DESCRIPTION": "Deal Xd20 damage.",
+    "UPGRADE_DESCRIPTION": "Deal (X+1)d20 damage.",
+    "EXTENDED_DESCRIPTION": ["Deal Xd20 + ","Deal Xd20 - ","Deal (X+1)d20 + ","Deal (X+1)d20 - "," damage."]
   },
-  "theGamblignant:VorpalStrike": {
-    "NAME": "Vorpal Strike",
-    "DESCRIPTION": "Deal 1d8^2 damage.",
-    "EXTENDED_DESCRIPTION": ["Deal 1d8^2 + ","Deal 1d8^2 - "," damage."]
+  "theGamblignant:Gaslight": {
+    "NAME": "Gaslight",
+    "DESCRIPTION": "Deal !D! damage. Deals 1 additional damage for each stack of the target's buffs and debuffs."
   },
-  "theGamblignant:Thunderbolt": {
-    "NAME": "Thunderbolt",
-    "DESCRIPTION": "Deal !D! damage and apply 1d4 Vulnerable."
+  "theGamblignant:Cascade": {
+    "NAME": "Cascade",
+    "DESCRIPTION": "Deal 4d13 damage.",
+    "UPGRADE_DESCRIPTION": "Deal 6d12 damage.",
+    "EXTENDED_DESCRIPTION": ["Deal 4d13 + ","Deal 4d13 - ","Deal 6d12 + ","Deal 6d12 - "," damage."]
   },
-  "theGamblignant:LusterPurge": {
-    "NAME": "Luster Purge",
-    "DESCRIPTION": "Deal 4d6 damage to all enemies, then gain 1 Luck for each enemy affected. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal 6d6 damage to all enemies, then gain 1 Luck for each enemy affected. Exhaust.",
-    "EXTENDED_DESCRIPTION": ["Deal 4d6 + ","Deal 4d6 - ","Deal 6d6 + ","Deal 6d6 - "," damage to all enemies, then gain 1 Luck for each enemy affected. Exhaust."]
+  "theGamblignant:Luminaire": {
+    "NAME": "Luminaire",
+    "DESCRIPTION": "Deal 1d100 damage. Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Deal 1d100 + "," damage. Exhaust."]
   },
-  "theGamblignant:JujuBreaker": {
-    "NAME": "Juju Breaker",
-    "DESCRIPTION": "Deal 7 damage. Remove all buffs from both you and target enemy. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal 7 damage. Remove all buffs from target enemy. Exhaust."
+
+
+
+  "theGamblignant:Defend_Cobalt": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Gain 1d6 + !B! Block."
   },
-  "theGamblignant:SolarBeam": {
-    "NAME": "Solar Beam",
-    "DESCRIPTION": "Heal Xd3 HP. At the start of next turn, deal Xd20 damage to all enemies. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Heal Xd4 HP. At the start of next turn, deal Xd24 damage to all enemies. Exhaust."
+  "theGamblignant:StringShot": {
+    "NAME": "String Shot",
+    "DESCRIPTION": "Apply !M! Weak. Exhaust."
   },
   "theGamblignant:WebWeave": {
     "NAME": "Web Weave",
     "DESCRIPTION": "Gain !B! Block and lose 1 Strength."
   },
-  "theGamblignant:Meddle": {
-    "NAME": "Meddle",
-    "DESCRIPTION": "Gain 1d8 Block and add !M! to your next roll.",
-    "UPGRADE_DESCRIPTION": "Gain 1d10 Block and add !M! to your next roll.",
-    "EXTENDED_DESCRIPTION": ["Gain 1d8 + ","Gain 1d8 - ","Gain 1d10 + ","Gain 1d10 - "," Block and add !M! to your next roll."]
-  },
-  "theGamblignant:Fuss": {
-    "NAME": "Fuss",
-    "DESCRIPTION": "Gain !B! Block. Subtract 3 from your next roll.",
-    "UPGRADE_DESCRIPTION": "Retain. Gain !B! Block. Subtract 3 from your next roll."
-  },
   "theGamblignant:Prattle": {
     "NAME": "Prattle",
     "DESCRIPTION": "Draw 1d4 cards."
+  },
+  "theGamblignant:Scintillate": {
+    "NAME": "Scintillate",
+    "DESCRIPTION": "Draw 1d4 cards."
+  },
+  "theGamblignant:UncannyDodge": {
+    "NAME": "Uncanny Dodge",
+    "DESCRIPTION": "Gain 1d8x2 Block."
+  },
+  "theGamblignant:Mirror Shield": {
+    "NAME": "Mirror Shield",
+    "DESCRIPTION": "Gain !B! Block and !M! Curse."
   },
   "theGamblignant:Refract": {
     "NAME": "Refract",
     "DESCRIPTION": "Add 1d8 to your next roll."
   },
-  "theGamblignant:MoodSwing": {
-    "NAME": "Mood Swing",
-    "DESCRIPTION": "Gain 1d4 Strength. At the end of this turn, lose 1d4 Strength. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1d6 Strength. At the end of this turn, lose 1d6 Strength. Exhaust."
-  },
-  "theGamblignant:ViciousMockery": {
-    "NAME": "Vicious Mockery",
-    "DESCRIPTION": "Apply 1d8 Vulnerable. Exhaust."
-  },
-  "theGamblignant:Call": {
-    "NAME": "Call",
-    "DESCRIPTION": "If target enemy intends to Attack, gain 1 Luck. Exhaust.",
-    "EXTENDED_DESCRIPTION": ["That guy doesn't intend to attack!"]
-  },
-  "theGamblignant:Mulligan": {
-    "NAME": "Mulligan",
-    "DESCRIPTION": "Discard your hand and draw 1d6 cards. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Discard your hand and draw 1d6 cards."
-  },
-  "theGamblignant:DiceTechnique": {
-    "NAME": "Dice Technique",
-    "DESCRIPTION": "Add a random Attack of any color to your hand, with 1d8 determining its rarity.",
-    "UPGRADE_DESCRIPTION": "Add a random Attack of any color to your hand, with 1d8 determining its rarity. It costs 0 this turn."
-  },
-  "theGamblignant:SavingRoll": {
-    "NAME": "Saving Roll",
-    "DESCRIPTION": "Add a random Skill of any color to your hand, with 1d8 determining its rarity.",
-    "UPGRADE_DESCRIPTION": "Add a random Skill of any color to your hand, with 1d8 determining its rarity. It costs 0 this turn."
-  },
   "theGamblignant:Fold": {
     "NAME": "Fold",
     "DESCRIPTION": "Discard your hand. Gain !B! Block for each card discarded."
   },
-  "theGamblignant:BlindingFlash": {
-    "NAME": "Blinding Flash",
-    "DESCRIPTION": "Gain 1 Luck. Apply 2 Weak to all enemies. Exhaust."
-  },
-  "theGamblignant:MindFang": {
-    "NAME": "Mind Fang",
-    "DESCRIPTION": "Apply 1d8 Poison and 1d4 Weak to target enemy. Lose 1 Luck.",
-    "UPGRADE_DESCRIPTION": "Apply 1d10 Poison and 1d5 Weak to target enemy. Lose 1 Luck."
-  },
-  "theGamblignant:Girlboss": {
-    "NAME": "Girlboss",
-    "DESCRIPTION": "Apply 99 Weak. Exhaust."
+  "theGamblignant:LightScreen": {
+    "NAME": "Light Screen",
+    "DESCRIPTION": "Gain 5d6 Block.",
+    "UPGRADE_DESCRIPTION": "Gain 7d6 Block.",
+    "EXTENDED_DESCRIPTION": ["Gain 5d6 + ","Gain 5d6 - ","Gain 7d6 + ","Gain 7d6 - "," Block."]
   },
   "theGamblignant:Bioluminescence": {
     "NAME": "Bioluminescence",
@@ -279,56 +145,62 @@
   },
   "theGamblignant:BigBlind": {
     "NAME": "Big Blind",
-    "DESCRIPTION": "Gain !M! Luck. All enemies gain !M! Strength."
+    "DESCRIPTION": "Gain !M! Luck. All enemies gain !M! Strength this turn."
   },
-  "theGamblignant:Clairvoyant": {
-    "NAME": "Clairvoyant",
-    "DESCRIPTION": "Next turn, gain !M! temporary Luck. Exhaust."
+  "theGamblignant:Reroll": {
+    "NAME": "Reroll",
+    "DESCRIPTION": "Discard your hand and draw 1d6 cards. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Discard your hand and draw 1d6 cards."
   },
-  "theGamblignant:Pupation": {
-    "NAME": "Pupation",
-    "DESCRIPTION": "Add !M! Powers into your draw pile. Exhaust."
+  "theGamblignant:BanefulBunker": {
+    "NAME": "Baneful Bunker",
+    "DESCRIPTION": "Gain !B! Block. Apply !M! Poison to attackers this turn."
   },
-  "theGamblignant:MindControl": {
-    "NAME": "Mind Control",
-    "DESCRIPTION": "If target enemy intends to attack, it attacks itself or a random enemy and is stunned for 1 turn. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. If target enemy intends to attack, it attacks itself or a random enemy and is stunned for 1 turn. Exhaust."
+  "theGamblignant:Girlboss": {
+    "NAME": "Girlboss",
+    "DESCRIPTION": "Apply 99 Weak. Exhaust."
+  },
+  "theGamblignant:VisionEightfold": {
+    "NAME": "Vision Eightfold",
+    "DESCRIPTION": "Scry your entire draw pile."
   },
   "theGamblignant:DoomsdayDevice": {
     "NAME": "Doomsday Device",
     "DESCRIPTION": "After 8 turns, deal 88 damage to all enemies. Exhaust.",
     "UPGRADE_DESCRIPTION": "Innate. After 8 turns, deal 88 damage to all enemies. Exhaust."
   },
-  "theGamblignant:Superstition": {
-    "NAME": "Superstition",
-    "DESCRIPTION": "Whenever you roll a 1, deal !M! damage to all enemies."
+  "theGamblignant:ScourgePurge": {
+    "NAME": "Scourge Purge",
+    "DESCRIPTION": "Apply Poison equal to your Curse. Lose all Curse.",
+    "UPGRADE_DESCRIPTION": "Apply Poison equal to your Curse to all enemies. Lose all Curse."
   },
-  "theGamblignant:LoadedDice": {
-    "NAME": "Loaded Dice",
-    "DESCRIPTION": "Whenever you roll a die, deal !M! damage to a random enemy."
+
+
+
+  "theGamblignant:QuiverDance": {
+    "NAME": "Quiver Dance",
+    "DESCRIPTION": "Add !M! to the first roll you make each turn."
   },
   "theGamblignant:FengShui": {
     "NAME": "Feng Shui",
     "DESCRIPTION": "At the end of your turn, gain 1d8 Block.",
     "UPGRADE_DESCRIPTION": "Gain 1d8 Block. At the start of your turn, gain 1d8 Block."
   },
+  "theGamblignant:TrashTalk": {
+    "NAME": "Trash Talk",
+    "DESCRIPTION": "Whenever a dice roll results in its worst outcome, apply !M! Poison to all enemies."
+  },
+  "theGamblignant:Gatekeep": {
+    "NAME": "Gatekeep",
+    "DESCRIPTION": "Whenever you fully Block an attack, the attacker loses 1 Strength."
+  },
+  "theGamblignant:SilverWind": {
+    "NAME": "Silver Wind",
+    "DESCRIPTION": "Gain 1d4 Strength and 1d4 Dexterity."
+  },
   "theGamblignant:AncestralAwakening": {
     "NAME": "Ancestral Awakening",
     "DESCRIPTION": "Whenever a D8 is rolled, it results in an 8."
-  },
-  "theGamblignant:TricksterMode": {
-    "NAME": "Trickster Mode",
-    "DESCRIPTION": "At the start of your turn, gain 1d6 Luck. At the end of your turn, lose 1d6 Luck. Ignores your Luck.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, gain 1d8 Luck. At the end of your turn, lose 1d8 Luck. Ignores your Luck."
-  },
-  "theGamblignant:ThiefForm": {
-    "NAME": "Thief Form",
-    "DESCRIPTION": "Whenever you play an Attack, gain 1 Luck. Whenever you are attacked, lose 1 Luck.",
-    "UPGRADE_DESCRIPTION": "Whenever you play an Attack, gain 1 Luck. Whenever you take unblocked attack damage, lose 1 Luck."
-  },
-  "theGamblignant:TailGlow": {
-    "NAME": "Tail Glow",
-    "DESCRIPTION": "Gain !M! Strength and !M! Dexterity. Lose !M! Luck."
   }
 
 }

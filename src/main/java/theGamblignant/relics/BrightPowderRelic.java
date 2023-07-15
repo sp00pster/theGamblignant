@@ -8,12 +8,9 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theGamblignant.VriskaMod;
-import theGamblignant.powers.LoseLuckPower;
 import theGamblignant.powers.LuckPower;
 import theGamblignant.util.TextureLoader;
 
@@ -38,7 +35,6 @@ public class BrightPowderRelic extends CustomRelic {
             AbstractPlayer p = AbstractDungeon.player;
             this.addToBot(new RelicAboveCreatureAction(p, this));
             this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, 1), 1));
-            this.addToBot(new ApplyPowerAction(p, p, new LoseLuckPower(p, 1), 1));
         }
 
     }

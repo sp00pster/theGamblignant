@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import theGamblignant.VriskaMod;
@@ -30,21 +31,20 @@ public class BigBlind extends AbstractVriskaCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public BigBlind() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = 1;
+        magicNumber = 2;
         baseMagicNumber = magicNumber;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, this.magicNumber), this.magicNumber));
-        Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
-        while(var3.hasNext()) {
-            AbstractMonster mo = (AbstractMonster)var3.next();
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             this.addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            this.addToBot(new ApplyPowerAction(mo, p, new LoseStrengthPower(mo, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
     }
 

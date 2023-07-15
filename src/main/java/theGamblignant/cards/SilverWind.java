@@ -27,18 +27,16 @@ public class SilverWind extends AbstractVriskaCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     public SilverWind() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = 4;
-        baseMagicNumber = magicNumber;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int str = roll(this.magicNumber,'p');
-        int dex = roll(this.magicNumber,'p');
+        int str = roll(4,'p');
+        int dex = roll(4,'p');
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, str), str));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, dex), dex));
     }
@@ -48,7 +46,6 @@ public class SilverWind extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
-            upgradeMagicNumber(2);
             initializeDescription();
         }
     }

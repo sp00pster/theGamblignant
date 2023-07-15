@@ -45,7 +45,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
     //this roll function was inspired by that of Downfall's Snecko
 
     public static int roll(int faces, char purpose) {
-        //for purpose, 'a' = attack, 's' = skill, 'o' = other (used for wisdom/charisma)
+        //purpose is used to store information about the card played. this was once used for powers that only buff attack rolls or skill rolls, but these were removed. keeping the parameter just in case tho
         int luckAmt = 0;
         int result;
         int max;
@@ -57,16 +57,11 @@ public abstract class AbstractVriskaCard extends CustomCard {
         if (AbstractDungeon.player.hasPower(VimPower.POWER_ID)&&purpose!='f') {
             luckAmt += AbstractDungeon.player.getPower(VimPower.POWER_ID).amount;
             AbstractDungeon.player.getPower(VimPower.POWER_ID).flash();
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VimPower.POWER_ID));
+            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VimPower.POWER_ID));
         }
-        if (AbstractDungeon.player.hasPower(CharismaPower.POWER_ID)&&purpose=='a') {
-            luckAmt += AbstractDungeon.player.getPower(CharismaPower.POWER_ID).amount;
-        }
-        if (AbstractDungeon.player.hasPower(WisdomPower.POWER_ID)&&purpose=='s') {
-            luckAmt += AbstractDungeon.player.getPower(WisdomPower.POWER_ID).amount;
-        }
-        if (AbstractDungeon.player.hasPower(LoadedDicePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, AbstractDungeon.player.getPower(LoadedDicePower.POWER_ID).amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+        if (AbstractDungeon.player.hasPower(CursePower.POWER_ID)&&purpose!='t') {
+            luckAmt -= AbstractDungeon.player.getPower(LuckPower.POWER_ID).amount;
+            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VimPower.POWER_ID));
         }
 
         logger.info("luck going into this roll: "+luckAmt); //you can remove this eventually
@@ -92,10 +87,6 @@ public abstract class AbstractVriskaCard extends CustomCard {
 
         }
         logger.info("final roll: "+result);
-
-        if ((result == 1) && (AbstractDungeon.player.hasPower(SuperstitionPower.POWER_ID))) {
-            AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(AbstractDungeon.player.getPower(SuperstitionPower.POWER_ID).amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.POISON));
-        }
 
         return result;
     }

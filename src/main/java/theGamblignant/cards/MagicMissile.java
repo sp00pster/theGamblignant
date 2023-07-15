@@ -30,14 +30,9 @@ public class MagicMissile extends AbstractVriskaCard {
 
     private static final int COST = -1;
 
-    private static final int MAGIC = 12;
-    private static final int MAGIC_ADDEND = 16;
-
 
     public MagicMissile() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = MAGIC;
-        magicNumber = baseMagicNumber;
     }
 
     @Override
@@ -47,11 +42,12 @@ public class MagicMissile extends AbstractVriskaCard {
             effect += 2;
             p.getRelic("Chemical X").flash();
         }
+        if (upgraded) {effect += 1;}
 
         if (effect > 0) {
             int damageroll = 0;
             for (int i = 0; i < effect; i++) {
-                damageroll += roll(magicNumber, 'a');
+                damageroll += roll(20, 'a');
             }
             this.baseDamage = damageroll;
             this.calculateCardDamage(m);
@@ -88,7 +84,6 @@ public class MagicMissile extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(MAGIC_ADDEND);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

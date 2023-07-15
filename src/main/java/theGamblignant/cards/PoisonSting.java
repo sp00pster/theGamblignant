@@ -29,17 +29,22 @@ public class PoisonSting extends AbstractVriskaCard {
     private static final int COST = 1;
 
     private static final int DAMAGE = 6;
+    private static final int MAGIC = 6;
+    private static final int MAGIC_ADDEND = 2;
+
 
 
     public PoisonSting() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.exhaust = true;
+
+        magicNumber = MAGIC;
+        baseMagicNumber = magicNumber;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int poisonroll = roll(8,'a');
+        int poisonroll = roll(magicNumber,'a');
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, poisonroll), poisonroll, AbstractGameAction.AttackEffect.POISON));
     }
@@ -48,8 +53,8 @@ public class PoisonSting extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.exhaust = false;
             this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(MAGIC_ADDEND);
             initializeDescription();
         }
     }

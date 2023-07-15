@@ -48,7 +48,7 @@ public class FengShuiPower extends AbstractPower implements CloneablePowerInterf
     }
 
     public void atEndOfTurn(boolean isPlayer) {
-        this.addToBot(new GainBlockAction(this.owner, this.owner, AbstractVriskaCard.roll(8,'f')));
+        this.addToBot(new GainBlockAction(this.owner, this.owner, AbstractVriskaCard.roll(this.amount,'f')));
     }
 
     public void updateDescription() {

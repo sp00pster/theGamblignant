@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
-import theGamblignant.powers.FengShuiPlusPower;
 import theGamblignant.powers.FengShuiPower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
@@ -29,16 +28,12 @@ public class FengShui extends AbstractVriskaCard {
 
     public FengShui() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.baseMagicNumber = 4;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!this.upgraded) {
-            this.addToBot(new ApplyPowerAction(p, p, new FengShuiPower(p), magicNumber));
-        } else {
-            this.addToBot(new GainBlockAction(p,roll(8,'p'))); //its kind of a downgrade if it doesnt do this, because youre missing block on the turn you play it
-            this.addToBot(new ApplyPowerAction(p, p, new FengShuiPlusPower(p), magicNumber));
-        }
+        this.addToBot(new ApplyPowerAction(p, p, new FengShuiPower(p), magicNumber));
     }
 
     @Override
@@ -46,6 +41,7 @@ public class FengShui extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(2);
             initializeDescription();
         }
     }

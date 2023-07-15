@@ -3,6 +3,7 @@ package theGamblignant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -60,6 +61,11 @@ public class LuckPower extends AbstractPower implements CloneablePowerInterface 
             this.type = PowerType.DEBUFF;
         }
 
+    }
+
+    public void atEndOfTurn(boolean isPlayer) {
+        this.flash();
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
 
     @Override

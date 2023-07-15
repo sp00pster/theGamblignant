@@ -25,10 +25,13 @@ public class Bioluminescence extends AbstractVriskaCard {
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
     private static final int COST = 1;
+    private static final int MAGIC = 4;
+    private static final int MAGIC_ADDEND = 1;
 
     public Bioluminescence() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+        magicNumber = MAGIC;
+        baseMagicNumber = magicNumber;
     }
 
     @Override
@@ -41,7 +44,7 @@ public class Bioluminescence extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
-            this.exhaust = false;
+            upgradeMagicNumber(MAGIC_ADDEND);
             initializeDescription();
         }
     }

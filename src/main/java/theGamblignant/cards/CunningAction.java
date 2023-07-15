@@ -27,7 +27,7 @@ public class CunningAction extends AbstractVriskaCard {
     private static final int COST = 1;
 
     private static final int DAMAGE = 8;
-    private static final int DAMAGE_ADDEND = 3;
+    private static final int DAMAGE_ADDEND = 4;
 
 
     public CunningAction() {

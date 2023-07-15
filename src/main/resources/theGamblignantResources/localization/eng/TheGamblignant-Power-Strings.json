@@ -18,16 +18,16 @@
         "theGamblignant:Luck": {
                 "NAME": "Luck",
                 "DESCRIPTIONS": [
-                        "Increase all your dice rolls by #b",
-                        "Decrease all your dice rolls by #b",
-                        ", without exceeding their normal limits."
+                        "Increase all your dice rolls this turn by #b",
+                        "Decrease all your dice rolls this turn by #b",
+                        ", without exceeding their normal limits. Wears off at the end of your turn."
                 ]
         },
-        "theGamblignant:LoseLuck": {
-                "NAME": "Luck Down",
+        "theGamblignant:Curse": {
+                "NAME": "Curse",
                 "DESCRIPTIONS": [
-                        "At the end of your turn, lose #b",
-                        " Luck."
+                        "Subtract #b",
+                        " from your next dice roll. When triggered, reduce this by 1."
                 ]
         },
         "theGamblignant:Vim": {

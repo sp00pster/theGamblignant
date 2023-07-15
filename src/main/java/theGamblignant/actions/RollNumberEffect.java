@@ -17,17 +17,17 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 //this was built off of BlockedNumberEffect
 
 public class RollNumberEffect extends AbstractGameEffect {
-    private static final float EFFECT_DUR = 0.3F;
-    private float x;
+    private static final float EFFECT_DUR = 0.45F;
+    private final float x;
     private float y;
     private static final float GRAVITY_Y;
-    private String msg;
+    private final String msg;
     private float scale = 1.7F;
     private boolean playedSound = false;
 
     public RollNumberEffect(float x, float y, String msg) {
-        this.duration = 0.3F;
-        this.startingDuration = 0.3F;
+        this.duration = 0.6F;
+        this.startingDuration = 0.6F;
         this.x = x;
         this.y = y;
         this.msg = msg;
