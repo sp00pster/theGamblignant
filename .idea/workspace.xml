@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d635dfa-f124-4dfa-acd0-1f56ce2b84af" name="Changes" comment="im back. this is me in the middle of overhauling it basically">
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/BigBlind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Ante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Prattle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Prattle.java" afterDir="false" />
+    <list default="true" id="3d635dfa-f124-4dfa-acd0-1f56ce2b84af" name="Changes" comment="this workspace.xml file is causing so much problems and i dont know what its deal is">
+      <change afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/BanefulBunker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Reroll.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/ScourgePurge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/VisionEightfold.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/BanefulBunkerPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Ante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Ante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/DoomsdayDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/DoomsdayDevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Fold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Fold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/MirrorShield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/MirrorShield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/localization/eng/TheGamblignant-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/localization/eng/TheGamblignant-Power-Strings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vriska Skill" />
         <option value="Isaac Attack" />
         <option value="Vriska Attack" />
+        <option value="Vriska Skill" />
       </list>
     </option>
   </component>
@@ -39,13 +48,12 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
         <option name="usePluginRegistry" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="26RMw7gBGbPTjVzLARWe2fFk6hv" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -66,6 +74,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="theGamblignant.cards" />
       <recent name="theGamblignant.powers" />
     </key>
   </component>
@@ -118,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689440418148</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="this workspace.xml file is causing so much problems and i dont know what its deal is">
+      <created>1689449033332</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689449033332</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,12 +147,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="mostly implemented fera's suggested changes (remove some cards, change some energy costs)" />
     <MESSAGE value="im back. this is me in the middle of overhauling it basically" />
-    <option name="LAST_COMMIT_MESSAGE" value="im back. this is me in the middle of overhauling it basically" />
+    <MESSAGE value="this workspace.xml file is causing so much problems and i dont know what its deal is" />
+    <option name="LAST_COMMIT_MESSAGE" value="this workspace.xml file is causing so much problems and i dont know what its deal is" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

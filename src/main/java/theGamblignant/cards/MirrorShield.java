@@ -27,6 +27,7 @@ public class MirrorShield extends AbstractVriskaCard {
 
     private static final int COST = 1;
     private static final int BLOCK = 10;
+    private static final int BLOCK_ADDEND = 5;
 
     public MirrorShield() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -47,6 +48,7 @@ public class MirrorShield extends AbstractVriskaCard {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeMagicNumber(1);
+            upgradeBlock(BLOCK_ADDEND);
             initializeDescription();
         }
     }

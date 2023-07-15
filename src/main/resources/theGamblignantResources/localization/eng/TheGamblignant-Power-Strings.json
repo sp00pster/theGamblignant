@@ -38,20 +38,6 @@
                         " without exceeding its normal limit."
                 ]
         },
-        "theGamblignant:Wisdom": {
-                "NAME": "Wisdom",
-                "DESCRIPTIONS": [
-                        "Increase dice rolls made on Skills by #b",
-                        " ."
-                ]
-        },
-        "theGamblignant:Charisma": {
-                "NAME": "Charisma",
-                "DESCRIPTIONS": [
-                        "Increase dice rolls made on Attacks by #b",
-                        " ."
-                ]
-        },
         "theGamblignant:QuiverDance": {
                 "NAME": "Quiver Dance",
                 "DESCRIPTIONS": [
@@ -66,30 +52,10 @@
                         " Strength."
                 ]
         },
-        "theGamblignant:Superstition": {
-                "NAME": "Superstition",
-                "DESCRIPTIONS": [
-                        "Whenever you roll a 1, deal #b",
-                        " damage to all enemies."
-                ]
-        },
-        "theGamblignant:LoadedDice": {
-                "NAME": "Loaded Dice",
-                "DESCRIPTIONS": [
-                        "Whenever you roll a die, deal #b",
-                        " damage to a random enemy."
-        ]
-        },
         "theGamblignant:FengShui": {
                 "NAME": "Feng Shui",
                 "DESCRIPTIONS": [
                       "At the end of your turn, gain 1d8 Block."
-                ]
-        },
-        "theGamblignant:FengShuiPlus": {
-                "NAME": "Feng Shui+",
-                "DESCRIPTIONS": [
-                        "At the start of your turn, gain 1d8 Block."
                 ]
         },
         "theGamblignant:AncestralAwakening": {
@@ -97,47 +63,16 @@
                 "DESCRIPTIONS": [
                         "Whenever a D8 is rolled, it results in an 8."]
         },
-        "theGamblignant:TricksterMode": {
-                "NAME": "Trickster Mode",
-                "DESCRIPTIONS": [
-                        "At the start of your turn, gain #b1d",
-                        " Luck. At the end of your turn, lose #b1d",
-                        " Luck."
-                ]
-        },
-        "theGamblignant:ThiefForm": {
-                "NAME": "Thief Form",
-                "DESCRIPTIONS": [
-                        "Whenever you play an Attack, gain #b1d",
-                        " Luck. Whenever you are attacked, lose #b1d",
-                        " Luck."
-                ]
-        },
-        "theGamblignant:ThiefFormPlus": {
-                "NAME": "Thief Form+",
-                "DESCRIPTIONS": [
-                        "Whenever you play an Attack, gain #b1d",
-                        " Luck. Whenever you take unblocked attack damage, lose #b1d",
-                        " Luck."
-                ]
-        },
-        "theGamblignant:SolarBeam": {
-                "NAME": "Solar Energy",
-                "DESCRIPTIONS": [
-                        "At the start of next turn, deal #b",
-                        " damage to all enemies."
-                ]
-        },
-        "theGamblignant:Clairvoyant": {
-                "NAME": "Clairvoyant",
-                "DESCRIPTIONS": [
-                        "At the start of your next turn, gain #b"," temporary Luck."
-                ]
-        },
         "theGamblignant:DoomsdayDevice": {
                 "NAME": "Impending Doom",
                 "DESCRIPTIONS": [
                         "After #b","turns, deal 88 damage to all enemies."
+                ]
+        },
+        "theGamblignant:BanefulBunker": {
+                "NAME": "Baneful Bunker",
+                "DESCRIPTIONS": [
+                        "When attacked, apply #b","poison back. Wears off at the end of your turn."
                 ]
         }
 }

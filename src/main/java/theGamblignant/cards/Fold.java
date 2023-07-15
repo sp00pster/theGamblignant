@@ -28,7 +28,7 @@ public class Fold extends AbstractVriskaCard {
 
     public Fold() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseBlock = 3;
+        this.baseBlock = 4;
     }
 
     @Override
