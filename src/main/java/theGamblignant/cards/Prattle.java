@@ -1,5 +1,8 @@
 package theGamblignant.cards;
 
+import basemod.devcommands.draw.Draw;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
+import theGamblignant.powers.VimPower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
@@ -30,7 +34,6 @@ public class Prattle extends AbstractVriskaCard {
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
 
     // /STAT DECLARATION/
 
@@ -42,6 +45,8 @@ public class Prattle extends AbstractVriskaCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int drawroll = roll(4, 's');
+        this.addToBot(new DrawCardAction(p, drawroll));
     }
 
     //Upgraded stats.
@@ -50,7 +55,7 @@ public class Prattle extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

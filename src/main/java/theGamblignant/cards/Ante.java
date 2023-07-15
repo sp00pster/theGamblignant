@@ -2,7 +2,6 @@ package theGamblignant.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,18 +9,15 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 import theGamblignant.powers.LuckPower;
 
-import java.util.Iterator;
-
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class BigBlind extends AbstractVriskaCard {
+public class Ante extends AbstractVriskaCard {
 
-    public static final String ID = VriskaMod.makeID(BigBlind.class.getSimpleName());
+    public static final String ID = VriskaMod.makeID(Ante.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -33,7 +29,7 @@ public class BigBlind extends AbstractVriskaCard {
 
     private static final int COST = 0;
 
-    public BigBlind() {
+    public Ante() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = 2;
         baseMagicNumber = magicNumber;

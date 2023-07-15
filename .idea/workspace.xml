@@ -4,85 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d635dfa-f124-4dfa-acd0-1f56ce2b84af" name="Changes" comment="mostly implemented fera's suggested changes (remove some cards, change some energy costs)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/FlipKick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/CursePower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/actions/RollNumberEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/actions/RollNumberEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/AbstractVriskaCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/AbstractVriskaCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/BallBreak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/BallBreak.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/BeginnersLuck.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/BigBlind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/BigBlind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Bioluminescence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Bioluminescence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/BlindingFlash.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Call.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Charisma.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Clairvoyant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/CombRave.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/CripplingBlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/CripplingBlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/CunningAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/CunningAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/DazzlingGleam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/DazzlingGleam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/DiceTechnique.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/DieCast.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/FengShui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/FengShui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/FuryCutter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Fuss.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/JujuBreaker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/JumpKick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/JumpKick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/LoadedDice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/LusterPurge.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/MagicMissile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/MagicMissile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Meddle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/MindControl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/MindFang.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/MoodSwing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Mulligan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Pilfer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/PoisonSting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/PoisonSting.java" afterDir="false" />
+    <list default="true" id="3d635dfa-f124-4dfa-acd0-1f56ce2b84af" name="Changes" comment="im back. this is me in the middle of overhauling it basically">
+      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/BigBlind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Ante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Prattle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Prattle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Pupation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/SavingRoll.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Scintillate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Shatter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/ShiningArmor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/SilverWind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/SilverWind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/SlideKick.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/SolarBeam.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/SpiderClaw.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Superstition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/TailGlow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/ThiefForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/TricksterMode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/UTurn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/ViciousMockery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/VorpalStrike.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Wingbeat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/cards/Wisdom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/CharismaPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/ClairvoyantPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/FengShuiPlusPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/FengShuiPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/FengShuiPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/LoadedDicePower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/LoseLuckPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/LuckPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/LuckPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/SolarBeamPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/SuperstitionPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/ThiefFormPlusPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/ThiefFormPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/TricksterModePower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/powers/WisdomPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theGamblignant/relics/BrightPowderRelic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theGamblignant/relics/BrightPowderRelic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/cards/Attack.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/cards/Attack.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/cards/Attack_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/cards/Attack_p.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/cards/Power.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/cards/Power.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/cards/Power_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/cards/Power_p.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/cards/Skill.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/cards/Skill.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/cards/Skill_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/cards/Skill_p.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/powers/charisma_power32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/powers/charisma_power84.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/powers/wisdom_power32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/images/powers/wisdom_power84.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/localization/eng/TheGamblignant-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/localization/eng/TheGamblignant-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/localization/eng/TheGamblignant-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theGamblignantResources/localization/eng/TheGamblignant-Power-Strings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +104,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647391514795</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="im back. this is me in the middle of overhauling it basically">
+      <created>1689440387294</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689440387294</updated>
+    </task>
+    <task id="LOCAL-00003" summary="im back. this is me in the middle of overhauling it basically">
+      <created>1689440418148</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689440418148</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,7 +135,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="mostly implemented fera's suggested changes (remove some cards, change some energy costs)" />
-    <option name="LAST_COMMIT_MESSAGE" value="mostly implemented fera's suggested changes (remove some cards, change some energy costs)" />
+    <MESSAGE value="im back. this is me in the middle of overhauling it basically" />
+    <option name="LAST_COMMIT_MESSAGE" value="im back. this is me in the middle of overhauling it basically" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
