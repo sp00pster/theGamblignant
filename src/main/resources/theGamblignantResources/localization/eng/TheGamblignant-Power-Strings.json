@@ -74,5 +74,12 @@
                 "DESCRIPTIONS": [
                         "When attacked, apply #b","poison back. Wears off at the end of your turn."
                 ]
+        },
+        "theGamblignant:TrashTalk": {
+                "NAME": "Trash Talk",
+                "DESCRIPTIONS": [
+                        "When a dice roll results in its worst outcome #b",
+                        " Strength."
+                ]
         }
 }
