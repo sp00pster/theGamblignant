@@ -23,11 +23,12 @@ public class CursePower extends AbstractPower implements CloneablePowerInterface
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("arrowloseluck_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("arrowloseluck_power32.png"));
 
-    public CursePower(final AbstractCreature owner) {
+    public CursePower(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
+        this.amount = amount;
 
         type = PowerType.DEBUFF;
         isTurnBased = false;
@@ -50,6 +51,6 @@ public class CursePower extends AbstractPower implements CloneablePowerInterface
 
     @Override
     public AbstractPower makeCopy() {
-        return new CursePower(owner);
+        return new CursePower(owner, amount);
     }
 }
