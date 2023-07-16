@@ -22,7 +22,7 @@ import static theGamblignant.VriskaMod.makePowerPath;
 public class BanefulBunkerPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = VriskaMod.makeID("Luck");
+    public static final String POWER_ID = VriskaMod.makeID("Baneful Bunker");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -15,12 +15,12 @@ import static theGamblignant.VriskaMod.makePowerPath;
 public class TrashTalkPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = VriskaMod.makeID("Curse");
+    public static final String POWER_ID = VriskaMod.makeID("Trash Talk");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("arrowloseluck_power84.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("arrowloseluck_power32.png"));
 
     public TrashTalkPower(final AbstractCreature owner, final int amount) {
@@ -30,7 +30,7 @@ public class TrashTalkPower extends AbstractPower implements CloneablePowerInter
         this.owner = owner;
         this.amount = amount;
 
-        type = PowerType.DEBUFF;
+        type = PowerType.BUFF;
         isTurnBased = false;
         this.canGoNegative = false;
 
@@ -46,7 +46,7 @@ public class TrashTalkPower extends AbstractPower implements CloneablePowerInter
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override

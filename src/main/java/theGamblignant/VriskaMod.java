@@ -337,7 +337,7 @@ public class VriskaMod implements
         BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheGamblignant.Enums.COLOR_COBALT);
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheGamblignant.Enums.COLOR_COBALT);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheGamblignant.Enums.COLOR_COBALT);
-        BaseMod.addRelicToCustomPool(new TetradactylyRelic(), TheGamblignant.Enums.COLOR_COBALT);
+        BaseMod.addRelicToCustomPool(new StarterRelic(), TheGamblignant.Enums.COLOR_COBALT);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);

@@ -55,7 +55,7 @@
         "theGamblignant:FengShui": {
                 "NAME": "Feng Shui",
                 "DESCRIPTIONS": [
-                      "At the end of your turn, gain 1d8 Block."
+                      "At the start of your turn, gain 1d#b"," Block."
                 ]
         },
         "theGamblignant:AncestralAwakening": {
@@ -78,8 +78,8 @@
         "theGamblignant:TrashTalk": {
                 "NAME": "Trash Talk",
                 "DESCRIPTIONS": [
-                        "When a dice roll results in its worst outcome #b",
-                        " Strength."
+                        "Whenever you roll a 1, apply #b",
+                        " Poison to all enemies."
                 ]
         }
 }

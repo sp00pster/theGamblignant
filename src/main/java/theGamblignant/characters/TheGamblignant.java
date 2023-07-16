@@ -1,11 +1,8 @@
 package theGamblignant.characters;
 
 import basemod.abstracts.CustomPlayer;
-import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.math.MathUtils;
-import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -23,7 +20,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theGamblignant.VriskaMod;
 import theGamblignant.cards.*;
-import theGamblignant.relics.TetradactylyRelic;
+import theGamblignant.relics.StarterRelic;
 //TODO: go through the imports of each file and remove unused ones
 
 import java.util.ArrayList;
@@ -156,11 +153,11 @@ public class TheGamblignant extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        retVal.add(TetradactylyRelic.ID);
+        retVal.add(StarterRelic.ID);
 
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
-        UnlockTracker.markRelicAsSeen(TetradactylyRelic.ID);
+        UnlockTracker.markRelicAsSeen(StarterRelic.ID);
 
         return retVal;
     }
