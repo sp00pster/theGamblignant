@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 //this was built off of BlockedNumberEffect
 
 public class RollNumberEffect extends AbstractGameEffect {
-    private static final float EFFECT_DUR = 0.45F;
+    private static final float EFFECT_DUR = 0.4F;
     private final float x;
     private float y;
     private static final float GRAVITY_Y;

@@ -39,9 +39,9 @@ public class CripplingBlow extends AbstractVriskaCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 12;
     private static final int DAMAGE_ADDEND = 3;
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 2;
     private static final int MAGIC_ADDEND = 1;
 
 
@@ -57,9 +57,8 @@ public class CripplingBlow extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int weakroll = roll(magicNumber,'a');
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, weakroll, false), weakroll, true, AbstractGameAction.AttackEffect.NONE));
+        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override

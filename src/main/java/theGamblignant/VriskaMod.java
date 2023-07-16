@@ -334,9 +334,6 @@ public class VriskaMod implements
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheGamblignant.Enums.COLOR_COBALT);
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheGamblignant.Enums.COLOR_COBALT);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheGamblignant.Enums.COLOR_COBALT);
         BaseMod.addRelicToCustomPool(new StarterRelic(), TheGamblignant.Enums.COLOR_COBALT);
         
         // This adds a relic to the Shared pool. Every character can find this relic.

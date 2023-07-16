@@ -9,16 +9,16 @@ import theGamblignant.util.TextureLoader;
 import static theGamblignant.VriskaMod.makeRelicOutlinePath;
 import static theGamblignant.VriskaMod.makeRelicPath;
 
-public class BrightPowderRelic extends CustomRelic {
+public class CloversHatRelic extends CustomRelic {
 
     // ID, images, text.
-    public static final String ID = VriskaMod.makeID("BrightPowderRelic");
+    public static final String ID = VriskaMod.makeID("CloversHatRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
-    public BrightPowderRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
+    public CloversHatRelic() {
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     //here

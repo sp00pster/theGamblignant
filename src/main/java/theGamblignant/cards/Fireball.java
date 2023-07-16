@@ -2,6 +2,7 @@ package theGamblignant.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,6 +15,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
+import theGamblignant.powers.VimPower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
@@ -41,8 +43,11 @@ public class Fireball extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int damageroll = 0;
-        for (int i = 0; i < 8; i++) {
-            damageroll += roll(6,'a');
+        damageroll += roll(6,'a');
+        for (int i = 0; i < 7; i++) {
+            damageroll += roll(6,'r');
+
+            //TODO the first roll IS affected by vim, and further ones aren't, but the RollNumberEffect for the first one doesn't reflect the increased number. internally it is still raised. i have no idea how this is the case
         }
         this.baseDamage = damageroll;
         this.calculateCardDamage(m);

@@ -19,7 +19,7 @@ import static theGamblignant.VriskaMod.makeRelicPath;
 
 public class StarterRelic extends CustomRelic {
 
-    public static final String ID = VriskaMod.makeID("TetradactylyRelic");
+    public static final String ID = VriskaMod.makeID("StarterRelic");
     public static final int COUNT = 8;
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));

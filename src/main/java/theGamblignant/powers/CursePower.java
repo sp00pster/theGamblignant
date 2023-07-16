@@ -3,10 +3,14 @@ package theGamblignant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.vfx.combat.GainPowerEffect;
 import theGamblignant.VriskaMod;
 import theGamblignant.util.TextureLoader;
 
@@ -43,6 +47,20 @@ public class CursePower extends AbstractPower implements CloneablePowerInterface
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
+
+        if (this.amount == 0) {
+            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, CursePower.POWER_ID));
+            if (this.owner.hasPower("Superstition")) {
+                int stition = (this.owner.getPower("Superstition")).amount;
+                this.addToBot(new ApplyPowerAction(this.owner,this.owner, new DexterityPower(this.owner, -stition),-stition));
+            }
+        } else {
+            if (this.owner.hasPower("Superstition")) {
+                int stition = (this.owner.getPower("Superstition")).amount;
+                this.addToBot(new ApplyPowerAction(this.owner,this.owner, new DexterityPower(this.owner, stition),stition));
+            }
+
+        }
     }
 
     public void updateDescription() {

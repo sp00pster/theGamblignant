@@ -71,6 +71,11 @@
     "UPGRADE_DESCRIPTION": "Deal 8d4 damage to all enemies.",
     "EXTENDED_DESCRIPTION": ["Deal 6d4 + ","Deal 6d4 - ","Deal 8d4 + ","Deal 8d4 - "," damage to all enemies."]
   },
+  "theGamblignant:Thunderbolt": {
+    "NAME": "Thunderbolt",
+    "DESCRIPTION": "Deal !D! damage and apply 1d4 Vulnerable.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1d6 Vulnerable."
+  },
   "theGamblignant:MagicMissile": {
     "NAME": "Magic Missile",
     "DESCRIPTION": "Deal Xd20 damage.",
@@ -106,7 +111,7 @@
   },
   "theGamblignant:WebWeave": {
     "NAME": "Web Weave",
-    "DESCRIPTION": "Gain !B! Block and lose 1 Strength."
+    "DESCRIPTION": "Gain !B! Block and 2 Weak."
   },
   "theGamblignant:Prattle": {
     "NAME": "Prattle",
@@ -114,7 +119,7 @@
   },
   "theGamblignant:Scintillate": {
     "NAME": "Scintillate",
-    "DESCRIPTION": "Draw 1d4 cards."
+    "DESCRIPTION": "Gain !M! Luck."
   },
   "theGamblignant:UncannyDodge": {
     "NAME": "Uncanny Dodge",

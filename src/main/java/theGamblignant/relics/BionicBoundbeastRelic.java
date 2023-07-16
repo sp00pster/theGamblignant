@@ -9,15 +9,15 @@ import theGamblignant.util.TextureLoader;
 import static theGamblignant.VriskaMod.makeRelicOutlinePath;
 import static theGamblignant.VriskaMod.makeRelicPath;
 
-public class BrightPowderRelic extends CustomRelic {
+public class BionicBoundbeastRelic extends CustomRelic {
 
     // ID, images, text.
-    public static final String ID = VriskaMod.makeID("BrightPowderRelic");
+    public static final String ID = VriskaMod.makeID("BionicBoundbeastRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
-    public BrightPowderRelic() {
+    public BionicBoundbeastRelic() {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
     }
 

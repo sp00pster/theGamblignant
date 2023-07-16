@@ -51,17 +51,20 @@ public abstract class AbstractVriskaCard extends CustomCard {
         int max;
         int min;
 
-        if (AbstractDungeon.player.hasPower(LuckPower.POWER_ID)&&purpose!='t') {
+        if (AbstractDungeon.player.hasPower(LuckPower.POWER_ID)) {
+            AbstractDungeon.player.getPower(LuckPower.POWER_ID).flash();
             luckAmt += AbstractDungeon.player.getPower(LuckPower.POWER_ID).amount;
         }
-        if (AbstractDungeon.player.hasPower(VimPower.POWER_ID)&&purpose!='f') {
+        if (AbstractDungeon.player.hasPower(VimPower.POWER_ID) && purpose != 'r') { //"r" stands for "repeat", where one card rolls multiple times. i couldnt find a way to make this work properly, so i am just going to manually deny the use of vim for these further rolls
             luckAmt += AbstractDungeon.player.getPower(VimPower.POWER_ID).amount;
             AbstractDungeon.player.getPower(VimPower.POWER_ID).flash();
             AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VimPower.POWER_ID));
+            logger.info("vim triggered");
         }
-        if (AbstractDungeon.player.hasPower(CursePower.POWER_ID)&&purpose!='t') {
-            luckAmt -= AbstractDungeon.player.getPower(LuckPower.POWER_ID).amount;
-            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VimPower.POWER_ID));
+        if (AbstractDungeon.player.hasPower(CursePower.POWER_ID)) {
+            luckAmt -= AbstractDungeon.player.getPower(CursePower.POWER_ID).amount;
+            AbstractDungeon.player.getPower(CursePower.POWER_ID).flash();
+            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, CursePower.POWER_ID));
         }
 
         logger.info("luck going into this roll: "+luckAmt); //you can remove this eventually

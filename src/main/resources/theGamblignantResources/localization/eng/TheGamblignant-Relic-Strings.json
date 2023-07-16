@@ -36,9 +36,54 @@
     "FLAVOR": "There is no flavor. sorry. Terezi would be so pissed off if theres no flavor",
     "DESCRIPTIONS": ["Add 4 to the first roll you make each combat."]
   },
+  "theGamblignant:SuperStarterRelic": {
+    "NAME": "Super Starter Relic",
+    "FLAVOR": "There is still no flavor. Sorry im so sorry oh my god",
+    "DESCRIPTIONS": ["Add 20 to the first roll you make each combat."]
+  },
   "theGamblignant:DimBulbRelic": {
     "NAME": "Dim Bulb",
-    "FLAVOR": "from isaac",
+    "FLAVOR": "from binding of isaac",
     "DESCRIPTIONS": ["Whenever you roll a 1, add 2 to your next roll."]
+  },
+  "theGamblignant:DreamBubbleRelic": {
+    "NAME": "Dream Bubble",
+    "FLAVOR": "blub",
+    "DESCRIPTIONS": ["Whenever you Rest, visit a random ? room."]
+  },
+  "theGamblignant:ScratchedCoinRelic": {
+    "NAME": "Scratched Coin",
+    "FLAVOR": "Both sides are identical, but one has a scratch through its eye. Stupid.",
+    "DESCRIPTIONS": ["At the end of combat, gain 1d20 Gold"]
+  },
+  "theGamblignant:ToxicTraitsRelic": {
+    "NAME": "Toxic Traits",
+    "FLAVOR": "Of which you have many.",
+    "DESCRIPTIONS": ["Whenever you apply Poison, apply 1 more."]
+  },
+  "theGamblignant:CoolSunglassesRelic": {
+    "NAME": "Cool Sunglasses",
+    "FLAVOR": "so cool....",
+    "DESCRIPTIONS": ["Whenever you take no damage in a turn, gain 1 Luck next turn."]
+  },
+  "theGamblignant:BionicBoundbeastRelic": {
+    "NAME": "Bionic Boundbeast",
+    "FLAVOR": "You've heard the limbs of these creatures can bring luck. This one doesn't seem willing to part with any, though.",
+    "DESCRIPTIONS": ["Add 1 to all dice rolls."]
+  },
+  "theGamblignant:BrightPowderRelic": {
+    "NAME": "Bright Powder",
+    "FLAVOR": "pokemo",
+    "DESCRIPTIONS": ["Whenever you play a Skill, gain 1 Luck."]
+  },
+  "theGamblignant:CloversHatRelic": {
+    "NAME": "Clover's Hat",
+    "FLAVOR": "Doesn't have horn holes. Looking at it kinda pisses you off.",
+    "DESCRIPTIONS": ["Lose 75% of your max HP. Add 4 to all dice rolls."]
+  },
+  "theGamblignant:BloodSpadeRelic": {
+    "NAME": "Blood Spade",
+    "FLAVOR": "What kind of blood even is this?",
+    "DESCRIPTIONS": ["Gain [E] at the start of your turn. Whenever your dice rolls in a single turn add up to 21, gain 4 Curse."]
   }
 }

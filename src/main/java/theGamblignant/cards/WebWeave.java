@@ -28,13 +28,13 @@ public class WebWeave extends AbstractVriskaCard {
 
     public WebWeave() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = 10;
+        baseBlock = 12;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, p, block));
-        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, -1), -1));
+        this.addToBot(new ApplyPowerAction(p, p, new WeakPower(p, 2, false), 2));
     }
 
     @Override
