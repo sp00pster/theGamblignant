@@ -16,7 +16,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class Scintillate extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(Scintillate.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("scintillate.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -42,9 +42,7 @@ public class Scintillate extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeMagicNumber(1);
-            initializeDescription();
         }
     }
 }

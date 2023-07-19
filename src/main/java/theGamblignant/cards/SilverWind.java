@@ -36,7 +36,7 @@ public class SilverWind extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int str = roll(4,'p');
-        int dex = roll(4,'p');
+        int dex = roll(4,'r');
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, str), str));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, dex), dex));
     }
@@ -45,8 +45,7 @@ public class SilverWind extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeBaseCost(1);
         }
     }
 }

@@ -15,9 +15,9 @@ import theGamblignant.powers.LuckPower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class Ante extends AbstractVriskaCard {
+public class BigBlind extends AbstractVriskaCard {
 
-    public static final String ID = VriskaMod.makeID(Ante.class.getSimpleName());
+    public static final String ID = VriskaMod.makeID(BigBlind.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -29,7 +29,7 @@ public class Ante extends AbstractVriskaCard {
 
     private static final int COST = 0;
 
-    public Ante() {
+    public BigBlind() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = 2;
         baseMagicNumber = magicNumber;
@@ -49,7 +49,6 @@ public class Ante extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
-            initializeDescription();
         }
     }
 }

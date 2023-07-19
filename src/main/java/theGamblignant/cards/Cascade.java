@@ -2,6 +2,7 @@ package theGamblignant.cards;
 
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,13 +14,14 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
+import theGamblignant.powers.CursePower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
 public class Cascade extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(Cascade.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("cascade.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -40,17 +42,20 @@ public class Cascade extends AbstractVriskaCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int damageroll = 0;
         if (this.upgraded) {
-            for (int i = 0; i < 6; i++) {
-                damageroll += roll(12,'a');
+            damageroll += roll(12,'a');
+            for (int i = 1; i < 6; i++) {
+                damageroll += roll(12,'r');
             }
         } else {
-            for (int i = 0; i < 4; i++) {
-                damageroll += roll(13,'a');
+            damageroll += roll(13,'a');
+            for (int i = 1; i < 4; i++) {
+                damageroll += roll(13,'r');
             }
         }
         this.baseDamage = damageroll;
         this.calculateCardDamage(m);
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));
+        this.addToBot(new ApplyPowerAction(p, p, new CursePower(p, 6)));
     }
 
     public void applyPowers() {

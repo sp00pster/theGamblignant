@@ -23,7 +23,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class DazzlingGleam extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(DazzlingGleam.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("magicmissile.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -62,7 +62,6 @@ public class DazzlingGleam extends AbstractVriskaCard {
             upgradeName();
             upgradeDamage(DAMAGE_ADDEND);
             upgradeMagicNumber(MAGIC_ADDEND);
-            initializeDescription();
         }
     }
 }

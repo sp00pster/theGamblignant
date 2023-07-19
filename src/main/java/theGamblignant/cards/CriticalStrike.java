@@ -19,7 +19,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class CriticalStrike extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(CriticalStrike.class.getSimpleName());
-    public static final String IMG = makeCardPath("headshot.png");
+    public static final String IMG = makeCardPath("criticalstrike.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.BASIC;

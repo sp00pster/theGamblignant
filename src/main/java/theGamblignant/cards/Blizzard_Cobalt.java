@@ -45,8 +45,9 @@ public class Blizzard_Cobalt extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int damageroll = 0;
-        for (int i = 0; i < magicNumber; i++) {
-            damageroll += roll(4,'a');
+        damageroll += roll(4,'a');
+        for (int i = 1; i < magicNumber; i++) {
+            damageroll += roll(4,'r');
         }
         this.baseDamage = damageroll;
         calculateCardDamage(m);

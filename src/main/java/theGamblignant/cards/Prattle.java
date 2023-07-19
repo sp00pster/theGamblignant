@@ -54,9 +54,7 @@ public class Prattle extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeBaseCost(0);
-            initializeDescription();
         }
     }
 }

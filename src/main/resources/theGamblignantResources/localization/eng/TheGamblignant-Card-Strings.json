@@ -49,9 +49,10 @@
   },
   "theGamblignant:PoisonSting": {
     "NAME": "Poison Sting",
-    "DESCRIPTION": "Deal !D! damage and apply 1d8 Poison. Exhaust.",
+    "DESCRIPTION": "Deal !D! damage and apply 1d6 Poison.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1d8 Poison."
   },
+
   "theGamblignant:DazzlingGleam": {
     "NAME": "Dazzling Gleam",
     "DESCRIPTION": "Deal !D! damage to all enemies and add !M! to your next roll."
@@ -82,20 +83,21 @@
     "UPGRADE_DESCRIPTION": "Deal (X+1)d20 damage.",
     "EXTENDED_DESCRIPTION": ["Deal Xd20 + ","Deal Xd20 - ","Deal (X+1)d20 + ","Deal (X+1)d20 - "," damage."]
   },
+
   "theGamblignant:Gaslight": {
     "NAME": "Gaslight",
     "DESCRIPTION": "Deal !D! damage. Deals 1 additional damage for each stack of the target's buffs and debuffs."
   },
   "theGamblignant:Cascade": {
     "NAME": "Cascade",
-    "DESCRIPTION": "Deal 4d13 damage.",
-    "UPGRADE_DESCRIPTION": "Deal 6d12 damage.",
-    "EXTENDED_DESCRIPTION": ["Deal 4d13 + ","Deal 4d13 - ","Deal 6d12 + ","Deal 6d12 - "," damage."]
+    "DESCRIPTION": "Deal 4d13 damage. Gain 6 Curse.",
+    "UPGRADE_DESCRIPTION": "Deal 6d12 damage. Gain 6 Curse.",
+    "EXTENDED_DESCRIPTION": ["Deal 4d13 + ","Deal 4d13 - ","Deal 6d12 + ","Deal 6d12 - "," damage. Gain 6 Curse."]
   },
-  "theGamblignant:Luminaire": {
-    "NAME": "Luminaire",
+  "theGamblignant:Sunslammer": {
+    "NAME": "Sunslammer",
     "DESCRIPTION": "Deal 1d100 damage. Exhaust.",
-    "EXTENDED_DESCRIPTION": ["Deal 1d100 + "," damage. Exhaust."]
+    "EXTENDED_DESCRIPTION": ["Deal 1d100 + ","Deal 1d100 - ","Deal 1d100 + ","Deal 1d100 - "," damage. Exhaust."]
   },
 
 
@@ -123,12 +125,14 @@
   },
   "theGamblignant:UncannyDodge": {
     "NAME": "Uncanny Dodge",
-    "DESCRIPTION": "Gain 1d8x2 Block."
+    "DESCRIPTION": "Gain 1d8x2 Block.",
+    "UPGRADE_DESCRIPTION": "Gain 1d8x3 Block."
   },
-  "theGamblignant:Mirror Shield": {
+  "theGamblignant:MirrorShield": {
     "NAME": "Mirror Shield",
     "DESCRIPTION": "Gain !B! Block and !M! Curse."
   },
+
   "theGamblignant:Refract": {
     "NAME": "Refract",
     "DESCRIPTION": "Add 1d8 to your next roll."
@@ -145,8 +149,7 @@
   },
   "theGamblignant:Bioluminescence": {
     "NAME": "Bioluminescence",
-    "DESCRIPTION": "Gain 1d4 Energy. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1d4 Energy."
+    "DESCRIPTION": "Gain 1d4 Energy."
   },
   "theGamblignant:BigBlind": {
     "NAME": "Big Blind",
@@ -161,6 +164,7 @@
     "NAME": "Baneful Bunker",
     "DESCRIPTION": "Gain !B! Block. Apply !M! Poison to attackers this turn."
   },
+
   "theGamblignant:Girlboss": {
     "NAME": "Girlboss",
     "DESCRIPTION": "Apply 99 Weak. Exhaust."
@@ -193,8 +197,13 @@
   },
   "theGamblignant:TrashTalk": {
     "NAME": "Trash Talk",
-    "DESCRIPTION": "Whenever a dice roll results in its worst outcome, apply !M! Poison to all enemies."
+    "DESCRIPTION": "Whenever you roll a 1, apply !M! Poison to all enemies."
   },
+  "theGamblignant:Superstition": {
+    "NAME": "Superstition",
+    "DESCRIPTION": "While you have Curse, gain !M! Dexterity."
+  },
+
   "theGamblignant:Gatekeep": {
     "NAME": "Gatekeep",
     "DESCRIPTION": "Whenever you fully Block an attack, the attacker loses 1 Strength."

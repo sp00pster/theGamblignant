@@ -44,7 +44,7 @@ public class Fireball extends AbstractVriskaCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int damageroll = 0;
         damageroll += roll(6,'a');
-        for (int i = 0; i < 7; i++) {
+        for (int i = 1; i < 8; i++) {
             damageroll += roll(6,'r');
 
             //TODO the first roll IS affected by vim, and further ones aren't, but the RollNumberEffect for the first one doesn't reflect the increased number. internally it is still raised. i have no idea how this is the case

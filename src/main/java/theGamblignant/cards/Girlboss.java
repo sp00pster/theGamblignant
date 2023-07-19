@@ -44,7 +44,6 @@ public class Girlboss extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(1);
-            initializeDescription();
         }
     }
 }

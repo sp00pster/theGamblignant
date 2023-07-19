@@ -17,7 +17,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class CunningAction extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(CunningAction.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("cunningaction.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

@@ -1,6 +1,7 @@
 package theGamblignant.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -55,6 +56,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
             AbstractDungeon.player.getPower(LuckPower.POWER_ID).flash();
             luckAmt += AbstractDungeon.player.getPower(LuckPower.POWER_ID).amount;
         }
+        //TODO on cards that roll multiple dice, changes to vim and curse do NOT update in between a single card's rolls.
         if (AbstractDungeon.player.hasPower(VimPower.POWER_ID) && purpose != 'r') { //"r" stands for "repeat", where one card rolls multiple times. i couldnt find a way to make this work properly, so i am just going to manually deny the use of vim for these further rolls
             luckAmt += AbstractDungeon.player.getPower(VimPower.POWER_ID).amount;
             AbstractDungeon.player.getPower(VimPower.POWER_ID).flash();
@@ -66,6 +68,10 @@ public abstract class AbstractVriskaCard extends CustomCard {
             AbstractDungeon.player.getPower(CursePower.POWER_ID).flash();
             AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, CursePower.POWER_ID));
         }
+        if (AbstractDungeon.player.hasRelic("Bionic Boundbeast")) {
+            luckAmt += 1;
+        }
+
 
         logger.info("luck going into this roll: "+luckAmt); //you can remove this eventually
 
@@ -90,6 +96,10 @@ public abstract class AbstractVriskaCard extends CustomCard {
 
         }
         logger.info("final roll: "+result);
+
+        if (result == 1 && AbstractDungeon.player.hasRelic("Dim Bulb")) {
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VimPower(AbstractDungeon.player, 2), 2, true));
+        }
 
         return result;
     }

@@ -43,9 +43,7 @@ public class Bioluminescence extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            upgradeMagicNumber(MAGIC_ADDEND);
-            initializeDescription();
+            upgradeBaseCost(0);
         }
     }
 }

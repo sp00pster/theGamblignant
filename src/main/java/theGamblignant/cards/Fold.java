@@ -35,7 +35,7 @@ public class Fold extends AbstractVriskaCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int cardcount = p.hand.size();
         this.addToTop(new DiscardAction(p, p, cardcount, true));
-        for (int i = 0; i < cardcount; i++) {
+        for (int i = 0; i < cardcount-1; i++) {
             this.addToBot(new GainBlockAction(p, p, block));
         }
     }

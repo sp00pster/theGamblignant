@@ -77,6 +77,7 @@ public class BallBreak extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();
         }

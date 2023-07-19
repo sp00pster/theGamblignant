@@ -46,10 +46,8 @@ public class MirrorShield extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeMagicNumber(1);
             upgradeBlock(BLOCK_ADDEND);
-            initializeDescription();
         }
     }
 }

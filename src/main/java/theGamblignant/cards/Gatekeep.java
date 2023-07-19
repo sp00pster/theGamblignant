@@ -35,7 +35,6 @@ public class Gatekeep extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(0);
-            initializeDescription();
         }
     }
 }

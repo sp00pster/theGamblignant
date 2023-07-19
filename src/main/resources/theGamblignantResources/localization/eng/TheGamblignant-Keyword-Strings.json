@@ -19,8 +19,9 @@
   },
   {
     "NAMES": [
+      "Luck",
       "luck"
     ],
-    "DESCRIPTION": "Increases the result of all your dice rolls, without exceeding their normal limits"
+    "DESCRIPTION": "Increases the results of your dice rolls, without exceeding their normal limits. Wears off at turn end."
   }
 ]

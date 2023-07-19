@@ -63,7 +63,6 @@ public class JumpKick extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            initializeDescription();
         }
     }
 }

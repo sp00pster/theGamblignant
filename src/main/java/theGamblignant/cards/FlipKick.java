@@ -22,7 +22,7 @@ public class FlipKick extends AbstractVriskaCard {
     // TEXT DECLARATION
 
     public static final String ID = VriskaMod.makeID(FlipKick.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("flipkick.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -62,9 +62,7 @@ public class FlipKick extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeDamage(4);
         }
     }
 }

@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.Vajra;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theGamblignant.VriskaMod;
@@ -20,11 +22,8 @@ import static theGamblignant.VriskaMod.makeRelicPath;
 public class StarterRelic extends CustomRelic {
 
     public static final String ID = VriskaMod.makeID("StarterRelic");
-    public static final int COUNT = 8;
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
-    public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName()); //this is for testing purposes, you can remove this eventually
-
 
     public StarterRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
@@ -41,5 +40,7 @@ public class StarterRelic extends CustomRelic {
         return DESCRIPTIONS[0];
     }
 
-
+    public AbstractRelic makeCopy() {
+        return new StarterRelic();
+    }
 }

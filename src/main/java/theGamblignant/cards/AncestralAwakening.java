@@ -35,7 +35,6 @@ public class AncestralAwakening extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(1);
-            initializeDescription();
         }
     }
 }

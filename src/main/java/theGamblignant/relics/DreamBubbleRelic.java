@@ -3,6 +3,7 @@ package theGamblignant.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theGamblignant.VriskaMod;
 import theGamblignant.util.TextureLoader;
 
@@ -21,6 +22,6 @@ public class DreamBubbleRelic extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
     }
 
-    //here
+    public AbstractRelic makeCopy() {return new DreamBubbleRelic();}
 
 }

@@ -18,7 +18,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class AerialAce extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(AerialAce.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("aerialace.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
