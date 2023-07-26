@@ -1,12 +1,9 @@
 package theGamblignant.cards;
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -51,24 +48,27 @@ public abstract class AbstractVriskaCard extends CustomCard {
         int result;
         int max;
         int min;
+        AbstractPlayer p = AbstractDungeon.player;
 
-        if (AbstractDungeon.player.hasPower(LuckPower.POWER_ID)) {
-            AbstractDungeon.player.getPower(LuckPower.POWER_ID).flash();
-            luckAmt += AbstractDungeon.player.getPower(LuckPower.POWER_ID).amount;
+        if (p.hasPower(LuckPower.POWER_ID)) {
+            p.getPower(LuckPower.POWER_ID).flash();
+            luckAmt += p.getPower(LuckPower.POWER_ID).amount;
         }
         //TODO on cards that roll multiple dice, changes to vim and curse do NOT update in between a single card's rolls.
-        if (AbstractDungeon.player.hasPower(VimPower.POWER_ID) && purpose != 'r') { //"r" stands for "repeat", where one card rolls multiple times. i couldnt find a way to make this work properly, so i am just going to manually deny the use of vim for these further rolls
-            luckAmt += AbstractDungeon.player.getPower(VimPower.POWER_ID).amount;
-            AbstractDungeon.player.getPower(VimPower.POWER_ID).flash();
-            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VimPower.POWER_ID));
+        if (p.hasPower(VimPower.POWER_ID) && purpose != 'm') { //"m" is for "multi", where one card rolls multiple times. these cards didnt work properly with vim and curse so im going with a sort of messy solution
+            luckAmt += p.getPower(VimPower.POWER_ID).amount;
+            p.getPower(VimPower.POWER_ID).flash();
+            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, VimPower.POWER_ID));
+            AbstractDungeon.actionManager.addToTop(new ReducePowerAction(p, p, "Vim",100));
             logger.info("vim triggered");
         }
-        if (AbstractDungeon.player.hasPower(CursePower.POWER_ID)) {
-            luckAmt -= AbstractDungeon.player.getPower(CursePower.POWER_ID).amount;
-            AbstractDungeon.player.getPower(CursePower.POWER_ID).flash();
-            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, CursePower.POWER_ID));
+        if (p.hasPower(CursePower.POWER_ID) && purpose != 'm') {
+            luckAmt -= p.getPower(CursePower.POWER_ID).amount;
+            p.getPower(CursePower.POWER_ID).flash();
+            //AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, CursePower.POWER_ID));
+            AbstractDungeon.actionManager.addToTop(new ReducePowerAction(p,p,"Curse", 1));
         }
-        if (AbstractDungeon.player.hasRelic("Bionic Boundbeast")) {
+        if (p.hasRelic("Bionic Boundbeast")) {
             luckAmt += 1;
         }
 
@@ -85,20 +85,20 @@ public abstract class AbstractVriskaCard extends CustomCard {
         if (result > max) {result = max;}
         if (result < 1) {result = 1;}
 
-        if ((faces == 8 && AbstractDungeon.player.hasPower(AncestralAwakeningPower.POWER_ID))) {
+        if ((faces == 8 && p.hasPower(AncestralAwakeningPower.POWER_ID))) {
             result = 8;
         }
 
         if (result == max) {
-            AbstractDungeon.actionManager.addToTop(new TimedVFXAction(new RollNumberEffect(AbstractDungeon.player.dialogX+25F, AbstractDungeon.player.dialogY, result+"!")));
+            AbstractDungeon.actionManager.addToTop(new TimedVFXAction(new RollNumberEffect(p.dialogX+25F, p.dialogY, result+"!")));
         } else {
-            AbstractDungeon.actionManager.addToTop(new TimedVFXAction(new RollNumberEffect(AbstractDungeon.player.dialogX+25F, AbstractDungeon.player.dialogY, Integer.toString(result))));
+            AbstractDungeon.actionManager.addToTop(new TimedVFXAction(new RollNumberEffect(p.dialogX+25F, p.dialogY, Integer.toString(result))));
 
         }
         logger.info("final roll: "+result);
 
-        if (result == 1 && AbstractDungeon.player.hasRelic("Dim Bulb")) {
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VimPower(AbstractDungeon.player, 2), 2, true));
+        if (result == 1 && p.hasRelic("Dim Bulb")) {
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new VimPower(p, 2), 2, true));
         }
 
         return result;
