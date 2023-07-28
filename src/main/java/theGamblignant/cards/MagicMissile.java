@@ -42,14 +42,12 @@ public class MagicMissile extends AbstractVriskaCard {
             effect += 2;
             p.getRelic("Chemical X").flash();
         }
-        if (upgraded) {effect += 1;}
+        if (upgraded) {
+            effect += 1;
+        }
 
         if (effect > 0) {
-            int damageroll = 0;
-            for (int i = 0; i < effect; i++) {
-                damageroll += roll(20, 'a');
-            }
-            this.baseDamage = damageroll;
+            this.baseDamage = roll(effect, 20, 'a');
             this.calculateCardDamage(m);
             this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 

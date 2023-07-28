@@ -51,7 +51,7 @@ public class DazzlingGleam extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal)));
+        this.addToBot(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal))); //this is a little much
         this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
     }

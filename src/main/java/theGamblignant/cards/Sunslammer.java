@@ -36,7 +36,7 @@ public class Sunslammer extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.baseDamage = roll(100,'a');
+        this.baseDamage = roll(1, 100,'a');
         this.calculateCardDamage(m);
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));

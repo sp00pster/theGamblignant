@@ -44,7 +44,7 @@ public class PoisonSting extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int poisonroll = roll(magicNumber,'a');
+        int poisonroll = roll(1, magicNumber,'a');
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, poisonroll), poisonroll, AbstractGameAction.AttackEffect.POISON));
     }

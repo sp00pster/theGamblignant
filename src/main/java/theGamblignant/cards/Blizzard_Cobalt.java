@@ -44,12 +44,8 @@ public class Blizzard_Cobalt extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int damageroll = 0;
-        damageroll += roll(4,'a');
-        for (int i = 1; i < magicNumber; i++) {
-            damageroll += roll(4,'r');
-        }
-        this.baseDamage = damageroll;
+        this.baseDamage = roll(magicNumber, 4,'a');
+
         calculateCardDamage(m);
         if (Settings.FAST_MODE) {
             this.addToBot(new VFXAction(new BlizzardEffect(magicNumber, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.25F));

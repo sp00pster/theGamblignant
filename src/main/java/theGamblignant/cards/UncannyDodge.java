@@ -36,7 +36,7 @@ public class UncannyDodge extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int block = roll(8,'a')*magicNumber;
+        int block = roll(1, 8,'a')*magicNumber;
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));
     }
 

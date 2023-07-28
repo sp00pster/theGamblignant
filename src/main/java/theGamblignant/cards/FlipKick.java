@@ -51,7 +51,7 @@ public class FlipKick extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        int cantriproll = roll(2,'a');
+        int cantriproll = roll(1,2,'a');
         if (cantriproll == 2) {
             this.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
             this.addToTop(new GainEnergyAction(1));

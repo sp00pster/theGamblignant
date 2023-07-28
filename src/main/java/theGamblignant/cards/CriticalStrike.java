@@ -39,10 +39,9 @@ public class CriticalStrike extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.baseDamage = roll(8,'a')*magicNumber;
+        this.baseDamage = roll(1,8,'a')*magicNumber;
         this.calculateCardDamage(m);
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     public void applyPowers() {

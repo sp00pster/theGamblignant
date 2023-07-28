@@ -42,23 +42,9 @@ public class Fireball extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int damageroll = 0;
-        for (int i = 1; i < 8; i++) {
-            damageroll += roll(6,'a');
-            applyPowers();
-        }
-
-        /*
-        damageroll += roll(6,'a');
-        for (int i = 1; i < 8; i++) {
-            damageroll += roll(6,'r');
-
-            //TODO the first roll IS affected by vim, and further ones aren't, but the RollNumberEffect for the first one doesn't reflect the increased number. internally it is still raised. i have no idea how this is the case
-        }
-         */
-        this.baseDamage = damageroll;
+        this.baseDamage = roll(8,6,'a');
         this.calculateCardDamage(m);
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damageroll, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
     }
 
     public void applyPowers() {

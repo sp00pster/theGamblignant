@@ -44,7 +44,7 @@ public class Thunderbolt extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int effectroll = roll(4, 'a');
+        int effectroll = roll(1, 4, 'a');
         this.addToBot(new VFXAction(new LightningEffect(m.drawX, m.drawY), 0.05F));
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, effectroll, false), effectroll, true, AbstractGameAction.AttackEffect.NONE));

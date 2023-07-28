@@ -36,7 +36,7 @@ public class Bioluminescence extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainEnergyAction(roll(4,'s')));
+        this.addToBot(new GainEnergyAction(roll(1, 4,'s')));
     }
 
     @Override

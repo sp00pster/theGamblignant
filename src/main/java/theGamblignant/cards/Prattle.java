@@ -45,7 +45,7 @@ public class Prattle extends AbstractVriskaCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int drawroll = roll(4, 's');
+        int drawroll = roll(1, 4, 's');
         this.addToBot(new DrawCardAction(p, drawroll));
     }
 

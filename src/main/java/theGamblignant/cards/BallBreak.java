@@ -40,9 +40,9 @@ public class BallBreak extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!upgraded) {
-            this.baseDamage = roll(4,'a')+4;
+            this.baseDamage = roll(1, 4,'a') + 4;
         } else {
-            this.baseDamage = roll(4,'a')+roll(4,'a')+4;
+            this.baseDamage = roll(2,4,'a') + 4;
         }
 
         this.calculateCardDamage(m);

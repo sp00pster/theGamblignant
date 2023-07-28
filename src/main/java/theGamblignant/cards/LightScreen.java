@@ -34,11 +34,7 @@ public class LightScreen extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int blockroll = 0;
-        for (int i = 0; i < magicNumber; i++) {
-            blockroll += roll(6,'s');
-        }
-        baseBlock = blockroll;
+        baseBlock = roll(magicNumber, 6, '2');
         applyPowersToBlock();
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }

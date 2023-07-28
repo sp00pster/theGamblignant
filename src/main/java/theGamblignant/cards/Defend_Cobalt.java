@@ -46,7 +46,7 @@ public class Defend_Cobalt extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.upgraded) {
-            this.addToBot(new GainBlockAction(p, p, (block + roll(6,'s'))));
+            this.addToBot(new GainBlockAction(p, p, (block + roll(1, 6,'s'))));
         } else {
             this.addToBot(new GainBlockAction(p, p, block));
         }

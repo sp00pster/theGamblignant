@@ -34,7 +34,7 @@ public class Refract extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int powerroll = roll(8, 's');
+        int powerroll = roll(1,8, 's');
         this.addToBot(new ApplyPowerAction(m, p, new VimPower(p, powerroll), powerroll));
     }
 

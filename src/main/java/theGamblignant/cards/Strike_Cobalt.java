@@ -51,7 +51,7 @@ public class Strike_Cobalt extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.upgraded) {
-            this.baseDamage = roll(6,'a') + 6;
+            this.baseDamage = roll(1,6,'a') + 6;
             this.calculateCardDamage(m);
         }
         AbstractDungeon.actionManager.addToBottom(

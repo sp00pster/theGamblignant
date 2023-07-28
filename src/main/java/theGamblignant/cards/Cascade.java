@@ -42,17 +42,10 @@ public class Cascade extends AbstractVriskaCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int damageroll = 0;
         if (this.upgraded) {
-            damageroll += roll(12,'a');
-            for (int i = 1; i < 6; i++) {
-                damageroll += roll(12,'r');
-            }
+            this.baseDamage = roll(6, 12,'a');
         } else {
-            damageroll += roll(13,'a');
-            for (int i = 1; i < 4; i++) {
-                damageroll += roll(13,'r');
-            }
+            this.baseDamage = roll(4, 13, 'a');
         }
-        this.baseDamage = damageroll;
         this.calculateCardDamage(m);
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));
         this.addToBot(new ApplyPowerAction(p, p, new CursePower(p, 6)));
