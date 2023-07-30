@@ -17,7 +17,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class UncannyDodge extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(UncannyDodge.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("uncannydodge.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 

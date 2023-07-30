@@ -18,7 +18,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class BigBlind extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(BigBlind.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("bigblind.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 

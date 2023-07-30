@@ -18,7 +18,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class SilverWind extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(SilverWind.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("silverwind.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 

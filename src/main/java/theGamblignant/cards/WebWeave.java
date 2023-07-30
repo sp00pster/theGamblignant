@@ -17,7 +17,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class WebWeave extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(WebWeave.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("webweave.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

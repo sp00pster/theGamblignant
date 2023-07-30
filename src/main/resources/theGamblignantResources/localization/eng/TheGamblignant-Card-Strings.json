@@ -32,9 +32,9 @@
   },
   "theGamblignant:BallBreak": {
     "NAME": "Ball Break",
-    "DESCRIPTION": "Deal 1d4 + 4 damage and draw a card.",
-    "UPGRADE_DESCRIPTION": "Deal 2d4 + 4 damage and draw a card.",
-    "EXTENDED_DESCRIPTION": ["Deal 1d4 + ","Deal 1d4 - ","Deal 2d4 + ","Deal 2d4 - "," damage."]
+    "DESCRIPTION": "Deal 1d4 + !D! damage and gain 2 Curse.",
+    "UPGRADE_DESCRIPTION": "Deal 2d4 + !D! damage and gain 2 Curse.",
+    "EXTENDED_DESCRIPTION": ["Deal 1d4 + ","Deal 1d4 - ","Deal 2d4 + ","Deal 2d4 - "," damage and gain 2 Curse."]
   },
   "theGamblignant:AerialAce": {
     "NAME": "Aerial Ace",
@@ -55,7 +55,7 @@
 
   "theGamblignant:DazzlingGleam": {
     "NAME": "Dazzling Gleam",
-    "DESCRIPTION": "Deal !D! damage to all enemies and add !M! to your next roll."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies and gain !M! Luck."
   },
   "theGamblignant:FlipKick": {
     "NAME": "Flip Kick",
@@ -149,7 +149,7 @@
   },
   "theGamblignant:Bioluminescence": {
     "NAME": "Bioluminescence",
-    "DESCRIPTION": "Gain 1d4 Energy."
+    "DESCRIPTION": "Gain 1d4 [E]."
   },
   "theGamblignant:BigBlind": {
     "NAME": "Big Blind",
@@ -192,8 +192,8 @@
   },
   "theGamblignant:FengShui": {
     "NAME": "Feng Shui",
-    "DESCRIPTION": "At the end of your turn, gain 1d8 Block.",
-    "UPGRADE_DESCRIPTION": "Gain 1d8 Block. At the start of your turn, gain 1d8 Block."
+    "DESCRIPTION": "At the end of your turn, gain 1d4 Block.",
+    "UPGRADE_DESCRIPTION": "At the end of your turn, Gain 1d6 Block."
   },
   "theGamblignant:TrashTalk": {
     "NAME": "Trash Talk",
@@ -214,7 +214,7 @@
   },
   "theGamblignant:AncestralAwakening": {
     "NAME": "Ancestral Awakening",
-    "DESCRIPTION": "Whenever a D8 is rolled, it results in an 8."
+    "DESCRIPTION": "Whenever a D8 is rolled, it lands on 8."
   }
 
 }

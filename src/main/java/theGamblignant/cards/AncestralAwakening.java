@@ -12,7 +12,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class AncestralAwakening extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(AncestralAwakening.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("ancestralawakening.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;

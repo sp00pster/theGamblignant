@@ -17,7 +17,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class Refract extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(Refract.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("refract.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -35,7 +35,7 @@ public class Refract extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int powerroll = roll(1,8, 's');
-        this.addToBot(new ApplyPowerAction(m, p, new VimPower(p, powerroll), powerroll));
+        this.addToBot(new ApplyPowerAction(p, p, new VimPower(p, powerroll), powerroll));
     }
 
     @Override

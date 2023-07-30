@@ -16,7 +16,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class MirrorShield extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(MirrorShield.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("mirrorshield.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 

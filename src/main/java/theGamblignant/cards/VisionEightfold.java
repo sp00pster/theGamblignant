@@ -15,7 +15,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class VisionEightfold extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(VisionEightfold.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("visioneightfold.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -39,7 +39,6 @@ public class VisionEightfold extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeBaseCost(1);
             initializeDescription();
         }

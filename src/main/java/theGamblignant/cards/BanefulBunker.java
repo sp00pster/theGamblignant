@@ -16,16 +16,15 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class BanefulBunker extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(BanefulBunker.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("banefulbunker.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int BLOCK = 12;
     private static final int BLOCK_ADDEND = 4;
 

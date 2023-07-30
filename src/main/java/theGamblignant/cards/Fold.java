@@ -15,7 +15,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class Fold extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(Fold.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("fold.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 

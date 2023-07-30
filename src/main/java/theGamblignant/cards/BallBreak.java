@@ -1,6 +1,7 @@
 package theGamblignant.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
+import theGamblignant.powers.CursePower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
@@ -29,8 +31,7 @@ public class BallBreak extends AbstractVriskaCard {
 
     private static final int COST = 0;
 
-    private static final int DAMAGE = 4;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 8;
 
     public BallBreak() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -40,16 +41,14 @@ public class BallBreak extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!upgraded) {
-            this.baseDamage = roll(1, 4,'a') + 4;
+            this.baseDamage = roll(1, 4,'a') + 8;
         } else {
-            this.baseDamage = roll(2,4,'a') + 4;
+            this.baseDamage = roll(2,4,'a') + 8;
         }
 
         this.calculateCardDamage(m);
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        AbstractDungeon.actionManager.addToBottom(
-                new DrawCardAction(p, 1));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        this.addToBot(new ApplyPowerAction(p, p, new CursePower(p, 2)));
     }
 
     public void applyPowers() {
@@ -78,7 +77,6 @@ public class BallBreak extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();
         }
     }

@@ -12,14 +12,14 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class Gatekeep extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(Gatekeep.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("gatekeep.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 1;
+    private static final int COST = 3;
 
     public Gatekeep() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -22,7 +22,7 @@ import static theGamblignant.VriskaMod.makeCardPath;
 public class StringShot extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(StringShot.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("stringshot.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
