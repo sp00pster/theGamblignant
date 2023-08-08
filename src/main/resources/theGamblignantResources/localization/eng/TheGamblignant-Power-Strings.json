@@ -24,7 +24,7 @@
                 ]
         },
         "theGamblignant:Curse": {
-                "NAME": "Curse",
+                "NAME": "Gloom",
                 "DESCRIPTIONS": [
                         "Subtract #b",
                         " from your next dice roll. When triggered, reduce this by 1."
@@ -55,7 +55,7 @@
         "theGamblignant:FengShui": {
                 "NAME": "Feng Shui",
                 "DESCRIPTIONS": [
-                      "At the start of your turn, gain 1d#b"," Block."
+                      "At the start of your turn, gain #b1d"," Block."
                 ]
         },
         "theGamblignant:AncestralAwakening": {
@@ -80,6 +80,13 @@
                 "DESCRIPTIONS": [
                         "Whenever you roll a 1, apply #b",
                         " Poison to all enemies."
+                ]
+        },
+        "theGamblignant:Superstition": {
+                "NAME:": "Superstition",
+                "DESCRIPTIONS": [
+                        "Whenever you have Gloom, you also have #b",
+                        " Dexterity."
                 ]
         }
 }

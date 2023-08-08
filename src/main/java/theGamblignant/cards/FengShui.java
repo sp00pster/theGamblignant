@@ -33,7 +33,7 @@ public class FengShui extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new FengShuiPower(p), magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new FengShuiPower(p, magicNumber), magicNumber));
     }
 
     @Override

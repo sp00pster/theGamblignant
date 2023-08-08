@@ -13,9 +13,9 @@ import static theGamblignant.VriskaMod.makeRelicPath;
 
 public class DimBulbRelic extends CustomRelic {
 
-    public static final String ID = VriskaMod.makeID("Dim Bulb");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    public static final String ID = VriskaMod.makeID("DimBulbRelic");
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("dimbulb.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("dimbulb.png"));
 
     public DimBulbRelic() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);

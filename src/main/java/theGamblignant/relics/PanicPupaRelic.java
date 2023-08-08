@@ -10,16 +10,16 @@ import theGamblignant.util.TextureLoader;
 import static theGamblignant.VriskaMod.makeRelicOutlinePath;
 import static theGamblignant.VriskaMod.makeRelicPath;
 
-public class CloversHatRelic extends CustomRelic {
+public class PanicPupaRelic extends CustomRelic {
 
     // ID, images, text.
-    public static final String ID = VriskaMod.makeID("Clover'sHatRelic");
+    public static final String ID = VriskaMod.makeID("PanicPupaRelic");
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("panicpupa.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("panicpupa.png"));
 
-    public CloversHatRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
+    public PanicPupaRelic() {
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.FLAT);
     }
 
     @Override
@@ -28,7 +28,6 @@ public class CloversHatRelic extends CustomRelic {
     }
 
     public AbstractRelic makeCopy() {
-        return new CloversHatRelic();
+        return new PanicPupaRelic();
     }
-
 }

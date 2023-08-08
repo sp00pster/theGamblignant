@@ -6,24 +6,20 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
-import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
+import com.megacrit.cardcrawl.vfx.combat.SweepingBeamEffect;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 import theGamblignant.powers.LuckPower;
-import theGamblignant.powers.VimPower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class DazzlingGleam extends AbstractVriskaCard {
+public class Gleam extends AbstractVriskaCard {
 
-    public static final String ID = VriskaMod.makeID(DazzlingGleam.class.getSimpleName());
-    public static final String IMG = makeCardPath("dazzlinggleam.png");
+    public static final String ID = VriskaMod.makeID(Gleam.class.getSimpleName());
+    public static final String IMG = makeCardPath("gleam.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -41,7 +37,7 @@ public class DazzlingGleam extends AbstractVriskaCard {
     private static final int MAGIC_ADDEND = 1;
 
 
-    public DazzlingGleam() {
+    public Gleam() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseMagicNumber = MAGIC;
@@ -51,9 +47,9 @@ public class DazzlingGleam extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal))); //this is a little much
-        this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        this.addToBot(new VFXAction(p, new SweepingBeamEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractDungeon.player.flipHorizontal), 0.4F));
+        this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, this.magicNumber), this.magicNumber));
     }
 
     @Override

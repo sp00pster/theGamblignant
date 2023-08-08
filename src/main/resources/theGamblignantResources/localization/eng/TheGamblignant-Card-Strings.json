@@ -32,9 +32,9 @@
   },
   "theGamblignant:BallBreak": {
     "NAME": "Ball Break",
-    "DESCRIPTION": "Deal 1d4 + !D! damage and gain 2 Curse.",
-    "UPGRADE_DESCRIPTION": "Deal 2d4 + !D! damage and gain 2 Curse.",
-    "EXTENDED_DESCRIPTION": ["Deal 1d4 + ","Deal 1d4 - ","Deal 2d4 + ","Deal 2d4 - "," damage and gain 2 Curse."]
+    "DESCRIPTION": "Deal 1d4 + !D! damage and gain 2 Gloom.",
+    "UPGRADE_DESCRIPTION": "Deal 2d4 + !D! damage and gain 2 Gloom.",
+    "EXTENDED_DESCRIPTION": ["Deal 1d4 + ","Deal 1d4 - ","Deal 2d4 + ","Deal 2d4 - "," damage and gain 2 Gloom."]
   },
   "theGamblignant:AerialAce": {
     "NAME": "Aerial Ace",
@@ -44,8 +44,7 @@
   },
   "theGamblignant:CripplingBlow": {
     "NAME": "Crippling Blow",
-    "DESCRIPTION": "Deal !D! damage and apply 1d3 Weak.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1d4 Weak."
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak."
   },
   "theGamblignant:PoisonSting": {
     "NAME": "Poison Sting",
@@ -53,8 +52,8 @@
     "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1d8 Poison."
   },
 
-  "theGamblignant:DazzlingGleam": {
-    "NAME": "Dazzling Gleam",
+  "theGamblignant:Gleam": {
+    "NAME": "Gleam",
     "DESCRIPTION": "Deal !D! damage to ALL enemies and gain !M! Luck."
   },
   "theGamblignant:FlipKick": {
@@ -90,9 +89,9 @@
   },
   "theGamblignant:Cascade": {
     "NAME": "Cascade",
-    "DESCRIPTION": "Deal 4d13 damage. Gain 6 Curse.",
-    "UPGRADE_DESCRIPTION": "Deal 6d12 damage. Gain 6 Curse.",
-    "EXTENDED_DESCRIPTION": ["Deal 4d13 + ","Deal 4d13 - ","Deal 6d12 + ","Deal 6d12 - "," damage. Gain 6 Curse."]
+    "DESCRIPTION": "Deal 4d13 damage. Gain 6 Gloom.",
+    "UPGRADE_DESCRIPTION": "Deal 6d12 damage. Gain 6 Gloom.",
+    "EXTENDED_DESCRIPTION": ["Deal 4d13 + ","Deal 4d13 - ","Deal 6d12 + ","Deal 6d12 - "," damage. Gain 6 Gloom."]
   },
   "theGamblignant:Sunslammer": {
     "NAME": "Sunslammer",
@@ -125,12 +124,11 @@
   },
   "theGamblignant:UncannyDodge": {
     "NAME": "Uncanny Dodge",
-    "DESCRIPTION": "Gain 1d8x2 Block.",
-    "UPGRADE_DESCRIPTION": "Gain 1d8x3 Block."
+    "DESCRIPTION": "Gain 1d8 x !M! Block."
   },
   "theGamblignant:MirrorShield": {
     "NAME": "Mirror Shield",
-    "DESCRIPTION": "Gain !B! Block and !M! Curse."
+    "DESCRIPTION": "Gain !B! Block and !M! Gloom."
   },
 
   "theGamblignant:Refract": {
@@ -153,7 +151,7 @@
   },
   "theGamblignant:BigBlind": {
     "NAME": "Big Blind",
-    "DESCRIPTION": "Gain !M! Luck. All enemies gain !M! Strength this turn."
+    "DESCRIPTION": "Gain !M! Luck. All enemies gain 2 Strength this turn."
   },
   "theGamblignant:Reroll": {
     "NAME": "Reroll",
@@ -180,8 +178,8 @@
   },
   "theGamblignant:ScourgePurge": {
     "NAME": "Scourge Purge",
-    "DESCRIPTION": "Apply Poison equal to your Curse. Lose all Curse.",
-    "UPGRADE_DESCRIPTION": "Apply Poison equal to your Curse to all enemies. Lose all Curse."
+    "DESCRIPTION": "Apply Poison equal to your Gloom. Lose all Gloom.",
+    "UPGRADE_DESCRIPTION": "Apply Poison equal to your Gloom to all enemies. Lose all Gloom."
   },
 
 
@@ -192,8 +190,8 @@
   },
   "theGamblignant:FengShui": {
     "NAME": "Feng Shui",
-    "DESCRIPTION": "At the end of your turn, gain 1d4 Block.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, Gain 1d6 Block."
+    "DESCRIPTION": "At the start of your turn, gain 1d4 Block.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, Gain 1d6 Block."
   },
   "theGamblignant:TrashTalk": {
     "NAME": "Trash Talk",
@@ -201,7 +199,7 @@
   },
   "theGamblignant:Superstition": {
     "NAME": "Superstition",
-    "DESCRIPTION": "While you have Curse, gain !M! Dexterity."
+    "DESCRIPTION": "While you have Gloom, gain !M! Dexterity."
   },
 
   "theGamblignant:Gatekeep": {

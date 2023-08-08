@@ -31,6 +31,7 @@ public class Scintillate extends AbstractVriskaCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = 2;
         baseMagicNumber = magicNumber;
+        this.exhaust = true;
     }
 
     @Override

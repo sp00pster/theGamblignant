@@ -26,11 +26,12 @@ public class FengShuiPower extends AbstractPower implements CloneablePowerInterf
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("fengshuipower_84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("fengshuipower_32.png"));
 
-    public FengShuiPower(final AbstractCreature owner) {
+    public FengShuiPower(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
+        this.amount = amount;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -47,7 +48,8 @@ public class FengShuiPower extends AbstractPower implements CloneablePowerInterf
         this.amount += stackAmount;
     }
 
-    public void atStartOfTurn(boolean isPlayer) {
+    public void atStartOfTurnPostDraw(boolean isPlayer) {
+        this.flash();
         int powerroll = AbstractVriskaCard.roll(1, this.amount,'f');
         this.addToBot(new GainBlockAction(this.owner, this.owner, powerroll));
     }
@@ -58,6 +60,6 @@ public class FengShuiPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public AbstractPower makeCopy() {
-        return new FengShuiPower(owner);
+        return new FengShuiPower(owner, amount);
     }
 }

@@ -26,7 +26,7 @@ public class Girlboss extends AbstractVriskaCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
 
     public Girlboss() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -35,7 +35,7 @@ public class Girlboss extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 99, false), 99, true, AbstractGameAction.AttackEffect.NONE));
+        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 20, false), 20, true, AbstractGameAction.AttackEffect.NONE));
 
     }
 
@@ -43,7 +43,7 @@ public class Girlboss extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeBaseCost(2);
         }
     }
 }

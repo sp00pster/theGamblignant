@@ -13,7 +13,7 @@ import static theGamblignant.VriskaMod.makeRelicPath;
 public class BionicBoundbeastRelic extends CustomRelic {
 
     // ID, images, text.
-    public static final String ID = VriskaMod.makeID("Bionic Boundbeast");
+    public static final String ID = VriskaMod.makeID("BionicBoundbeastRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
@@ -22,5 +22,11 @@ public class BionicBoundbeastRelic extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.CLINK);
     }
 
-    public AbstractRelic makeCopy() {return new BionicBoundbeastRelic();}
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
+
+    public AbstractRelic makeCopy() {
+        return new BionicBoundbeastRelic();
+    }
 }

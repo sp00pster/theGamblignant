@@ -22,6 +22,12 @@ public class DreamBubbleRelic extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
     }
 
-    public AbstractRelic makeCopy() {return new DreamBubbleRelic();}
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
 
+    public AbstractRelic makeCopy() {
+        return new DreamBubbleRelic();
+    }
 }

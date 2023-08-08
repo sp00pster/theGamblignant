@@ -49,12 +49,12 @@
   "theGamblignant:DreamBubbleRelic": {
     "NAME": "Dream Bubble",
     "FLAVOR": "blub",
-    "DESCRIPTIONS": ["Whenever you Rest, visit a random ? room."]
+    "DESCRIPTIONS": ["When resting at a Rest Site, you may choose to also visit a random ? room."]
   },
   "theGamblignant:ScratchedCoinRelic": {
-    "NAME": "Scratched Coin",
-    "FLAVOR": "Both sides are identical, but one has a scratch through its eye. Stupid.",
-    "DESCRIPTIONS": ["At the end of combat, gain 1d20 Gold"]
+    "NAME": "20-Sided Coin",
+    "FLAVOR": "...thats called a dice",
+    "DESCRIPTIONS": ["At the end of combat, gain 1d20 Gold."]
   },
   "theGamblignant:ToxicTraitsRelic": {
     "NAME": "Toxic Traits",
@@ -73,7 +73,7 @@
   },
   "theGamblignant:BrightPowderRelic": {
     "NAME": "Bright Powder",
-    "FLAVOR": "pokemo",
+    "FLAVOR": "pokemon",
     "DESCRIPTIONS": ["Whenever you play a Skill, gain 1 Luck."]
   },
   "theGamblignant:CloversHatRelic": {
@@ -85,5 +85,10 @@
     "NAME": "Blood Spade",
     "FLAVOR": "What kind of blood even is this?",
     "DESCRIPTIONS": ["Gain [E] at the start of your turn. Whenever your dice rolls in a single turn add up to 21, gain 4 Curse."]
+  },
+  "theGamblignant:PanicPupaRelic": {
+    "NAME": "Panic Pupa",
+    "FLAVOR": "squeezey",
+    "DESCRIPTIONS": ["Whenever you roll a 1, gain 3 Block."]
   }
 }

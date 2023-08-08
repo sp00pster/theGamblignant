@@ -27,7 +27,7 @@ public class SilverWind extends AbstractVriskaCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
 
     public SilverWind() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -36,16 +36,17 @@ public class SilverWind extends AbstractVriskaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int str = roll(1,4,'p');
-        int dex = roll(1,4,'p');
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, str), str));
+        int dex = roll(1,4,'p');
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, dex), dex));
+        //todo i think this is subject to the vim problem. check again if it is before trying to fix this
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeBaseCost(2);
         }
     }
 }

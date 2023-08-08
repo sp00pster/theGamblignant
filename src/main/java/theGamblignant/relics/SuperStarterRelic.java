@@ -26,13 +26,18 @@ public class SuperStarterRelic extends CustomRelic {
     }
 
     public boolean canSpawn() {
-        return AbstractDungeon.player.hasRelic("Starter Relic");
+        return AbstractDungeon.player.hasRelic(StarterRelic.ID);
     }
 
     public void atBattleStart() {
         this.flash();
         this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VimPower(AbstractDungeon.player, 20), 20));
         this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+    }
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
     }
 
     public AbstractRelic makeCopy() {

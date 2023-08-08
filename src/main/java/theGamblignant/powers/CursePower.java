@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.vfx.combat.GainPowerEffect;
 import theGamblignant.VriskaMod;
 import theGamblignant.util.TextureLoader;
 
@@ -24,8 +23,8 @@ public class CursePower extends AbstractPower implements CloneablePowerInterface
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("arrowloseluck_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("arrowloseluck_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("void_power84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("void_power32.png"));
 
     public CursePower(final AbstractCreature owner, final int amount) {
         name = NAME;
@@ -50,13 +49,13 @@ public class CursePower extends AbstractPower implements CloneablePowerInterface
 
         if (this.amount == 0) {
             this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, CursePower.POWER_ID));
-            if (this.owner.hasPower("Superstition")) {
-                int stition = (this.owner.getPower("Superstition")).amount;
+            if (this.owner.hasPower(SuperstitionPower.POWER_ID) && this.owner.hasPower(DexterityPower.POWER_ID)) {
+                int stition = (this.owner.getPower(SuperstitionPower.POWER_ID)).amount;
                 this.addToBot(new ApplyPowerAction(this.owner,this.owner, new DexterityPower(this.owner, -stition),-stition));
             }
         } else {
-            if (this.owner.hasPower("Superstition")) {
-                int stition = (this.owner.getPower("Superstition")).amount;
+            if (this.owner.hasPower(SuperstitionPower.POWER_ID)) {
+                int stition = (this.owner.getPower(SuperstitionPower.POWER_ID)).amount;
                 this.addToBot(new ApplyPowerAction(this.owner,this.owner, new DexterityPower(this.owner, stition),stition));
             }
 
@@ -64,7 +63,7 @@ public class CursePower extends AbstractPower implements CloneablePowerInterface
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

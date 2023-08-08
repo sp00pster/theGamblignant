@@ -65,7 +65,6 @@ public class CripplingBlow extends AbstractVriskaCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeDamage(DAMAGE_ADDEND);
             upgradeMagicNumber(MAGIC_ADDEND);
             initializeDescription();

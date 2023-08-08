@@ -49,6 +49,8 @@ public class SuperstitionPower extends AbstractPower implements CloneablePowerIn
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
+    //you DID implement this. the code that triggers it is in CursePower
+
     @Override
     public AbstractPower makeCopy() {
         return new SuperstitionPower(owner, amount);

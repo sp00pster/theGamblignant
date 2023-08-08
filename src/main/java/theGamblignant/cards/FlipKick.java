@@ -1,19 +1,20 @@
 package theGamblignant.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
+import theGamblignant.powers.CursePower;
+import theGamblignant.powers.LuckPower;
+import theGamblignant.powers.VimPower;
+import theGamblignant.relics.BionicBoundbeastRelic;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
@@ -53,8 +54,33 @@ public class FlipKick extends AbstractVriskaCard {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         int cantriproll = roll(1,2,'a');
         if (cantriproll == 2) {
-            this.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
-            this.addToTop(new GainEnergyAction(1));
+            this.addToBot(new DrawCardAction(AbstractDungeon.player, 1));
+            this.addToBot(new GainEnergyAction(1));
+        }
+    }
+
+    public void triggerOnGlowCheck() { //if the player has effects that would guarantee the roll to succeed, make the card glow yellow
+        AbstractPlayer p = AbstractDungeon.player;
+        int luck = 0;
+        int vim = 0;
+        int curse = 0;
+
+        if (p.hasPower(LuckPower.POWER_ID)) {
+            p.getPower(LuckPower.POWER_ID).flash();
+            luck = p.getPower(LuckPower.POWER_ID).amount;
+        }
+        if (p.hasPower(VimPower.POWER_ID)) {
+            p.getPower(VimPower.POWER_ID).flash();
+            vim = p.getPower(VimPower.POWER_ID).amount;
+        }
+        if (p.hasPower(CursePower.POWER_ID)) {
+            p.getPower(CursePower.POWER_ID).flash();
+            curse = p.getPower(CursePower.POWER_ID).amount;
+        }
+        if (p.hasRelic(BionicBoundbeastRelic.ID)) {luck++;}
+
+        if (luck + vim - curse >= 1) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }
 

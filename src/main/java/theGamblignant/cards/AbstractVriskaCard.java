@@ -2,6 +2,7 @@ package theGamblignant.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,6 +15,9 @@ import theGamblignant.VriskaMod;
 import theGamblignant.actions.RollNumberEffect;
 import theGamblignant.actions.TimedVFXAction;
 import theGamblignant.powers.*;
+import theGamblignant.relics.BionicBoundbeastRelic;
+import theGamblignant.relics.DimBulbRelic;
+import theGamblignant.relics.PanicPupaRelic;
 
 import java.util.Iterator;
 
@@ -21,7 +25,7 @@ import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
 public abstract class AbstractVriskaCard extends CustomCard {
 
-        public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName()); //this is for testing purposes, you can remove this eventually
+    public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName()); //this is for testing purposes, you can remove this eventually
 
     public AbstractVriskaCard(final String id,
                               final String img,
@@ -51,6 +55,8 @@ public abstract class AbstractVriskaCard extends CustomCard {
     //it used to distinguish attack rolls from skill rolls
     public static int roll(int count, int faces, char purpose) {
 
+        //todo make this return an array of numbers instead of just a sum!
+
         //counts for roll-modifying powers
         int luck = 0;
         int vim = 0;
@@ -79,8 +85,8 @@ public abstract class AbstractVriskaCard extends CustomCard {
             a.addToBottom(new ReducePowerAction(p, p, CursePower.POWER_ID, count));
         }
 
-        if (p.hasRelic("Bionic Boundbeast")) {
-            //flash?
+        if (p.hasRelic(BionicBoundbeastRelic.ID)) {
+            //flash? would probably get annoying
             luck += 1;
         }
 
@@ -160,9 +166,16 @@ public abstract class AbstractVriskaCard extends CustomCard {
 
 
     //RELICS
-        //if player has dim bulb and rolled a 1, gain 2 vim
-        if (p.hasRelic("Dim Bulb") && result == 1) {
+        //if player has dim bulb and rolled a 1, gain vim
+        if (p.hasRelic(DimBulbRelic.ID) && result == 1) {
+            p.getRelic(DimBulbRelic.ID).flash();
             a.addToBottom(new ApplyPowerAction(p, p, new VimPower(p, 2), 2));
+        }
+
+        //if player has panic pupa and rolled a 1, gain block
+        if (p.hasRelic(PanicPupaRelic.ID) && result == 1) {
+            p.getRelic(PanicPupaRelic.ID).flash();
+            a.addToBottom(new GainBlockAction(p, p, 3));
         }
     }
 }

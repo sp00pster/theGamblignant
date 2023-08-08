@@ -31,7 +31,7 @@ public class BigBlind extends AbstractVriskaCard {
 
     public BigBlind() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = 2;
+        magicNumber = 3;
         baseMagicNumber = magicNumber;
     }
 
@@ -39,8 +39,8 @@ public class BigBlind extends AbstractVriskaCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new LuckPower(p, this.magicNumber), this.magicNumber));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            this.addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-            this.addToBot(new ApplyPowerAction(mo, p, new LoseStrengthPower(mo, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            this.addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, 2), 2, true, AbstractGameAction.AttackEffect.NONE));
+            this.addToBot(new ApplyPowerAction(mo, p, new LoseStrengthPower(mo, 2), 2, true, AbstractGameAction.AttackEffect.NONE));
         }
     }
 

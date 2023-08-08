@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 import theGamblignant.powers.BanefulBunkerPower;
-import theGamblignant.powers.CursePower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 

@@ -1,27 +1,22 @@
 [
   {
+    "PROPER_NAME": "Roll XdY",
     "NAMES": [
-      "keyword",
-      "keywords"
+      "every used permutation of XdY. this is so stupid"
     ],
-    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
+    "DESCRIPTION": "Roll X dice, each with Y faces. Random numbers are chosen, and the sum of the results is used as the number on the card."
   },
   {
-    "PROPER_NAME": "Multiword Keyword",
+
     "NAMES": [
-      "Multiword Keyword",
-      "multiword_keyword",
-      "multiword_keywords",
-      "multikey",
-      "multikeyword"
-    ],
-    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
-  },
-  {
-    "NAMES": [
-      "Luck",
       "luck"
     ],
     "DESCRIPTION": "Increases the results of your dice rolls, without exceeding their normal limits. Wears off at turn end."
+  },
+  {
+    "NAMES": [
+      "gloom"
+    ],
+    "DESCRIPTION": "Decreases the results of your dice rolls, without going under 1. Is decreased by 1 whenever you roll."
   }
 ]

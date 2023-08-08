@@ -40,11 +40,12 @@ public class UncannyDodge extends AbstractVriskaCard {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));
     }
 
+    //todo add the stringupdate thing so that it works with positive/negative dexterity and reflects it on the card text
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeMagicNumber(1);
             initializeDescription();
         }

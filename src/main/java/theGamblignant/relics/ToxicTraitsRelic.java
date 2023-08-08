@@ -3,6 +3,7 @@ package theGamblignant.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theGamblignant.VriskaMod;
 import theGamblignant.util.TextureLoader;
 
@@ -21,6 +22,15 @@ public class ToxicTraitsRelic extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
     }
 
-    //here
+    //code here
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
+
+    public AbstractRelic makeCopy() {
+        return new ToxicTraitsRelic();
+    }
 
 }
