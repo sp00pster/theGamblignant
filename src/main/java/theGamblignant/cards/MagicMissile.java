@@ -33,6 +33,7 @@ public class MagicMissile extends AbstractVriskaCard {
 
     public MagicMissile() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.doesRoll = true;
     }
 
     @Override

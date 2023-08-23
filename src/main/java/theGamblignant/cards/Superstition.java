@@ -9,6 +9,7 @@ import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 import theGamblignant.powers.FengShuiPower;
 import theGamblignant.powers.SuperstitionPower;
+import theGamblignant.powers.VimPower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
@@ -32,7 +33,7 @@ public class Superstition extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new SuperstitionPower(p, magicNumber), magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new VimPower(p, magicNumber), magicNumber));
     }
 
     @Override

@@ -40,6 +40,7 @@ public class PoisonSting extends AbstractVriskaCard {
 
         magicNumber = MAGIC;
         baseMagicNumber = magicNumber;
+        this.doesRoll = true;
     }
 
     @Override

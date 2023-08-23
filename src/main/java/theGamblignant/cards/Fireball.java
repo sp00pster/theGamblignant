@@ -38,6 +38,7 @@ public class Fireball extends AbstractVriskaCard {
     public Fireball() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
+        this.doesRoll = true;
     }
 
     @Override

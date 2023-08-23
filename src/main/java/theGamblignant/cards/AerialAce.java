@@ -37,6 +37,7 @@ public class AerialAce extends AbstractVriskaCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = MAGIC;
         baseMagicNumber = magicNumber;
+        this.doesRoll = true;
     }
 
     @Override

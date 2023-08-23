@@ -58,6 +58,7 @@ public class Defend_Cobalt extends AbstractVriskaCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
+            this.doesRoll = true;
             initializeDescription();
         }
     }

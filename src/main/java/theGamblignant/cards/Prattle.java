@@ -40,6 +40,7 @@ public class Prattle extends AbstractVriskaCard {
 
     public Prattle() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.doesRoll = true;
     }
 
     // Actions the card should do.

@@ -31,6 +31,7 @@ public class SilverWind extends AbstractVriskaCard {
 
     public SilverWind() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.doesRoll = true;
     }
 
     @Override

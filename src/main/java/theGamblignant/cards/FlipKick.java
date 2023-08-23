@@ -47,6 +47,7 @@ public class FlipKick extends AbstractVriskaCard {
     public FlipKick() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        this.doesRoll = true;
     }
 
     @Override

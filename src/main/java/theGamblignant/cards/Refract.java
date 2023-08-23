@@ -30,6 +30,7 @@ public class Refract extends AbstractVriskaCard {
 
     public Refract() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.doesRoll = true;
     }
 
     @Override

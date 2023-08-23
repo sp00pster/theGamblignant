@@ -30,6 +30,7 @@ public class LightScreen extends AbstractVriskaCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = 5;
         baseMagicNumber = magicNumber;
+        this.doesRoll = true;
     }
 
     @Override

@@ -40,6 +40,7 @@ public class Blizzard_Cobalt extends AbstractVriskaCard {
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
         this.isMultiDamage = true;
+        this.doesRoll = true;
     }
 
     @Override

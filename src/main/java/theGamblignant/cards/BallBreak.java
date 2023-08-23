@@ -35,6 +35,7 @@ public class BallBreak extends AbstractVriskaCard {
     public BallBreak() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        this.doesRoll = true;
     }
 
     @Override

@@ -29,6 +29,7 @@ public class FengShui extends AbstractVriskaCard {
     public FengShui() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 4;
+        this.doesRoll = true;
     }
 
     @Override

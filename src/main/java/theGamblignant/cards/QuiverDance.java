@@ -25,6 +25,7 @@ public class QuiverDance extends AbstractVriskaCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = 2;
         baseMagicNumber = magicNumber;
+        this.doesRoll = true;
     }
 
     @Override

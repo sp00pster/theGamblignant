@@ -34,6 +34,7 @@ public class Reroll extends AbstractVriskaCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int drawroll = roll(1,6, 's');
         this.addToBot(new DrawCardAction(p, drawroll));
+        this.doesRoll = true;
     }
 
     @Override

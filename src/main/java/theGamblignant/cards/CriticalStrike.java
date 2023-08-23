@@ -35,6 +35,7 @@ public class CriticalStrike extends AbstractVriskaCard {
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
         this.tags.add(CardTags.STRIKE);
+        this.doesRoll = true;
     }
 
     @Override

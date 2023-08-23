@@ -2,12 +2,11 @@
   {
     "PROPER_NAME": "Roll XdY",
     "NAMES": [
-      "every used permutation of XdY. this is so stupid"
+      "xdy"
     ],
     "DESCRIPTION": "Roll X dice, each with Y faces. Random numbers are chosen, and the sum of the results is used as the number on the card."
   },
   {
-
     "NAMES": [
       "luck"
     ],

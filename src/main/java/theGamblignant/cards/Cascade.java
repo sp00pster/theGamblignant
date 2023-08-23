@@ -35,6 +35,8 @@ public class Cascade extends AbstractVriskaCard {
 
     public Cascade() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.isMultiDamage = true;
+        this.doesRoll = true;
     }
 
     @Override
@@ -47,7 +49,7 @@ public class Cascade extends AbstractVriskaCard {
         }
         this.calculateCardDamage(m);
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));
-        this.addToBot(new ApplyPowerAction(p, p, new CursePower(p, 6)));
+        this.addToBot(new ApplyPowerAction(p, p, new CursePower(p, 5)));
     }
 
     public void applyPowers() {

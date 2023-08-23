@@ -442,7 +442,7 @@ public class VriskaMod implements
         //obviously this is NOT how youre meant to do this but...the keywords werent loading with the below code and they ARE loading with this code
         BaseMod.addKeyword(new String[]{"luck"}, "Increases the results of your dice rolls, without exceeding their normal limits. Wears off at the end of your turn.");
         BaseMod.addKeyword(new String[]{"gloom"}, "Decreases the results of your dice rolls, without going under 1. Whenever you roll, #yGloom is decreased by 1.");
-        BaseMod.addKeyword("Roll XdY", new String[]{"1d2","1d4","1d6","1d8","1d10","1d12","1d20","1d30","1d100","2d4","8d6","6d4","8d4","Xd20","(X+1)d20","4d13","6d12","5d6","7d6"}, "Roll X dice, each with Y faces. Random numbers are chosen, and the sum of the results is used as the number on the card.");
+        BaseMod.addKeyword("Roll XdY", new String[]{"xdy"}, "Roll X dice, each with Y faces. Random numbers are chosen, and the sum of the results is used as the number on the card.");
         //BaseMod.addKeyword(new String[]{""}, "");
 
         // Keywords on cards are supposed to be Capitalized, while in Keyword-String.json they're lowercase

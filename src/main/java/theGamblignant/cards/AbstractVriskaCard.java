@@ -1,11 +1,14 @@
 package theGamblignant.cards;
+import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
@@ -19,13 +22,16 @@ import theGamblignant.relics.BionicBoundbeastRelic;
 import theGamblignant.relics.DimBulbRelic;
 import theGamblignant.relics.PanicPupaRelic;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
 public abstract class AbstractVriskaCard extends CustomCard {
 
     public static final Logger logger = LogManager.getLogger(VriskaMod.class.getName()); //this is for testing purposes, you can remove this eventually
+    public boolean doesRoll = false;
 
     public AbstractVriskaCard(final String id,
                               final String img,
@@ -45,6 +51,20 @@ public abstract class AbstractVriskaCard extends CustomCard {
         isMagicNumberModified = false;
     }
 
+    @Override
+    public List<TooltipInfo> getCustomTooltipsTop() {
+        List<TooltipInfo> rollTooltip = null;
+        if (!this.doesRoll) {
+            return super.getCustomTooltipsTop();
+        } else {
+            rollTooltip = new ArrayList<>();
+            rollTooltip.add(new TooltipInfo(BaseMod.getKeywordTitle("thegamblignant:xdy"), BaseMod.getKeywordDescription("thegamblignant:xdy")));
+            List<TooltipInfo> compoundList = new ArrayList<>(rollTooltip);
+            if (super.getCustomTooltipsTop() != null) compoundList.addAll(super.getCustomTooltipsTop());
+            return compoundList;
+        }
+    }
+
     public void displayUpgrades() { // Display the upgrade - when you click a card to upgrade it
         super.displayUpgrades();
     }
@@ -54,9 +74,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
     //the "purpose" parameter is currently not used, but im keeping it in the event that i need to use it later.
     //it used to distinguish attack rolls from skill rolls
     public static int roll(int count, int faces, char purpose) {
-
         //todo make this return an array of numbers instead of just a sum!
-
         //counts for roll-modifying powers
         int luck = 0;
         int vim = 0;

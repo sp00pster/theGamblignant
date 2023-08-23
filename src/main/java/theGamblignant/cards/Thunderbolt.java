@@ -40,6 +40,7 @@ public class Thunderbolt extends AbstractVriskaCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber;
+        this.doesRoll = true;
     }
 
     @Override
