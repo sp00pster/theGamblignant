@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.util.TextureLoader;
@@ -57,8 +58,12 @@ public class GatekeepPower extends AbstractPower implements CloneablePowerInterf
 
     public int onAttacked(DamageInfo info, int damageAmount) { //if statement taken from thorns, with final condition added
         if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner && damageAmount <= this.owner.currentBlock && this.owner.currentBlock != 0) {
+            AbstractCreature m = info.owner;
             this.flash();
-            this.addToTop(new ApplyPowerAction(info.owner, this.owner, new StrengthPower(info.owner, -this.amount), -this.amount));
+            this.addToTop(new ApplyPowerAction(m, this.owner, new StrengthPower(m, -this.amount), -this.amount));
+            if (m != null && !m.hasPower("Artifact")) {
+                this.addToBot(new ApplyPowerAction(m, this.owner, new GainStrengthPower(m, this.amount), this.amount));
+            }
         }
 
         return damageAmount;

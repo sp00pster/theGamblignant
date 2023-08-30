@@ -20,6 +20,7 @@ import static theGamblignant.VriskaMod.makePowerPath;
 
 public class DoomsdayDevicePower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
+    private static int doomIdOffset; //the bomb does this (its so i can have multiple instances of it)
 
     public static final String POWER_ID = VriskaMod.makeID("DoomsdayDevice");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -31,7 +32,8 @@ public class DoomsdayDevicePower extends AbstractPower implements CloneablePower
 
     public DoomsdayDevicePower(final AbstractCreature owner, final int amount) {
         name = NAME;
-        ID = POWER_ID;
+        ID = POWER_ID + doomIdOffset;
+        ++doomIdOffset;
 
         this.owner = owner;
         this.amount = amount;

@@ -7,8 +7,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
-import theGamblignant.powers.FengShuiPower;
-import theGamblignant.powers.SuperstitionPower;
 import theGamblignant.powers.VimPower;
 
 import static theGamblignant.VriskaMod.makeCardPath;

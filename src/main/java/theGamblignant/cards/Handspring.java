@@ -11,48 +11,39 @@ import theGamblignant.characters.TheGamblignant;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
-public class Defend_Cobalt extends AbstractVriskaCard {
+public class Handspring extends AbstractVriskaCard {
 
-    // TEXT DECLARATION
-
-    public static final String ID = VriskaMod.makeID(Defend_Cobalt.class.getSimpleName());
-    public static final String IMG = makeCardPath("avert.png");
+    public static final String ID = VriskaMod.makeID(Handspring.class.getSimpleName());
+    public static final String IMG = makeCardPath("handspring.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    // /TEXT DECLARATION/
 
-
-    // STAT DECLARATION
-
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
     private static final int COST = 1;
-    private static final int BLOCK = 5;
 
-    // /STAT DECLARATION/
-
-
-    public Defend_Cobalt() {
+    public Handspring() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = BLOCK;
-        this.tags.add(CardTags.STARTER_DEFEND);
+        magicNumber = 2;
+        baseMagicNumber = magicNumber;
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p, p, block));
+        int block = roll(1, 8,'a')*magicNumber;
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));
     }
 
-    //Upgraded stats.
+    //todo add the stringupdate thing so that it works with positive/negative dexterity and reflects it on the card text
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeBlock(3);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

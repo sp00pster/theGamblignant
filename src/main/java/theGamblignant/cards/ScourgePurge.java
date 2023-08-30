@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
 import theGamblignant.powers.CursePower;
@@ -25,7 +26,7 @@ public class ScourgePurge extends AbstractVriskaCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
@@ -42,12 +43,14 @@ public class ScourgePurge extends AbstractVriskaCard {
             AbstractPower curse = AbstractDungeon.player.getPower(CursePower.POWER_ID);
             if (!this.upgraded) {
                 this.addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, curse.amount), curse.amount, AbstractGameAction.AttackEffect.POISON));
+                this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, curse.amount, false), curse.amount, AbstractGameAction.AttackEffect.POISON));
             } else {
                 Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
 
                 while (var3.hasNext()) {
                     AbstractMonster mo = (AbstractMonster) var3.next();
                     this.addToBot(new ApplyPowerAction(mo, p, new PoisonPower(mo, p, curse.amount), curse.amount, AbstractGameAction.AttackEffect.POISON));
+                    this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, curse.amount, false), curse.amount, AbstractGameAction.AttackEffect.POISON));
                 }
             }
             this.addToBot(new RemoveSpecificPowerAction(p, p, CursePower.POWER_ID));

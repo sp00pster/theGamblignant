@@ -25,22 +25,26 @@ public class DoomsdayDevice extends AbstractVriskaCard {
 
     private static final int COST = 1;
 
+    private static final int MAGIC = 8;
+    private static final int MAGIC_ADDEND = -2;
+
     public DoomsdayDevice() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
+        this.isInnate = true;
+        this.magicNumber = MAGIC;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new DoomsdayDevicePower(p, 8), 8));
+        this.addToBot(new ApplyPowerAction(p, p, new DoomsdayDevicePower(p, magicNumber), magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.isInnate = true;
+            upgradeMagicNumber(MAGIC_ADDEND);
             initializeDescription();
         }
     }

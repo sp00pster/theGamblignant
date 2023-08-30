@@ -1,9 +1,9 @@
 {
   "modid": "${project.artifactId}",
   "name": "${project.name}",
-  "author_list": ["NotGremious"],
+  "author_list": ["spoopster"],
   "credits": "Basemod, ModTheSpire, #modding",
-  "description": "${project.description}",
+  "description": "8itch",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",

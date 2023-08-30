@@ -90,9 +90,9 @@ public class ScratchedCoinRelic extends CustomRelic {
 
         //make the roll vfx
         if (result == 20) {
-            AbstractDungeon.actionManager.addToBottom(new TimedVFXAction(new RollNumberEffect(p.dialogX + 25F, p.dialogY, result + "!")));
+            AbstractDungeon.actionManager.addToBottom(new TimedVFXAction(new RollNumberEffect(p.dialogX + 25F, p.dialogY, 1, result + "!")));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new TimedVFXAction(new RollNumberEffect(p.dialogX + 25F, p.dialogY, Integer.toString(result))));
+            AbstractDungeon.actionManager.addToBottom(new TimedVFXAction(new RollNumberEffect(p.dialogX + 25F, p.dialogY, 1, Integer.toString(result))));
         }
 
         addToBot(new GainGoldAction(result));

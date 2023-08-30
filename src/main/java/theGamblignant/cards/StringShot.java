@@ -33,7 +33,7 @@ public class StringShot extends AbstractVriskaCard {
 
     public StringShot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = 2;
+        magicNumber = 3;
         baseMagicNumber = magicNumber;
         this.exhaust = true;
     }

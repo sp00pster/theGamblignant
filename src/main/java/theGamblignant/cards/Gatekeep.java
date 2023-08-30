@@ -27,14 +27,14 @@ public class Gatekeep extends AbstractVriskaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new GatekeepPower(p, 1), 1));
+        this.addToBot(new ApplyPowerAction(p, p, new GatekeepPower(p, 2), 2));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeBaseCost(2);
         }
     }
 }

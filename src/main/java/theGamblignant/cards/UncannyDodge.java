@@ -1,52 +1,47 @@
 package theGamblignant.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGamblignant.VriskaMod;
 import theGamblignant.characters.TheGamblignant;
+import theGamblignant.powers.UncannyDodgePower;
 
 import static theGamblignant.VriskaMod.makeCardPath;
 
 public class UncannyDodge extends AbstractVriskaCard {
 
     public static final String ID = VriskaMod.makeID(UncannyDodge.class.getSimpleName());
-    public static final String IMG = makeCardPath("uncannydodge.png");
+    public static final String IMG = makeCardPath("power.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheGamblignant.Enums.COLOR_COBALT;
 
     private static final int COST = 1;
 
     public UncannyDodge() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = 2;
-        baseMagicNumber = magicNumber;
+        this.baseMagicNumber = 6;
+        this.doesRoll = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int block = roll(1, 8,'a')*magicNumber;
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));
+        this.addToBot(new ApplyPowerAction(p, p, new UncannyDodgePower(p, magicNumber), magicNumber));
     }
-
-    //todo add the stringupdate thing so that it works with positive/negative dexterity and reflects it on the card text
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(2);
             initializeDescription();
         }
     }

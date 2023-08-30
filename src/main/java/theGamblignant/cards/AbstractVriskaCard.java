@@ -84,6 +84,7 @@ public abstract class AbstractVriskaCard extends CustomCard {
         int totalResult = 0;
         AbstractPlayer p = AbstractDungeon.player;
         GameActionManager a = AbstractDungeon.actionManager;
+        StringBuilder rollvfx = new StringBuilder();
 
         //check for all powers that directly modify luck, make them flash, and record their values. remove vim and reduce curse also.
         if (p.hasPower(LuckPower.POWER_ID)) {
@@ -144,9 +145,11 @@ public abstract class AbstractVriskaCard extends CustomCard {
 
             //make the roll vfx
             if (result == faces) {
-                AbstractDungeon.actionManager.addToBottom(new TimedVFXAction(new RollNumberEffect(p.dialogX + 25F, p.dialogY, result + "!")));
+                //AbstractDungeon.actionManager.addToBottom(new TimedVFXAction(new RollNumberEffect(p.dialogX + 25F, p.dialogY, result + "!")));
+                rollvfx.append(result).append("! + ");
             } else {
-                AbstractDungeon.actionManager.addToBottom(new TimedVFXAction(new RollNumberEffect(p.dialogX + 25F, p.dialogY, Integer.toString(result))));
+                //AbstractDungeon.actionManager.addToBottom(new TimedVFXAction(new RollNumberEffect(p.dialogX + 25F, p.dialogY, Integer.toString(result))));
+                rollvfx.append(result).append(" + ");
             }
 
             //trigger any effects that listen for dice rolls
@@ -156,6 +159,13 @@ public abstract class AbstractVriskaCard extends CustomCard {
 
             logger.info("_____________ ROLL END _____________");
         }
+
+        //remove the last " + " from the roll and display it
+        rollvfx.deleteCharAt(rollvfx.length() - 1);
+        rollvfx.deleteCharAt(rollvfx.length() - 1);
+        rollvfx.deleteCharAt(rollvfx.length() - 1);
+        AbstractDungeon.actionManager.addToBottom(new TimedVFXAction(new RollNumberEffect(p.dialogX + 25F, p.dialogY, count, rollvfx.toString())));
+
         logger.info("total result is " + totalResult);
         logger.info("________________ CARD END ________________");
         return totalResult;

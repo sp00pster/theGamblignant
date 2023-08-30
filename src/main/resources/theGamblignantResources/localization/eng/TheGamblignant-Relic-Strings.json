@@ -34,7 +34,7 @@
   "theGamblignant:StarterRelic": {
     "NAME": "Starter Relic",
     "FLAVOR": "There is no flavor. sorry. Terezi would be so pissed off if theres no flavor",
-    "DESCRIPTIONS": ["Add 4 to the first roll you make each combat."]
+    "DESCRIPTIONS": ["At the start of each combat, add #yAttune to your hand."]
   },
   "theGamblignant:SuperStarterRelic": {
     "NAME": "Super Starter Relic",

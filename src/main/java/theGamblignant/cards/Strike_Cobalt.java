@@ -20,7 +20,7 @@ public class Strike_Cobalt extends AbstractVriskaCard {
     // TEXT DECLARATION
 
     public static final String ID = VriskaMod.makeID(Strike_Cobalt.class.getSimpleName());
-    public static final String IMG = makeCardPath("strike.png");
+    public static final String IMG = makeCardPath("assail.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -44,46 +44,20 @@ public class Strike_Cobalt extends AbstractVriskaCard {
     public Strike_Cobalt() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-
-        this.tags.add(CardTags.STRIKE);
+        //this.tags.add(CardTags.STRIKE); //idk. like it IS your strike and removing this makes strike dummy suck ass but. it doesnt have "strike"
         this.tags.add(CardTags.STARTER_STRIKE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.upgraded) {
-            this.baseDamage = roll(1,6,'a') + 6;
-            this.calculateCardDamage(m);
-        }
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-    }
-
-    public void applyPowers() {
-        super.applyPowers();
-        if (this.upgraded) {
-            int addeddamage = 6;
-            if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)) {
-                addeddamage += AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount;
-            }
-            if (AbstractDungeon.player.hasPower(VigorPower.POWER_ID)) {
-                addeddamage += AbstractDungeon.player.getPower(VigorPower.POWER_ID).amount;
-            }
-            if (addeddamage >= 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
-            } else if (addeddamage < 0) {
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + -addeddamage + cardStrings.EXTENDED_DESCRIPTION[2];
-            }
-        }
-        this.initializeDescription();
+        new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT);
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.doesRoll = true;
+            this.upgradeDamage(3);
             initializeDescription();
         }
     }

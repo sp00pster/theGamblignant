@@ -22,12 +22,16 @@ public class RollNumberEffect extends AbstractGameEffect {
     private float y;
     private static final float GRAVITY_Y;
     private final String msg;
+    private final int rolls;
+    private int timemult;
     private float scale = 1.7F;
     private boolean playedSound = false;
 
-    public RollNumberEffect(float x, float y, String msg) {
-        this.duration = 0.6F;
-        this.startingDuration = 0.6F;
+    public RollNumberEffect(float x, float y, int rollcount, String msg) {
+        this.rolls = rollcount;
+        this.timemult = 1; //this should be sqrt(rolls) but thats kind of a headache
+        this.duration = 0.6F * timemult;
+        this.startingDuration = 0.6F * timemult;
         this.x = x;
         this.y = y;
         this.msg = msg;
@@ -38,7 +42,11 @@ public class RollNumberEffect extends AbstractGameEffect {
         this.y += 3 * GRAVITY_Y * Gdx.graphics.getDeltaTime();
         super.update();
         if (!this.playedSound) {
-            CardCrawlGame.sound.play("VriskaMod:DICE");
+            if (rolls > 3) {
+                CardCrawlGame.sound.play("VriskaMod:DICE");
+            } else {
+                CardCrawlGame.sound.play("VriskaMod:MANYDICE");
+            }
             this.playedSound = true;
         }
     }

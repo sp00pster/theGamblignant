@@ -49,11 +49,11 @@
                 "NAME": "Gatekeep",
                 "DESCRIPTIONS": [
                         "Whenever you fully block an attack, the attacker loses #b",
-                        " Strength."
+                        " temporary Strength."
                 ]
         },
-        "theGamblignant:FengShui": {
-                "NAME": "Feng Shui",
+        "theGamblignant:UncannyDodge": {
+                "NAME": "Uncanny Dodge",
                 "DESCRIPTIONS": [
                       "At the start of your turn, gain #b1d"," Block."
                 ]
@@ -72,7 +72,7 @@
         "theGamblignant:BanefulBunker": {
                 "NAME": "Baneful Bunker",
                 "DESCRIPTIONS": [
-                        "When attacked, apply #b","poison back. Wears off at the end of your turn."
+                        "When attacked, apply #b"," Poison back. Wears off at the end of your turn."
                 ]
         },
         "theGamblignant:TrashTalk": {

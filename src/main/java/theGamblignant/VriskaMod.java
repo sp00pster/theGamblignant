@@ -476,5 +476,6 @@ public class VriskaMod implements
     @Override
     public void receiveAddAudio() {
         BaseMod.addAudio("VriskaMod:DICE", "theGamblignantResources/sfx/dice.ogg");
+        BaseMod.addAudio("VriskaMod:MANYDICE", "theGamblignantResources/sfx/manydice.ogg");
     }
 }

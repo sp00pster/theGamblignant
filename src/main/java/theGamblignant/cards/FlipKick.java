@@ -60,6 +60,11 @@ public class FlipKick extends AbstractVriskaCard {
         }
     }
 
+    public void applyPowers() {
+        super.applyPowers();
+        triggerOnGlowCheck();
+    }
+
     public void triggerOnGlowCheck() { //if the player has effects that would guarantee the roll to succeed, make the card glow yellow
         AbstractPlayer p = AbstractDungeon.player;
         int luck = 0;
@@ -67,21 +72,20 @@ public class FlipKick extends AbstractVriskaCard {
         int curse = 0;
 
         if (p.hasPower(LuckPower.POWER_ID)) {
-            p.getPower(LuckPower.POWER_ID).flash();
             luck = p.getPower(LuckPower.POWER_ID).amount;
         }
         if (p.hasPower(VimPower.POWER_ID)) {
-            p.getPower(VimPower.POWER_ID).flash();
             vim = p.getPower(VimPower.POWER_ID).amount;
         }
         if (p.hasPower(CursePower.POWER_ID)) {
-            p.getPower(CursePower.POWER_ID).flash();
             curse = p.getPower(CursePower.POWER_ID).amount;
         }
         if (p.hasRelic(BionicBoundbeastRelic.ID)) {luck++;}
 
         if (luck + vim - curse >= 1) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 
